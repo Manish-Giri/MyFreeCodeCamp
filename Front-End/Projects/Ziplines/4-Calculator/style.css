@@ -1,0 +1,61 @@
+@import url(https://fonts.googleapis.com/css?family=Lobster|Montserrat);
+body {
+    /*  width: 100%;
+  max-width: 1920px; /* YOUR BG MAX SIZE */
+    background: #B6ABB1 url(images/9.jpg) no-repeat center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+#wrapper {
+    position: relative;
+    width: 320px;
+    height: 480px;
+    margin: 80px auto 0 auto;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(16, 15, 15, 0.7) 57%, rgba(33, 54, 63, 0.2) 100%);
+    border-radius: 20em / 3em;
+    box-shadow: 0 5px 25px 1px #222, inset 0 0 10px 1px #222;
+    padding: 10px 4px;
+}
+#calculator-footer {
+    font-family: 'Lobster', cursive;
+    text-align: center;
+    color: floralwhite;
+    position: absolute;
+    bottom: 20px;
+    left: 40px;
+}
+#calculator-display {
+    box-sizing: border-box;
+    position: absolute;
+    top: 30px;
+    width: 95%;
+    height: 100px;
+    margin: 10px auto;
+    padding: 12px;
+    padding-top: 30px;
+    text-align: right;
+    color: antiquewhite;
+    font-size: 2.5em;
+    font-family: 'Montserrat', sans-serif;
+}
+#calculator-controls {
+    box-sizing: border-box;
+    position: absolute;
+    top: 150px;
+    width: 95%;
+    height: 250px;
+}
+.table {
+    height: 250px;
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+}
+.table-row {
+    display: table-row;
+    margin: 5px;
+}
+.table-cell {
+    display: table-cell;
+    padding: 10px;
+}

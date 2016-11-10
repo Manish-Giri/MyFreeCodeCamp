@@ -1,0 +1,9 @@
+#wrapper {
+	margin: 40px auto;
+	width: 90%;
+}
+
+figcaption {
+	padding: 5px;
+	margin: 5px;
+}

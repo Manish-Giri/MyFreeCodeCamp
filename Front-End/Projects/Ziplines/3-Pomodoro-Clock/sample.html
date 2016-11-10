@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sample Pomodoro</title>
+	<link rel="stylesheet" type="text/css" href="sample.css">
+</head>
+<body>
+<div id='wrap'>
+    <!--plus-minus session minutes-->
+    <div id='plusminusWrapper'>
+      <div class='minPan' id='plmiPan'>
+        <div class='sl'>Session length
+          <br>
+          <div class='smalltext'>(minutes)</div>
+        </div>
+        <div id='min'>25</div>
+        <div class='butt'>
+          <div id='pl'><a href='#'>+</a></div>
+          <div id='mi'><a href='#'>--</a></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div id='buttsWrap'>
+      <!--run button-->
+      <div id='runButt' class='minPan'><a href='#'>RUN</a></div>
+      <div id='resetButt' class='minPan'><a href='#'>RESET</a></div>
+    </div>
+    <div class='minPan' id='break'>
+      <div class='sl'>Break length
+        <br>
+        <div class='smalltext'>(minutes)</div>
+      </div>
+      
+      <div class='butta'>
+        <div id='bpl'><a href='#'>+</a></div>
+        <div id='bmi'><a href='#'>--</a></div>
+      </div>
+      <div id='breakMin'>15</div>
+    </div>
+    <!--timer-->
+    <div class='minPan' id='timah'>
+      <div id='timeMin'>25</div>
+      :
+      <div id='timeSec'>00</div>
+    </div>
+  </div>
+  <script type="text/javascript" src="sample.js"></script>
+</body>
+</html>

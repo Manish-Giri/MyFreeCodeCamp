@@ -1,0 +1,1 @@
+{"version":3,"sources":["divide-decimals.js"],"names":[],"mappings":";;AAAA,IAAI,WAAW,MAAM,GAArB;;AAGA;;AAEA,CAAC,UAAS,CAAT,EAAW;AAAC,SAAO,cAAY,CAAnB;AAAsB,CAAnC,EAAqC,QAArC","file":"divide-decimals-compiled.js","sourcesContent":["var quotient = 4.4 / 2.0;\n\n\n// Only change code above this line.\n\n(function(y){return 'quotient='+y;})(quotient);\n"]}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pomodoro Clock</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="1.css">
+</head>
+<body>
+<div id="wrapper" class="container-fluid">
+<div id="main">
+	<div class="page-header">
+		<h1 class="text-center">The Pomodoro Technique</h1>
+	</div>
+	<div id="lengths">
+		<div class="row">
+			<div class="col-md-3 col-md-offset-2 col-xs-6">
+				<div class="elements">
+					<div class="timer-text h3 text-center">Session Length</div>
+					<div class="timer-row">
+						<div id="sessionMinus" class="timer-minus"><span>-</span></div>
+						<div id="sessionLength" class="timer-length"><span>25</span></div>
+						<div id="sessionPlus" class="timer-plus"><span>+</span></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 col-md-offset-2 col-xs-6">
+				<div class="elements">
+					<div class="timer-text h3 text-center">Break Length</div>
+					<div class="timer-row">
+						<div id="breakMinus" class="timer-minus"><span>-</span></div>
+						<div id="breakLength" class="timer-length"><span>5</span></div>
+						<div id="breakPlus" class="timer-plus"><span>+</span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="timer">
+		<div id="circle">
+
+			<div id="circle-numbers">
+				<div id="circle-minutes">25</div>
+				<span id="circle-colon">:</span>
+				<div id="circle-seconds">00</div>
+			</div>
+
+
+			<div id="circle-text">
+				<div id="circle-start">Start</div>
+				<div id="circle-pause">Pause</div>
+			</div>
+
+
+			<div id="reset-wrap">
+				<div id="reset">
+					Reset
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+</div>
+</div>
+</div>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="1.1.js"></script>
+</body>
+</html>

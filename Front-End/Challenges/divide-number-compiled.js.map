@@ -1,0 +1,1 @@
+{"version":3,"sources":["divide-number.js"],"names":[],"mappings":";;AAAA,IAAI,WAAW,KAAK,EAApB;;AAEA;;AAEA,CAAC,UAAS,CAAT,EAAW;AAAC,SAAO,cAAY,CAAnB;AAAsB,CAAnC,EAAqC,QAArC","file":"divide-number-compiled.js","sourcesContent":["var quotient = 66 / 33;\n\n// Only change code above this line.\n\n(function(z){return 'quotient='+z;})(quotient);\n"]}

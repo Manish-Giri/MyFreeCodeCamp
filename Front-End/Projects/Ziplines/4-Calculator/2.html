@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="2.css">
+        <!-- Latest compiled and minified JavaScript -->
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div id="wrapper">
+            <div id="calculator-display">
+                <div id="previousDisplay"></div>
+                <div id="currentDisplay"></div>
+            </div>
+            <div id="calculator-controls">
+                <div class="table">
+                    <div class="table-row" id="row-1">
+                        <div id="ac" class="table-cell op null-op"><span>AC</span></div>
+                        <div id="ce" class="table-cell op null-op"><span>CE</span></div>
+                        <div id="percent" class="table-cell op binary-op"><span>%</span></div>
+                        <div id="square-root" class="table-cell op unary-op sqrt">&radic;<span style="text-decoration: overline">2</span></div>
+                    </div>
+                    <div class="table-row" id="row-2">
+                        <div id="seven" class="table-cell number"><span>7</span></div>
+                        <div id="eight" class="table-cell number"><span>8</span></div>
+                        <div id="nine" class="table-cell number"><span>9</span></div>
+                        <div id="divide" class="table-cell op binary-op"><span>&divide;</span></div>
+                    </div>
+                    <div class="table-row" id="row-3">
+                        <div id="four" class="table-cell number"><span>4</span></div>
+                        <div id="five" class="table-cell number"><span>5</span></div>
+                        <div id="six" class="table-cell number"><span>6</span></div>
+                        <div id="multiply" class="table-cell op binary-op"><span>&times;</span></div>
+                    </div>
+                    <div class="table-row" id="row-4">
+                        <div id="one" class="table-cell number"><span>1</span></div>
+                        <div id="two" class="table-cell number"><span>2</span></div>
+                        <div id="three" class="table-cell number"><span>3</span></div>
+                        <div id="subtract" class="table-cell op binary-op"><span>-</span></div>
+                    </div>
+                    <div class="table-row" id="row-5">
+                        <div id="zero" class="table-cell number"><span>0</span></div>
+                        <div id="period" class="table-cell op unary-op dot"><span>.</span></div>
+                        <div id="equals" class="table-cell op null-op"><span>=</span></div>
+                        <div id="add" class="table-cell op binary-op"><span>+</span></div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div id="calculator-footer">
+                Designed by Manish Giri for FreeCodeCamp
+            </div>
+
+
+        </div>
+
+        <div id="instructions">
+          <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary btn-large" data-toggle="modal" data-target="#myModal">
+          Launch Instructions
+        </button>
+
+        <!-- Modal -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Instructions</h4>
+                  </div>
+                  <div class="modal-body">
+                    <ul class="list-group">
+                      <li class="list-group-item">Click on the AC button before beginning each new calculation.</li>
+                      <li class="list-group-item">For square root of a number, first press the number then press the square root button.</li>
+                      <li class="list-group-item">An operation that results in a number too large to fit on the screen will display zero instead.</li>
+                      <li class="list-group-item">If a number has too many digits after the decimal point to fit on screen, some of the digits will be truncated.</li>
+                      <li class="list-group-item">Some operations like divide by zero, and square root of negative integers are not permitted.</li>
+                    </ul>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+        </div>
+               
+    </div>
+
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="4.js"></script>
+</body>
+
+</html>

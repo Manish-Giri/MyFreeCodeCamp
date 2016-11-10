@@ -1,0 +1,1 @@
+{"version":3,"sources":["declare-js-variables.js"],"names":[],"mappings":";;AAAA,IAAI,UAAU,gBAAd;AACA,IAAI,SAAS,aAAb","file":"declare-js-variables-compiled.js","sourcesContent":["var ourName = \"Free Code Camp\";\nvar myName = \"Manish Giri\";\n\n"]}

@@ -1,0 +1,113 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+@import url(https://fonts.googleapis.com/css?family=Courgette);
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display+SC:700italic);
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+#wrapper {
+	/*background: url(dark_embroidery.png);*/
+	background-color: #DADCDC;
+
+}
+
+.page-header {
+	background-color: #DADCDC;
+	font-family: 'Courgette', cursive;
+	text-transform: uppercase;
+	font-size: larger;
+	color: red;
+
+}
+
+
+.elements {
+	background-color: #EC4048;
+	color: white;
+	font-family: 'Open Sans', sans-serif;
+	padding: 10px;
+
+}
+
+.timer-text {
+	margin-top: 10px;
+}
+
+.timer-row {
+		text-align: center;
+}
+.timer-minus, .timer-length, .timer-plus {
+	font-size: 150%;
+	display: inline-block;
+	padding: 10%;
+	widows: 33.3333%;
+
+}
+
+
+#timer {
+	text-align: center;
+	margin: 30px auto;
+	padding-left: 35%;
+
+
+}
+
+#circle {
+	text-align: center;
+	width: 300px;
+    height: 300px;
+    -webkit-border-radius: 150px;
+    -moz-border-radius: 150px;
+    border-radius: 150px; 
+    border: 1px solid #EC4048;
+    padding: 5%;
+    margin: 5%;
+}
+
+#circle-numbers {
+	padding: 5px;
+	font-family: 'Playfair Display SC', serif;
+	color: #E61f05;
+}
+
+#circle-numbers div {
+	width: 33.33333%;
+	display: inline-block;
+	font-size: 500%;
+
+}
+#circle-numbers span {
+	font-size: 300%;
+}
+
+#circle-text, #reset-wrap {
+	font-family: 'Pacifico', cursive;
+	color: green;
+	font-size: 170%;
+	text-align: center;
+	text-transform: uppercase;
+
+}
+
+#circle-text div{
+	margin-top: 10px;
+	width: 48%;
+	display: inline-block;
+
+}
+#reset-wrap {
+	margin-top: 20px;
+}
+
+.timer-minus span, .timer-plus span, #circle-text, #reset {
+	cursor: pointer;
+}
+
+.timer-row div{
+		
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+
+}

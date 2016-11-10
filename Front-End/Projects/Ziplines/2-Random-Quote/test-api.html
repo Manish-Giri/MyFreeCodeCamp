@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test APIs</title>
+	<style type="text/css">
+		body {
+			font-family: 'Lucida Grande', Helvetica, Arial, serif;
+			background-color: #999;
+
+		}
+
+		h1 {
+			text-align: center;
+		}
+
+
+	</style>
+</head>
+<body>
+<h1>Random Quote</h1>
+<section id="quote">
+	<button>New Quote</button>
+	<div id="body"></div>
+	<div id="author"></div>
+</section>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		var quote='';
+
+		$("button").click(function() {
+			$.getJSON("http://api.theysaidso.com/qod.json", function(data) {
+				$("#body").empty().append("<blockquote><p>" + data.contents.quotes[0].quote + "</p></blockquote>")
+				$("#author").empty().append("<p>" + data.contents.quotes[0].author + "</p>")
+			console.log(data.contents.quotes[0].quote);
+			console.log(data.contents.quotes[0].author);
+
+
+			//console.log(data.contents.quotes[4]);
+			// 			function getQuote (){
+
+			//     $.ajax({
+			//         url: 'https://andruxnet-random-famous-quotes.p.mashape.com/',
+			//         type: 'PUT',
+			//         data: {cat: 'famous'
+			//         },
+			//         dataType: 'json',
+			//         success: function(data) {
+
+			//          ...displayed stuff here...
+
+			//              },
+			//         error: function(err) {
+			//         // log error to browser's console
+			//         console.log(err.toString()); },
+			//         beforeSend: function(xhr) {
+			//         xhr.setRequestHeader("X-Mashape-Authorization", API_KEY);
+			//         }
+			//     });
+			// }
+
+			// xhr.setRequestHeader('X-Mashape-Key', 'J8mTyP5mFFmshXngHXJEDdLzs6jcp1a0DJGjsnnbhSfAJIKMC6');
+			//  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+			//   xhr.setRequestHeader('Accept', 'application/json');
+			
+					   //  $.ajax({
+		      //   url: 'https://andruxnet-random-famous-quotes.p.mashape.com/',
+		      //   type: 'POST',
+		      //   data: {cat: 'famous'
+		      //   },
+		      //   dataType: 'json',
+		      // X-Mashape-Key: API_KEY
+		      //   success: function(data) {
+		});
+
+		});
+		
+	});
+
+
+</script>
+
+</body>
+</html>

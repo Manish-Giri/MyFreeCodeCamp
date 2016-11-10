@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Twitch.TV API</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div id="navbar-head">
+                <h1 id="nav-head">Twitch.TV Streamers</h1>
+            </div>
+        </div>
+    </nav>
+    <div id="main" class="container-fluid">
+
+
+        <div class="row" id="channels">
+            <div class="col-md-2 col-md-offset-3">
+                <div id="all">
+                    <button class="btn btn-lg btn-default">All Channels</button>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div id="online">
+                    <button class="btn btn-lg btn-success">Online Channels</button>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div id="offline">
+                    <button class="btn btn-lg btn-danger">Offline Channels</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="search">
+            <div class="col-md-7 col-md-offset-4">
+                <div>
+                    <input type="text" id="search-input" placeholder="Search for something">
+                     <span class="glyphicon glyphicon-search"></span>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div id="results-div">
+
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script type="application/javascript" src="script.js"></script>
+
+</body>
+
+</html>

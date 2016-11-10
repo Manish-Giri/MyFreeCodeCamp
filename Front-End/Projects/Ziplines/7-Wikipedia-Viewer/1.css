@@ -1,0 +1,18 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:700);
+@import url(https://fonts.googleapis.com/css?family=Lora:400,700);
+body {
+    background-color: #04b8ad;
+}
+#wrapper {
+    width: 90%;
+    margin: 20px auto;
+}
+#random-article {
+    font-family: 'Lora', serif;
+    color: whitesmoke;
+    font-size: 160%;
+    padding: 10px;
+}
+#random-article:hover {
+    cursor: pointer;
+}

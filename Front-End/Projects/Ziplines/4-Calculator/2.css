@@ -1,0 +1,148 @@
+@import url(https://fonts.googleapis.com/css?family=Lobster|Montserrat);
+@import url(https://fonts.googleapis.com/css?family=Lora:400italic|Slabo+27px);
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+@import url(https://fonts.googleapis.com/css?family=Courgette);
+@import url(https://fonts.googleapis.com/css?family=Droid+Serif:700);
+body {
+    /*  width: 100%;
+  max-width: 1920px; /* YOUR BG MAX SIZE */
+    background: #B6ABB1 url(images/9.jpg) no-repeat center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+#wrapper {
+    position: relative;
+    width: 330px;
+    height: 480px;
+    margin: 70px auto 0 auto;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(16, 15, 15, 0.7) 57%, rgba(33, 54, 63, 0.2) 100%);
+    border-radius: 20em / 3em;
+    box-shadow: 0 5px 25px 1px #222, inset 0 0 10px 1px #222;
+    padding: 10px 4px;
+}
+#calculator-footer {
+    font-family: 'Lobster', cursive;
+    text-align: center;
+    color: floralwhite;
+    position: absolute;
+    bottom: 20px;
+    left: 40px;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+}
+#calculator-display {
+    box-sizing: border-box;
+    position: absolute;
+    top: 15px;
+    width: 95%;
+    height: 115px;
+    margin: 10px auto;
+    padding: 6px;
+    
+    text-align: right;
+    color: antiquewhite;
+    font-size: 2.0em;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.1em;
+}
+
+
+#previousDisplay {
+    position: absolute;
+    right: 5px;
+    padding: 4px 2px;
+    height: 40px;
+    width: 95%;
+}
+
+#currentDisplay {
+    position: absolute;
+    top: 60px;
+    right: 5px;
+    height: 40px;
+    width: 95%;
+    padding: 6px 2px;
+}
+
+/* CSS for CONTROLS */
+
+#calculator-controls {
+    box-sizing: border-box;
+    position: absolute;
+    top: 130px;
+    width: 97%;
+    height: 300px;
+    padding: 20px 0;
+}
+.table {
+    box-sizing: border-box;
+    height: 250px;
+    display: table;
+    width: 100%;
+    border-collapse: separate;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    margin-left: 25px;
+}
+.table-row {
+    display: table-row;
+    margin: 5px;
+}
+#table-row div {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+}
+.table-cell {
+    display: table-cell;
+    padding: 10px;
+    font-size: larger;
+    text-shadow: -2px -2px 2px rgba(5, 5, 5, 1);
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+}
+.table-cell span {
+    cursor: pointer;
+}
+.table-cell:hover {
+    color: red;
+}
+.table-cell:active {
+    position: relative;
+    top: 5px;
+}
+
+/*square root button*/
+
+#row-1 div:first-child,
+#row-1 div:nth-child(2),
+#row-1 div:last-child {
+    padding: 5px;
+}
+
+
+/*CSS for instructions panel*/
+#instructions {
+    position: absolute;
+    left: 44%;
+    bottom: 0px;
+    font-family: 'Courgette', cursive;
+}
+
+#instructions button {
+    text-transform: uppercase;
+    opacity: 0.6;
+}
+
+#instructions button:hover {
+    opacity: 1;
+}
+
+.modal-body {
+    font-family: 'Droid Serif', serif;
+}

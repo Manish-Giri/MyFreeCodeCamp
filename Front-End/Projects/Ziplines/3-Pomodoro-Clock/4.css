@@ -1,0 +1,170 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Courgette);
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display+SC:700italic);
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+@import url(https://fonts.googleapis.com/css?family=Slabo+27px);
+@import url(https://fonts.googleapis.com/css?family=Playball);
+body {
+  /*background: url(dark_embroidery.png);*/
+  /* background-color: #DADCDC; */
+  
+  background-color: #111;
+  background-image: url(https://amvnow.files.wordpress.com/2012/01/board-black-series-texture-background-wood-wallpaper-wood-texture-wallpapers-476.jpg);
+}
+
+.page-header {
+  font-family: 'Courgette', cursive;
+  text-transform: uppercase;
+  font-size: larger;
+  color: red;
+}
+
+#controls {
+  color: #20B2AA;
+  font-family: 'Open Sans', sans-serif;
+  padding: 10px;
+  text-align: center;
+  width: 400px;
+  margin: 10px auto;
+}
+
+.timer-row {
+  padding: 10px;
+  font-size: 150%;
+}
+
+.timer-row div {
+  width: 20%;
+  display: inline-block;
+}
+
+#breakLength {
+  color: red;
+}
+
+#sessionLength {
+  color: green;
+}
+
+#timer {
+  text-align: center;
+  margin-top: 6%;
+}
+
+#circle {
+  text-align: center;
+  width: 340px;
+  height: 340px;
+  -webkit-border-radius: 200px;
+  -moz-border-radius: 200px;
+  border-radius: 170px;
+  border: 3px solid #4E5F5D;
+  padding: 5%;
+  color: #43A78D;
+  margin: 40px auto;
+}
+
+#circle-numbers {
+  padding: 5px;
+  margin-top: -10px;
+  font-family: 'Playfair Display SC', serif;
+  font-family: 'Slabo 27px', serif;
+}
+
+#circle-numbers div {
+  width: 41%;
+  display: inline-block;
+  padding: 2px;
+}
+
+#circle-minutes {
+  font-size: 600%;
+}
+
+#circle-seconds {
+  font-size: 400%;
+}
+
+#circle-numbers span {
+  font-size: 300%;
+  padding: 6px;
+}
+
+#circle-controls {
+  margin: 0px 20px 0px 20px;
+}
+
+#circle-controls div {
+  width: 40%;
+  display: inline-block;
+  padding: 10px;
+}
+
+.timer-minus span,
+.timer-plus span,
+#circle-play-pause,
+#circle-reset {
+  cursor: pointer;
+}
+
+.timer-row div,
+#circle-controls div,
+#circle-text div {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+#circle-controls {
+  font-size: 150%;
+}
+
+#circle-text {
+  font-family: 'Open Sans', sans-serif;
+  margin: 15px;
+  color: #20B2AA;
+  font-size: 20px;
+  text-transform: uppercase;
+  padding: 5px;
+}
+
+@media screen and (min-width: 1400px) {
+    #circle {
+    text-align: center;
+    width: 500px;
+    height: 500px;
+    -webkit-border-radius: 250px;
+    -moz-border-radius: 250px;
+    border-radius: 250px;
+    border: 3px solid #4E5F5D;
+    padding: 5%;
+    color: #43A78D;
+    margin: 40px auto;
+  }
+
+  #circle-controls {
+    margin: 50px 20px;
+  }
+
+  #circle-text {
+    margin: 50px auto 20px auto;
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+   #circle {
+    text-align: center;
+    width: 300px;
+    height: 300px;
+    -webkit-border-radius: 150px;
+    -moz-border-radius: 150px;
+    border-radius: 150px;
+    border: 3px solid #4E5F5D;
+    padding: 5%;
+    color: #43A78D;
+    margin: 1 0px auto;
+  }
+}

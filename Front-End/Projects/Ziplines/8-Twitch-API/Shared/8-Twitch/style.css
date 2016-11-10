@@ -1,0 +1,85 @@
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display:400,700,700italic);
+
+body {
+    background: url('twinkle_twinkle/twinkle_twinkle_@2X.png');
+    padding-top: 70px;
+}
+
+.navbar-inverse {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+}
+
+#nav-head {
+    font-family: 'Pacifico', cursive;
+    color: darkmagenta;
+    padding: 5px;
+    text-align: center;
+    margin: 1% auto;
+}
+
+#main {
+    margin-top: 2%;
+}
+
+
+#channels {
+    padding: 1%;
+
+}
+
+#search {
+    margin: 1%;
+    padding: 1%;
+}
+
+#search-input {
+    width: 250px;
+    height: 50px;
+    padding: 10px;
+    margin: 2px;
+    transition: width 0.5s ease-in-out;
+    margin-left: 80px;
+    margin-right: 20px;
+}
+
+#search-input:focus {
+    width: 350px;
+    outline-color: purple;
+    border: 1px solid purple;
+
+}
+#search div div span {
+    display: inline-block;
+    color: purple;
+    margin-left: 2%;
+    font-size: 1.6em;
+
+}
+#results-div {
+    padding: 10px;
+
+}
+
+#results-div div {
+    border-bottom: 2px solid black;
+    padding: 5px;
+}
+
+#results-div h2 {
+    font-family: 'Lato', sans-serif;
+    color: azure;
+    text-align: center;
+    font-weight: 900;
+}
+
+#results-div h3 {
+    font-family: 'Open Sans', sans-serif;
+    color: burlywood;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+}
+

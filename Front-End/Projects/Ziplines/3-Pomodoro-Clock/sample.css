@@ -1,0 +1,78 @@
+.minPan {
+  font-family: 'Iceland', cursive;
+  margin: 5px;
+  width: 300px;
+  display: block;
+  background-color: grey;
+  font-size: 80px;
+  overflow: auto;
+  text-align: center;
+  border-style:solid;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+#min, #sec, .butt, #minPan, #timeMin, #timeSec {
+  display: inline-block;
+}
+#min {
+  padding-left: 10px;
+  float:left;
+}
+.smalltext {
+  font-size: 15px;
+}
+.butt {
+  display: inline-block;
+  padding-right:15px;
+  padding-top:20px;
+  font-size: 40px;
+  float:right;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+#runButt, #resetButt {
+  font-size: 71px;
+  height: 75px;
+  text-align: center;
+}
+#resetButt {
+  display: inline-block;
+}
+#plmiPan {
+  width: 180px;
+  font-size: 120px;
+}
+#break{
+  display: inline-block;
+  width: 192px;
+  height: 160px;
+  font-size: 120px;
+}
+.sl{
+  font-size: 25px;
+}
+#buttsWrap, #plusminusWrapper {
+  display: inline-block;
+}
+#buttsWrap {
+  margin-left: 0px;
+}
+#wrap{
+  display:block;
+  min-width:730px;
+}
+#timah {
+  width:700px;
+  height:170px;
+  font-size:10.6em;
+  
+}
+.butta {
+  display: inline-block;
+  margin-left:10px;
+  padding-top:20px;
+  font-size: 40px;
+  float:left;

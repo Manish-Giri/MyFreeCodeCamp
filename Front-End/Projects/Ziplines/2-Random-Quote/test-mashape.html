@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test APIs</title>
+	<style type="text/css">
+		body {
+			font-family: 'Lucida Grande', Helvetica, Arial, serif;
+			background-color: #999;
+
+		}
+
+		h1 {
+			text-align: center;
+		}
+
+
+	</style>
+</head>
+<body>
+<h1>Random Quote</h1>
+<section id="quote">
+	<button>New Quote</button>
+	<div id="body"></div>
+	<div id="author"></div>
+</section>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		var quote='';
+
+		$("button").click(function() {
+
+
+		$.ajax({
+		    url: 'https://andruxnet-random-famous-quotes.p.mashape.com/cat=famous', // The URL to the API. You can get this in the API page of the API you intend to consume
+		    type: 'GET', // The HTTP Method, can be GET POST PUT DELETE etc
+		    data: {}, // Additional parameters here
+		    dataType: 'json',
+		    success: function(data) { 
+		    	console.log(data); 
+		    	$("#body").empty().append("<blockquote><p>" + data.quote + "</p></blockquote>");
+		    	$("#author").empty().append("<p>" + data.author + "</p>")
+
+		    },
+		    error: function(err) { alert(err); },
+		    beforeSend: function(xhr) {
+		    xhr.setRequestHeader("X-Mashape-Authorization", "32ROUuaq9wmshfk8uIxfd5dMc6H7p1lqdZSjsnXkB5bQtBteLK"); // Enter here your Mashape key
+		    }
+		});
+
+		});
+
+	});
+		
+
+
+</script>
+
+</body>
+</html>

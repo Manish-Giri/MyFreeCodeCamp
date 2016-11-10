@@ -1,0 +1,123 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:700);
+@import url(https://fonts.googleapis.com/css?family=Lora:400,700);
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+@import url(https://fonts.googleapis.com/css?family=Dancing+Script:700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400italic);
+body {
+    background-color: black;
+    background: url(footer_lodyas/footer_lodyas.png);
+
+}
+#wrapper {
+    width: 90%;
+    margin: 20px auto;
+}
+header {
+    font-family: 'Lora', serif;
+    padding: 0.9em;
+    text-align: center;
+    color: lightseagreen;
+    margin-bottom: 5%;
+}
+h1 {
+    text-transform: uppercase;
+}
+#search-div {
+    font-family: 'Roboto', serif;
+    color: whitesmoke;
+    font-size: 200%;
+    margin: 3% auto;
+    text-align: center;
+}
+#random-article {
+    font-family: 'Dancing Script', cursive;
+    color: whitesmoke;
+    font-size: 160%;
+    padding: 10px;
+    font-size: 200%;
+}
+#random-article:hover,
+.glyphicon {
+    cursor: pointer;
+}
+
+/*input { */
+
+
+/*visibility: hidden;*/
+
+
+/*display: none;*/
+
+
+/*width: 400px;
+    font-size: small;
+    border: 5px solid snow;
+    -webkit-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1), 0 0 16px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1), 0 0 16px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1), 0 0 16px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.5);
+    margin: 0 0 10px 0;
+    outline: none;
+    font-size: 80%;
+}*/
+
+input {
+    /*visibility: hidden;*/
+    /*display: none;*/
+    width: 500px;
+    border: none;
+    border-bottom: 5px solid snow;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.5);
+    margin: 0 0 10px 0;
+    outline: none;
+    font-size: 80%;
+    color: floralwhite;
+}
+#after {
+    margin: 10px auto;
+    padding: 1%;
+}
+#after span {
+    padding: 20px;
+    color: burlywood;
+}
+#results div {
+    padding: 20px;
+    margin: 20px;
+    color: floralwhite;
+    background: rgba(255, 255, 255, 0.5);
+    -webkit-box-shadow: -9px 9px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -9px 9px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: -9px 9px 5px 0px rgba(0,0,0,0.75);
+}
+
+#results div h2 {
+    font-family: Georgia,Times, serif;
+    color: darkgreen;
+    margin-bottom: 15px;
+    padding-top: 0px;
+    padding-bottom: 2px;
+    padding-left: 10px;
+    border-left: 5px solid yellow;
+
+}
+
+#results div p {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 1.3em;
+    color: floralwhite;
+    margin-bottom: 15px;
+}
+
+#results div a {
+    text-decoration: none;
+    font-size: 1.1em;
+    font-family: 'Open Sans', Arial, sans-serif;
+    color: maroon;
+
+
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>setInterval/clearInterval example</title>
+  <style type="text/css">
+    #my_number {
+      font-size: 400%;
+
+    }
+  </style>
+  <script>
+    var nIntervId;
+ 
+    function changeNumber() {
+      nIntervId = setInterval(change, 1000);
+    }
+ 
+    function change() {
+      var numBox = document.getElementById("num");
+      var num = parseInt(numBox.innerHTML);
+      num--;
+      numBox.innerHTML = num;
+
+     // oElem.style.color = oElem.style.color == "red" ? "blue" : "red";
+    }
+ 
+    function stopChange() {
+      clearInterval(nIntervId);
+    }
+  </script>
+</head>
+ 
+<body onload="changeNumber();">
+  <div id="my_number">
+    <p id="num">50</p>
+  </div>
+
+  <button onclick="stopChange();">Stop</button>
+</body>
+</html>

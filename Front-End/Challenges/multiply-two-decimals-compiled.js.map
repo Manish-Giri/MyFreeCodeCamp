@@ -1,0 +1,1 @@
+{"version":3,"sources":["multiply-two-decimals.js"],"names":[],"mappings":";;AAAA,IAAI,UAAU,MAAM,GAApB;;AAGA;;AAEA,CAAC,UAAS,CAAT,EAAW;AAAC,SAAO,aAAW,CAAlB;AAAqB,CAAlC,EAAoC,OAApC","file":"multiply-two-decimals-compiled.js","sourcesContent":["var product = 2.0 * 2.5;\n\n\n// Only change code above this line.\n\n(function(y){return 'product='+y;})(product);\n"]}

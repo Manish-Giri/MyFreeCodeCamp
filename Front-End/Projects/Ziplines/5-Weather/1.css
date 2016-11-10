@@ -1,0 +1,40 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:700);
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+header {
+    font-family: 'Roboto Slab', serif;
+    margin: 20px auto;
+}
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+}
+#weather {
+    padding: 10px;
+}
+#row-1 {
+    margin: 30px auto;
+}
+
+
+#temp {
+	height: 50px;
+}
+
+#row-2 {
+    margin: 30px auto;
+}
+
+#row-2 div {
+	background-color: #DFDEDD;
+	height: 60px;
+	margin-right: 20px;
+	padding: 10px;
+	text-align: center;
+}
+
+
+
+footer {
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+}

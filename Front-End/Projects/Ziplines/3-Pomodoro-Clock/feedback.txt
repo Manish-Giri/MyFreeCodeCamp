@@ -1,0 +1,51 @@
+@Manish-Giri yes I was about to say no sound. ok… there is no visual feed back as to which is being displayed… session or break .. so some text to say that or some sort of colour feedback would be good. are you going to do the circle filler? also on my screen (big) the main part is grey but that div runs out and there’s a lot of whitr below that.
+
+h4r1m4u 03:16
+@Manish-Giri couple of comments:
+1) while the break and session +/- buttons are responsive, the clock itself could use some improvement in that department
+2) i'd consider using a different font for Start, Pause and Reset. i find it a bit too hard to read, but that may just be me
+3) when i click Start and then increase the session length, it will increase the time on the clock and pause it. if i click Start after that, nothing happens. i have to click the Start button twice
+
+mutantspore 03:17
+@Manish-Giri visually the bits that set the timer dominate… the actual timer is less prominent.
+@mutantspore perhaps remove or fade or something the buttons that don’t function to reduce frustration
+@Manish-Giri @h4r1m4u yes the clock face is starting to look like a Christmas decoration
+@h4r1m4u we’ve stunned him… @Manish-Giri are you ok?
+
+h4r1m4u 03:20
+feeedback overload 
+ask and you shall be given
+
+Manish-Giri 03:20
+@h4r1m4u @mutantspore thank you guys
+
+camperbot 03:21
+  manish-giri already gave mutantspore points
+ manish-giri sends brownie points to @h4r1m4u and @mutantspore   
+
+Manish-Giri 03:20
+lol I was just trying to understand what @mutantspore said about the buttons, didn't really understand which buttons don't function and the extra space issue
+
+camperbot 03:21
+  892 | @h4r1m4u | http://www.freecodecamp.com/h4r1m4u
+
+h4r1m4u 03:22
+you're welcome 
+
+mutantspore 03:22
+@Manish-Giri well Start is useless when it’s running. as is pause when it’s not
+
+Manish-Giri 03:23
+@mutantspore I see. good point - initially my design was to have just one button saying start and when clicked on it, it's text would change to "pause" and vice versa.
+
+mutantspore 03:23
+@Manish-Giri ok then .. it seems start is actually a pause indisguise too
+
+Manish-Giri 03:24
+@mutantspore Yes, I had to put a pause in disguise inside start because if you click "start" when it's already running - the timer would run twice as fast
+I mean it would decrement by 2 on each second
+
+mutantspore 03:24
+@Manish-Giri yes that is what’s needed but the what is a pause button when it’s paused? it’s a play button.. or continue
+@Manish-Giri well you should just check if it’s already running with a boolean flag like isRunning
+which you set when it starts
