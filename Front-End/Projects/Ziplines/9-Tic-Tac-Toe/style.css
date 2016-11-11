@@ -42,7 +42,7 @@ input[type="text"]:focus {
 
 #feedback-container {
     width: 80%;
-    margin: 40px auto;
+    margin: 20px auto;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -54,27 +54,33 @@ input[type="text"]:focus {
 
 #table-div {
     padding: 20px;
+    min-width: 400px;
+    max-width: 600px;
+    margin: 0px auto;
 }
 
-.table-responsive {
-    max-width: 50%;
-    margin: 0 auto;
 
-}
-
-.table tr td{
-    width: 60px;
-    height: 100px;
-}
 
 #app {
     background-color: #14BDAC;
+    width: 65%;
+    margin: 0 auto;
+    height: 300px;
+}
 
+#app tr td {
+    height: 85px;
+    border: 4px solid #0DA192;
 }
 
 
-footer {
 
+footer {
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
 }
 
 
