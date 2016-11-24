@@ -10,7 +10,9 @@ body {
 }
 
 #header {
-    margin: 20px auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
 }
 #header h1 {
     font-family: 'Ravi Prakash', cursive;
@@ -82,6 +84,7 @@ input[type="text"]:focus {
     padding: 20px;
     min-height: 100% !important;
     margin: 0 auto -50px !important;
+    padding-top: 0;
 }
 
 /*
@@ -100,7 +103,7 @@ footer {
 }
 
 .footer {
-    /*background-color: darkgreen;*/
+    background-color: darkgreen;
     margin-top: 10px;
     position: relative;
 }
@@ -120,6 +123,25 @@ footer {
     color: #0DA192;
     font-weight: bold;
     font-size: 16px;
+
+}
+
+.button-holder {
+    min-width: 200px;
+    max-width: 370px;
+    margin: 10px auto;
+}
+
+.btn  {
+    color: black;
+    background-color: #0DA192;
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 17px;
+
+}
+
+.btn:hover {
+    background-color: darkred;
 
 }
 
