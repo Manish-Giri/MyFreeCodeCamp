@@ -142,9 +142,17 @@ footer {
 
 .btn:hover {
     background-color: darkred;
-
 }
 
+.input-holder {
+    display: inline-block;
+}
+
+.score {
+    position: absolute;
+    top: 7px;
+    right: 20px;
+}
 @media screen and (max-width: 460px) {
     .ultra-xs {
         display: block;
