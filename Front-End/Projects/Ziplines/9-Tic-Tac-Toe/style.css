@@ -49,7 +49,10 @@ input[type="text"]:focus {
 
 #feedback-container {
     width: 80%;
-    margin: 20px auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+
     font-family: 'Roboto', sans-serif;
 }
 
@@ -103,7 +106,7 @@ footer {
 }
 
 .footer {
-    background-color: darkgreen;
+    background-color: black;
     margin-top: 10px;
     position: relative;
 }
@@ -132,18 +135,28 @@ footer {
     margin: 10px auto;
 }
 
-.btn  {
-    color: black;
+.btn, .btn-custom {
+    color: white;
     background-color: #0DA192;
     font-family: 'Roboto', sans-serif !important;
     font-size: 17px;
-
 }
 
-.btn:hover {
-    background-color: darkred;
+.clicked {
+    background-color: #0DA192;
+    outline: 0;
+}
+.btn-custom:hover {
+    color: white;
+    background-color: red !important;
+    outline: 0;
 }
 
+.btn-custom:active, .btn-custom:focus {
+    color: white;
+    background-color: #0DA192;
+    outline: 0;
+}
 .input-holder {
     display: inline-block;
 }
