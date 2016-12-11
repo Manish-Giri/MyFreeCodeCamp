@@ -107,6 +107,16 @@ $(document).ready(function () {
         })
     });
 
+
+
+
+
+
+    //function to set message on top
+    function setMessage(message) {
+        $feedback.html(message);
+    }
+
     //function to detect a player win
     function detectWin(player) {
         //check a player's win in all cases
@@ -121,6 +131,7 @@ $(document).ready(function () {
             (tile3Content === player && tile6Content === player && tile9Content === player)
         ) {
             //set message
+            setMessage(`Player ${player} wins!`);
             return true;
         }
         else {
