@@ -105,7 +105,30 @@ $(document).ready(function () {
         cellRow.forEach(function (cell, inIndex) {
             console.log(cell);
         })
-    })
+    });
+
+    //function to detect a player win
+    function detectWin(player) {
+        //check a player's win in all cases
+        if(
+            (tile1Content === player && tile4Content === player && tile7Content === player) ||
+            (tile1Content === player && tile2Content === player && tile3Content === player) ||
+            (tile1Content === player && tile5Content === player && tile9Content === player) ||
+            (tile4Content === player && tile5Content === player && tile6Content === player) ||
+            (tile7Content === player && tile8Content === player && tile9Content === player) ||
+            (tile3Content === player && tile5Content === player && tile7Content === player) ||
+            (tile2Content === player && tile5Content === player && tile8Content === player) ||
+            (tile3Content === player && tile6Content === player && tile9Content === player)
+        ) {
+            //set message
+            return true;
+        }
+        else {
+            return false;
+        }
+
+    }
+
 
 
 
