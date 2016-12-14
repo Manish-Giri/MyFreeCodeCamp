@@ -69,6 +69,7 @@ $(document).ready(function () {
     //current player
     var isXSelected = false;
     var isPlayerSelected = false;
+    var playerChoice = '';
 
     //function to determine current player based on input selection
 
@@ -80,12 +81,14 @@ $(document).ready(function () {
                 console.log("Player X selected");
                 isXSelected = true;
                 isPlayerSelected = true;
+                playerChoice = 'X';
             }
             else if(this.id == 'oInp') {
                 $($xInp).prop("disabled", true);
                 console.log("Player O selected");
                 isXSelected = false;
                 isPlayerSelected = true;
+                playerChoice = 'O';
             }
 
         });
@@ -94,6 +97,7 @@ $(document).ready(function () {
         if(!isPlayerSelected) {
             isXSelected = true;
             isPlayerSelected = true;
+            playerChoice = 'X';
         }
     }
 
@@ -142,5 +146,28 @@ $(document).ready(function () {
 
 
 
+    //function to make the moves by the player
+    function playerMove() {
+        //if player selects X or 0
+        selectPlayer();
+
+        //if player didn't select anything
+        if(!isPlayerSelected) {
+            //if a player has not been selected, select X by default
+            isXSelected = true;
+            isPlayerSelected = true;
+            playerChoice = 'X';
+        }
+
+        let player = playerChoice;
+        setMessage(`Turn ${player}`);
+        
+    }
+
+    //playerMove();
+    //play game until there are moves left in the board
+    /*while(movesLeft.length) {
+
+    }*/
 
 })
