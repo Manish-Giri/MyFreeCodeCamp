@@ -94,14 +94,14 @@ $(document).ready(function () {
         });
 
         //if a player has not been selected, select X by default
-        if(!isPlayerSelected) {
+       /* if(!isPlayerSelected) {
             isXSelected = true;
             isPlayerSelected = true;
             playerChoice = 'X';
-        }
+        }*/
     }
 
-    selectPlayer();
+    //selectPlayer();
 
     //loop through board array and check contens
     board.forEach(function (cellRow, outIndex) {
@@ -151,20 +151,32 @@ $(document).ready(function () {
         //if player selects X or 0
         selectPlayer();
 
-        //if player didn't select anything
-        if(!isPlayerSelected) {
-            //if a player has not been selected, select X by default
-            isXSelected = true;
-            isPlayerSelected = true;
-            playerChoice = 'X';
-        }
+        //player clicks on a td cell
+        $(".cell").click(function () {
+            let $this = $(this);
+            let cellID = this.id;
+            console.log(`clicked on cell with id ${cellID}`);
+            //if player didn't select anything
+            if(!isPlayerSelected) {
+                //if a player has not been selected, select X by default
+                isXSelected = true;
+                isPlayerSelected = true;
+                playerChoice = 'X';
+            }
 
-        let player = playerChoice;
-        setMessage(`Turn ${player}`);
+            let player = playerChoice;
+            setMessage(`Turn ${player}`);
+            $this.css("color", "rgba(84,84,84)");
+            $this.html(player);
+
+
+        })
+
+
         
     }
 
-    //playerMove();
+    playerMove();
     //play game until there are moves left in the board
     /*while(movesLeft.length) {
 
