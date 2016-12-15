@@ -3,6 +3,7 @@
  */
 $(document).ready(function () {
 
+    //------------------------------------
     //global variables
 
     //reference to board cells
@@ -27,9 +28,18 @@ $(document).ready(function () {
     var tile8Content = $tile8.html();
     var tile9Content = $tile9.html();
 
+    //2D array -internal representation of board - 0 is empty, 1 is occupied
+    var board = [
+        [0,0,0],
+        [0,0,0],
+        [0,0,0]
+    ];
+
     //reference to x and o player box
     var $xInp = $("#xInp");
     var $oInp = $("#oInp");
+
+    var $feedback = $("#feedback");
 
 
     //current player
@@ -64,5 +74,15 @@ $(document).ready(function () {
     }
 
     selectPlayer();
+
+    //loop through board array and check contens
+    board.forEach(function (cellRow, outIndex) {
+        console.log("Row = " + outIndex);
+        cellRow.forEach(function (cell, inIndex) {
+            console.log(cell);
+        })
+    })
+
+
 
 })
