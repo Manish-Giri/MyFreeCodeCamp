@@ -59,6 +59,11 @@ $(document).ready(function () {
     console.log("Moves left = ");
     console.log(movesLeft)
 
+    //reference to array of cells
+    var cellsLeft = Object.keys(cellToMoves);
+    console.log("cells left array - ")
+    console.log(cellsLeft);
+
     //reference to x and o player box
     var $xInp = $("#xInp");
     var $oInp = $("#oInp");
@@ -176,6 +181,15 @@ $(document).ready(function () {
             let selectedCellPos = cellToMoves[cellID];
             console.log(`position of selected cell on board = ${selectedCellPos}`);
 
+            //test length of movesLeft array
+            console.log(`Length of movesLeft array = ${movesLeft.length}`);
+            //delete this position from the movesleft array
+            movesLeft.splice(selectedCellPos, 1);
+
+            //verify movesLeft array
+            console.log("Moves left = ");
+            console.log(movesLeft)
+            console.log(`Length of movesLeft array = ${movesLeft.length}`);
 
 
 
