@@ -58,9 +58,13 @@ input[type="text"]:focus {
 
 #feedback {
     text-align: center;
-    font-size: 16px;
+    font-size: 18px;
+    /*text-transform: uppercase;*/
 }
 
+table {
+    table-layout: fixed;
+}
 
 #table-div {
     padding: 20px;
@@ -81,6 +85,18 @@ input[type="text"]:focus {
 #app tr td {
     height: 85px;
     border: 4px solid #0DA192;
+    padding-top: 25px;
+
+}
+
+.cell {
+    /*color: orangered;*/
+    font-size: 4rem;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    line-height: 85px;
+    vertical-align: center;
+    font-weight: 900;
 }
 
 .wrapper {
