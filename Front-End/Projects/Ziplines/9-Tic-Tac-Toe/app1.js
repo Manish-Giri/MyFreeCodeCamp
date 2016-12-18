@@ -75,6 +75,7 @@ $(document).ready(function () {
     var isXSelected = false;
     var isPlayerSelected = false;
     var playerChoice = '';
+    var aiChoice = '';
 
     //function to determine current player based on input selection
 
@@ -210,11 +211,7 @@ $(document).ready(function () {
             console.log(cellsLeft);
 
 
-
-
-
-        })
-
+        });
 
         
     }
@@ -224,5 +221,22 @@ $(document).ready(function () {
     /*while(movesLeft.length) {
 
     }*/
+
+    function aiMove() {
+
+        //detemine if AI is using X or O
+
+        //set message on top
+
+
+
+        //pick a random cell from the cellsleft array
+        let selectedCellPos = Math.floor(Math.random() * cellsLeft.length);
+        let selectedCell = cellsLeft[selectedCellPos];
+
+        //place an O in this cell
+
+
+    }
 
 })
