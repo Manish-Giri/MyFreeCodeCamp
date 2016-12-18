@@ -56,8 +56,8 @@ $(document).ready(function () {
     //reference to array which will determine number of moves left
     var movesLeft = new Array(9);
     movesLeft.fill(0);
-    console.log("Moves left = ");
-    console.log(movesLeft)
+    // console.log("Moves left = ");
+    // console.log(movesLeft)
 
     //reference to array of cells
     var cellsLeft = Object.keys(cellToMoves);
@@ -152,6 +152,15 @@ $(document).ready(function () {
 
     }
 
+    //function to remove a cell from the playing board
+    function removeCell(cells, cell) {
+        //cells is the array, cell is the id of the cell clicled
+        let cellPos = cells.indexOf(cell);
+        if(cellPos !== -1) {
+            cells.splice(cellPos, 1);
+        }
+    }
+
 
 
     //function to make the moves by the player
@@ -190,6 +199,17 @@ $(document).ready(function () {
             console.log("Moves left = ");
             console.log(movesLeft)
             console.log(`Length of movesLeft array = ${movesLeft.length}`);
+            //
+            // console.log("Before player click, cells left array - ")
+            // console.log(cellsLeft);
+            //remove current cell from cellsLeft array
+            removeCell(cellsLeft, cellID);
+
+            //verify selected cell was removed
+            console.log("After player click,cells left array - ")
+            console.log(cellsLeft);
+
+
 
 
 
