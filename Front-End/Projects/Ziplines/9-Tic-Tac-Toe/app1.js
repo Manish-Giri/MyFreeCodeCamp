@@ -79,9 +79,11 @@ $(document).ready(function () {
             if(this.id == 'xInp') {
                 $($oInp).prop("disabled", true);
                 console.log("Player X selected");
+
                 isXSelected = true;
                 isPlayerSelected = true;
                 playerChoice = 'X';
+                setMessage(`Turn ${playerChoice}`);
             }
             else if(this.id == 'oInp') {
                 $($xInp).prop("disabled", true);
@@ -89,6 +91,7 @@ $(document).ready(function () {
                 isXSelected = false;
                 isPlayerSelected = true;
                 playerChoice = 'O';
+                setMessage(`Turn ${playerChoice}`);
             }
 
         });
@@ -168,6 +171,12 @@ $(document).ready(function () {
             setMessage(`Turn ${player}`);
             $this.css("color", "rgba(84,84,84)");
             $this.html(player);
+
+            //lookup cell position using id of current cell and remove it from movesLeft array
+            let selectedCellPos = cellToMoves[cellID];
+            console.log(`position of selected cell on board = ${selectedCellPos}`);
+
+
 
 
         })
