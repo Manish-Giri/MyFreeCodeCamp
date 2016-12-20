@@ -171,6 +171,7 @@ $(document).ready(function () {
 
         //player clicks on a td cell
         $(".cell").click(function () {
+            console.log("Callback running");
             let $this = $(this);
             let cellID = this.id;
             console.log(`clicked on cell with id ${cellID}`);
@@ -210,6 +211,10 @@ $(document).ready(function () {
             console.log("After player click,cells left array - ")
             console.log(cellsLeft);
 
+            //test aiMove() here
+            aiMove();
+
+
 
         });
 
@@ -224,9 +229,14 @@ $(document).ready(function () {
 
     function aiMove() {
 
+        console.log("AI Move running");
+
         //detemine if AI is using X or O
+        let computerChoice = (playerChoice === 'X') ? 'O' : 'X';
+        console.log(`AI Choice = ${computerChoice}`);
 
         //set message on top
+        setMessage(`Turn ${computerChoice}`);
 
 
 
@@ -238,5 +248,7 @@ $(document).ready(function () {
 
 
     }
+
+    //aiMove();
 
 })
