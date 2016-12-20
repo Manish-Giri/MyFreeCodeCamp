@@ -54,10 +54,8 @@ $(document).ready(function () {
 
 
     //reference to array which will determine number of moves left
-    var movesLeft = new Array(9);
-    movesLeft.fill(0);
-    // console.log("Moves left = ");
-    // console.log(movesLeft)
+   /* var movesLeft = new Array(9);
+    movesLeft.fill(0)*/;
 
     //reference to array of cells
     var cellsLeft = Object.keys(cellToMoves);
@@ -102,23 +100,17 @@ $(document).ready(function () {
 
         });
 
-        //if a player has not been selected, select X by default
-       /* if(!isPlayerSelected) {
-            isXSelected = true;
-            isPlayerSelected = true;
-            playerChoice = 'X';
-        }*/
     }
 
     //selectPlayer();
 
-    //loop through board array and check contens
+/*    //loop through board array and check contens
     board.forEach(function (cellRow, outIndex) {
         console.log("Row = " + outIndex);
         cellRow.forEach(function (cell, inIndex) {
             console.log(cell);
         })
-    });
+    });*/
 
 
 
@@ -192,6 +184,7 @@ $(document).ready(function () {
             let selectedCellPos = cellToMoves[cellID];
             console.log(`position of selected cell on board = ${selectedCellPos}`);
 
+            /*
             //test length of movesLeft array
             console.log(`Length of movesLeft array = ${movesLeft.length}`);
             //delete this position from the movesleft array
@@ -201,9 +194,9 @@ $(document).ready(function () {
             console.log("Moves left = ");
             console.log(movesLeft)
             console.log(`Length of movesLeft array = ${movesLeft.length}`);
-            //
-            // console.log("Before player click, cells left array - ")
-            // console.log(cellsLeft);
+            */
+
+
             //remove current cell from cellsLeft array
             removeCell(cellsLeft, cellID);
 
@@ -223,11 +216,12 @@ $(document).ready(function () {
         
     }
 
+    //test
     playerMove();
     //play game until there are moves left in the board
-    /*while(movesLeft.length) {
-
-    }*/
+    //while(cellsLeft.length) {
+        //playerMove();
+    //}
 
     function aiMove() {
 
@@ -257,9 +251,6 @@ $(document).ready(function () {
         //verify selected cell was removed
         console.log("After AI click,cells left array - ")
         console.log(cellsLeft);
-
-
-
 
     }
 
