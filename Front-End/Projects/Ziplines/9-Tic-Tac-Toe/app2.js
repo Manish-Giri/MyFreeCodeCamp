@@ -23,16 +23,6 @@ $(document).ready(function () {
     var $tile8 = $("#eight");
     var $tile9 = $("#nine");
 
-    /* //board cell contents
-     var $tile1.html() = $tile1.html();
-     var $tile2.html() = $tile2.html();
-     var $tile3.html() = $tile3.html();
-     var $tile4.html() = $tile4.html();
-     var $tile5.html() = $tile5.html();
-     var $tile6.html() = $tile6.html();
-     var $tile7.html() = $tile7.html();
-     var $tile8.html() = $tile8.html();
-     var $tile9.html() = $tile9.html();*/
 
     //2D array -internal representation of board - 0 is empty, 1 is occupied
     var board = [
@@ -58,7 +48,7 @@ $(document).ready(function () {
 
     //reference to array which will determine number of moves left
     /* var movesLeft = new Array(9);
-     movesLeft.fill(0)*/;
+     movesLeft.fill(0)*/
 
     //reference to array of cells
     var cellsLeft = Object.keys(cellToMoves);
@@ -174,10 +164,10 @@ $(document).ready(function () {
         count++;
 
         //check for win should happen before next click
-        if(currentTurn !== "" && detectWin(currentTurn)) {
-            alert(`Player ${currentTurn} won!!!`);
-            reset();
-        }
+        // if(currentTurn !== "" && detectWin(currentTurn)) {
+        //     alert(`Player ${currentTurn} won!!!`);
+        //     reset();
+        // }
 
         //player clicks on a td cell
         $(".cell").click(function () {
@@ -194,10 +184,11 @@ $(document).ready(function () {
             }
 
             currentTurn = playerChoice;
-            if(currentTurn !== "" && detectWin(currentTurn)) {
-                alert(`Player ${currentTurn} won!!!`);
-                reset();
-            }
+            // if(currentTurn !== "" && detectWin(currentTurn)) {
+            //     alert(`Player ${currentTurn} won!!!`);
+            //     reset();
+            //     return;
+            // }
 
             let player = playerChoice;
             setMessage(`Turn ${player}`);
@@ -231,14 +222,19 @@ $(document).ready(function () {
 
     //test
     playerMove();
-    //play game until there are moves left in the board
-    //while(cellsLeft.length) {
-    //playerMove();
-    //}
 
     function aiMove() {
 
         console.log("AI Move running");
+
+        //test for player win from previous run - works for player win
+        if(currentTurn !== "" && detectWin(currentTurn)) {
+            console.log("Inside aimove - 1");
+            alert(`Player ${currentTurn} won!!!`);
+            reset();
+            return;
+        }
+
 
         //detemine if AI is using X or O
         let computerChoice = (playerChoice === 'X') ? 'O' : 'X';
@@ -248,6 +244,7 @@ $(document).ready(function () {
         if(currentTurn !== "" && detectWin(currentTurn)) {
             alert(`Player ${currentTurn} won!!!`)
             reset();
+            return;
         }
 
         //set message on top
@@ -275,7 +272,7 @@ $(document).ready(function () {
         //     playerMove()
         // }, 1000);
 
-        // playerMove();
+        //playerMove();
 
     }
 
@@ -296,6 +293,17 @@ $(document).ready(function () {
         $(".cell").each(function () {
             $(this).html("");
         });
+
+        //set message on top
+        setMessage("Start game or select player");
+
+        //reset global variables
+        isXSelected = false;
+        isPlayerSelected = false;
+        playerChoice = '';
+        aiChoice = '';
+        currentTurn = '';
+
 
     }
 
