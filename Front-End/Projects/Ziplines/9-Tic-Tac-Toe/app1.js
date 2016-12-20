@@ -214,7 +214,7 @@ $(document).ready(function () {
             //test aiMove() here
             //aiMove();
             //test a delay before AI move
-            setTimeout(() => {aiMove()}, 2000);
+            setTimeout(() => {aiMove()}, 1000);
 
 
 
@@ -241,13 +241,15 @@ $(document).ready(function () {
         setMessage(`Turn ${computerChoice}`);
 
 
-
         //pick a random cell from the cellsleft array
         let selectedCellPos = Math.floor(Math.random() * cellsLeft.length);
         let selectedCell = cellsLeft[selectedCellPos];
+        console.log(`selected cell id = ${selectedCell}`);
 
         //place an O in this cell
-
+        let selectedCellID = ('#'+selectedCell);
+        $(selectedCellID).css("color", "rgb(242,235,211)");
+        $(selectedCellID).html(computerChoice);
 
     }
 
