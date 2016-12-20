@@ -20,16 +20,16 @@ $(document).ready(function () {
     var $tile8 = $("#eight");
     var $tile9 = $("#nine");
 
-    //board cell contents
-    var tile1Content = $tile1.html();
-    var tile2Content = $tile2.html();
-    var tile3Content = $tile3.html();
-    var tile4Content = $tile4.html();
-    var tile5Content = $tile5.html();
-    var tile6Content = $tile6.html();
-    var tile7Content = $tile7.html();
-    var tile8Content = $tile8.html();
-    var tile9Content = $tile9.html();
+   /* //board cell contents
+    var $tile1.html() = $tile1.html();
+    var $tile2.html() = $tile2.html();
+    var $tile3.html() = $tile3.html();
+    var $tile4.html() = $tile4.html();
+    var $tile5.html() = $tile5.html();
+    var $tile6.html() = $tile6.html();
+    var $tile7.html() = $tile7.html();
+    var $tile8.html() = $tile8.html();
+    var $tile9.html() = $tile9.html();*/
 
     //2D array -internal representation of board - 0 is empty, 1 is occupied
     var board = [
@@ -130,14 +130,14 @@ $(document).ready(function () {
         console.log(`Inside detect win, current player = ${player}`);
         //check a player's win in all cases
         if(
-            (tile1Content === player && tile4Content === player && tile7Content === player) ||
-            (tile1Content === player && tile2Content === player && tile3Content === player) ||
-            (tile1Content === player && tile5Content === player && tile9Content === player) ||
-            (tile4Content === player && tile5Content === player && tile6Content === player) ||
-            (tile7Content === player && tile8Content === player && tile9Content === player) ||
-            (tile3Content === player && tile5Content === player && tile7Content === player) ||
-            (tile2Content === player && tile5Content === player && tile8Content === player) ||
-            (tile3Content === player && tile6Content === player && tile9Content === player)
+            ($tile1.html() === player && $tile4.html() === player && $tile7.html() === player) ||
+            ($tile1.html() === player && $tile2.html() === player && $tile3.html() === player) ||
+            ($tile1.html() === player && $tile5.html() === player && $tile9.html() === player) ||
+            ($tile4.html() === player && $tile5.html() === player && $tile6.html() === player) ||
+            ($tile7.html() === player && $tile8.html() === player && $tile9.html() === player) ||
+            ($tile3.html() === player && $tile5.html() === player && $tile7.html() === player) ||
+            ($tile2.html() === player && $tile5.html() === player && $tile8.html() === player) ||
+            ($tile3.html() === player && $tile6.html() === player && $tile9.html() === player)
         ) {
             //set message
             setMessage(`Player ${player} wins!`);
@@ -281,7 +281,7 @@ $(document).ready(function () {
         cellsLeft = Object.keys(cellToMoves);
 
         //verify cellsLeft was reset
-        console.log("After game restart,cells left array - ")
+        // console.log("After game restart,cells left array - ")
         console.log(cellsLeft);
 
         //clear the board
