@@ -212,7 +212,9 @@ $(document).ready(function () {
             console.log(cellsLeft);
 
             //test aiMove() here
-            aiMove();
+            //aiMove();
+            //test a delay before AI move
+            setTimeout(() => {aiMove()}, 2000);
 
 
 
