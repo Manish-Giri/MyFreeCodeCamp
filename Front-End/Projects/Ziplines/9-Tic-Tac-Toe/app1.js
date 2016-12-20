@@ -74,6 +74,7 @@ $(document).ready(function () {
     var isPlayerSelected = false;
     var playerChoice = '';
     var aiChoice = '';
+    var currentTurn = '';
 
     //function to determine current player based on input selection
 
@@ -97,6 +98,8 @@ $(document).ready(function () {
                 playerChoice = 'O';
                 setMessage(`Turn ${playerChoice}`);
             }
+
+            currentTurn = playerChoice;
 
         });
 
@@ -124,6 +127,7 @@ $(document).ready(function () {
 
     //function to detect a player win
     function detectWin(player) {
+        console.log(`Inside detect win, current player = ${player}`);
         //check a player's win in all cases
         if(
             (tile1Content === player && tile4Content === player && tile7Content === player) ||
@@ -168,11 +172,16 @@ $(document).ready(function () {
             let cellID = this.id;
             console.log(`clicked on cell with id ${cellID}`);
             //if player didn't select anything
-            if(!isPlayerSelected) {
+            if (!isPlayerSelected) {
                 //if a player has not been selected, select X by default
                 isXSelected = true;
                 isPlayerSelected = true;
                 playerChoice = 'X';
+            }
+
+            currentTurn = playerChoice;
+            if(currentTurn !== "" && detectWin(currentTurn)) {
+                alert(`Player ${currentTurn} won!!!`)
             }
 
             let player = playerChoice;
@@ -185,16 +194,16 @@ $(document).ready(function () {
             console.log(`position of selected cell on board = ${selectedCellPos}`);
 
             /*
-            //test length of movesLeft array
-            console.log(`Length of movesLeft array = ${movesLeft.length}`);
-            //delete this position from the movesleft array
-            movesLeft.splice(selectedCellPos, 1);
+             //test length of movesLeft array
+             console.log(`Length of movesLeft array = ${movesLeft.length}`);
+             //delete this position from the movesleft array
+             movesLeft.splice(selectedCellPos, 1);
 
-            //verify movesLeft array
-            console.log("Moves left = ");
-            console.log(movesLeft)
-            console.log(`Length of movesLeft array = ${movesLeft.length}`);
-            */
+             //verify movesLeft array
+             console.log("Moves left = ");
+             console.log(movesLeft)
+             console.log(`Length of movesLeft array = ${movesLeft.length}`);
+             */
 
 
             //remove current cell from cellsLeft array
@@ -204,14 +213,17 @@ $(document).ready(function () {
             console.log("After player click,cells left array - ")
             console.log(cellsLeft);
 
+
+
             //test aiMove() here
             //aiMove();
             //test a delay before AI move
-            setTimeout(() => {aiMove()}, 1000);
-
-
+            setTimeout(() => {
+                aiMove()
+            }, 1000);
 
         });
+
 
         
     }
@@ -230,6 +242,11 @@ $(document).ready(function () {
         //detemine if AI is using X or O
         let computerChoice = (playerChoice === 'X') ? 'O' : 'X';
         console.log(`AI Choice = ${computerChoice}`);
+        currentTurn = computerChoice;
+
+        if(currentTurn !== "" && detectWin(currentTurn)) {
+            alert(`Player ${currentTurn} won!!!`)
+        }
 
         //set message on top
         setMessage(`Turn ${computerChoice}`);
@@ -255,5 +272,26 @@ $(document).ready(function () {
     }
 
     //aiMove();
+    
+    function reset() {
+
+        console.log("-----GAME RESET-------");
+
+        //reset cellsLeft array
+        cellsLeft = Object.keys(cellToMoves);
+
+        //verify cellsLeft was reset
+        console.log("After game restart,cells left array - ")
+        console.log(cellsLeft);
+
+        //clear the board
+        $(".cell").each(function () {
+            $(this).html("");
+        });
+
+    }
+
+    //hook up reset to restart button
+    $("#restart").click(reset);
 
 })
