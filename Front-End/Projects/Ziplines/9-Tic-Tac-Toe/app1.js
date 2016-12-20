@@ -251,6 +251,16 @@ $(document).ready(function () {
         $(selectedCellID).css("color", "rgb(242,235,211)");
         $(selectedCellID).html(computerChoice);
 
+        //remove this cell from array of available cells
+        removeCell(cellsLeft, selectedCell);
+
+        //verify selected cell was removed
+        console.log("After AI click,cells left array - ")
+        console.log(cellsLeft);
+
+
+
+
     }
 
     //aiMove();
