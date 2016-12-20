@@ -241,11 +241,11 @@ $(document).ready(function () {
         console.log(`AI Choice = ${computerChoice}`);
         currentTurn = computerChoice;
 
-        if(currentTurn !== "" && detectWin(currentTurn)) {
-            alert(`Player ${currentTurn} won!!!`)
-            reset();
-            return;
-        }
+        // if(currentTurn !== "" && detectWin(currentTurn)) {
+        //     alert(`Player ${currentTurn} won!!!`)
+        //     reset();
+        //     return;
+        // }
 
         //set message on top
         setMessage(`Turn ${computerChoice}`);
@@ -273,6 +273,36 @@ $(document).ready(function () {
         // }, 1000);
 
         //playerMove();
+
+        //detect AI win here
+
+        //test for player win from previous run - works for player win
+        if(currentTurn !== "" && detectWin(currentTurn)) {
+            console.log("Inside aimove - 2");
+
+            console.log(selectedCellID);
+
+            //ai move
+            $(selectedCellID).css("color", "rgb(242,235,211)");
+            $(selectedCellID).html(computerChoice);
+
+            //print contents of winning cell for test
+            let winAICell = $(selectedCellID).html();
+            console.log(`Contents of ${selectedCellID} = ${winAICell}`);
+
+            //create a delay so AI move can be drawn on screen
+
+            setTimeout(function () {
+                alert(`Player ${currentTurn} won!!!`);
+                reset();
+                return;
+            }, 1000);
+
+            // alert(`Player ${currentTurn} won!!!`);
+            // reset();
+            // return;
+        }
+
 
     }
 
