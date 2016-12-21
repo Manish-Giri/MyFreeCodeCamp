@@ -188,3 +188,23 @@ footer {
         width: 100%;
     }
 }
+
+/* styles for second button */
+.button-holder button {
+    display: inline-block;
+    width: 45%;
+}
+
+#reset {
+    margin-top: 0;
+    margin-left: 33px;
+}
+
+#restart:hover {
+    background-color: green !important;
+}
+
+button span {
+    margin-right: 10px;
+    margin-top: 2px;
+}
