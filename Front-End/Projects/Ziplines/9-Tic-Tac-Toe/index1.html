@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tic Tac Toe</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="wrapper container-fluid">
+    <!--THIS contains the top row - X or 0 -->
+
+
+    <div id="header">
+        <h1 class="text-center">Tic Tac Toe</h1>
+    </div>
+
+    <div class="row" id="choices">
+        <div class="ultra-xs col-xs-3 col-xs-offset-2 col-sm-3 col-sm-offset-2 col-md-2 col-md-offset-3 col-lg-2 col-lg-offset-3" id="ex">
+            <div class="input-holder">
+                <input type="text" id="xInp" class="player-choice" placeholder="X">
+                <span id="x-score" class="score">-</span>
+            </div>
+
+
+
+        </div>
+        <div class="ultra-xs col-xs-3 col-xs-offset-2 col-sm-3 col-md-2 col-lg-2" id="zero">
+            <div class="input-holder">
+                <input type="text" id="oInp" class="player-choice" placeholder="O">
+                <span id="0-score" class="score">-</span>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <div id="feedback-container">
+        <p id="feedback">Start game or select player</p>
+    </div>
+
+    <!--<div id="table-div">-->
+    <div id="table-div">
+        <table class="table table-bordered" id="app">
+            <tr>
+                <td id="one" class="cell"></td>
+                <td id="two" class="cell"></td>
+                <td id="three" class="cell"></td>
+            </tr>
+            <tr>
+                <td id="four" class="cell"></td>
+                <td id="five" class="cell"></td>
+                <td id="six" class="cell"></td>
+            </tr>
+            <tr>
+                <td id="seven" class="cell"></td>
+                <td id="eight" class="cell"></td>
+                <td id="nine" class="cell"></td>
+            </tr>
+        </table>
+    </div>
+    <!--</div>-->
+
+    <div class="button-holder">
+        <button type="button" class="btn btn-lg btn-block btn-custom" id="restart">
+            <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span>
+            Restart</button>
+        <button type="button" class="btn btn-lg btn-block btn-custom" id="reset">
+            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            Reset</button>
+
+
+    </div>
+
+    <div class="push">
+        <!-- this element for implementing sticky footer-->
+    </div>
+</div>
+
+
+<footer class="footer">
+    <span>&copy; Developed by Manish Giri for FreeCodeCamp 2016</span>
+</footer>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="app2.js"></script>
+</body>
+</html>
