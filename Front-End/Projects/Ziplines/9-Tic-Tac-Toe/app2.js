@@ -68,6 +68,8 @@ $(document).ready(function () {
     var playerChoice = '';
     var aiChoice = '';
     var currentTurn = '';
+    var playerScore = 0;
+    var computerScore = 0;
 
     //function to determine current player based on input selection
 
@@ -229,8 +231,16 @@ $(document).ready(function () {
 
         //test for player win from previous run - works for player win
         if(currentTurn !== "" && detectWin(currentTurn)) {
+            playerScore++;
+            console.log(`Player score is ${playerScore}`);
+            //document.getElementById("x-score").innerHTML = playerScore;
+            //$("x-score").html(playerScore);
             console.log("Inside aimove - 1");
             alert(`Player ${currentTurn} won!!!`);
+            let currentPlayerScore = $("#xScore").html();
+
+            console.log(`Current player score = ${currentPlayerScore}`);
+            $("#xScore").html(playerScore);
             reset();
             return;
         }
@@ -241,11 +251,6 @@ $(document).ready(function () {
         console.log(`AI Choice = ${computerChoice}`);
         currentTurn = computerChoice;
 
-        // if(currentTurn !== "" && detectWin(currentTurn)) {
-        //     alert(`Player ${currentTurn} won!!!`)
-        //     reset();
-        //     return;
-        // }
 
         //set message on top
         setMessage(`Turn ${computerChoice}`);
@@ -280,6 +285,7 @@ $(document).ready(function () {
         if(currentTurn !== "" && detectWin(currentTurn)) {
             console.log("Inside aimove - 2");
 
+
             console.log(selectedCellID);
 
             //ai move
@@ -290,10 +296,17 @@ $(document).ready(function () {
             let winAICell = $(selectedCellID).html();
             console.log(`Contents of ${selectedCellID} = ${winAICell}`);
 
-            //create a delay so AI move can be drawn on screen
+            //increment ai score
+            computerScore++;
 
+            //create a delay so AI move can be drawn on screen
             setTimeout(function () {
                 alert(`Player ${currentTurn} won!!!`);
+                //draw ai score
+                //computerScore++;
+                console.log(`AI score is ${computerScore}`);
+                $("#oScore").html(computerScore);
+
                 reset();
                 return;
             }, 1000);
