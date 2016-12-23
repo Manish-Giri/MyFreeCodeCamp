@@ -176,7 +176,7 @@ footer {
 
 .score {
     position: absolute;
-    top: 7px;
+    top: -2px;
     right: 20px;
 }
 
@@ -199,11 +199,13 @@ footer {
 button span {
     margin-right: 10px;
     margin-top: 2px;
+    position: absolute;
 }
 
 /* styles for player choice buttons */
 #xInp, #oInp {
     width: 150px;
+    position: relative;
 
 }
 
@@ -235,3 +237,15 @@ button span {
     margin-left: 170px;
   }
 }
+
+@media screen and (min-width: 768px) and (max-width: 875px) {
+    #ex {
+        margin-left: 150px;
+    }
+
+    #zero {
+        margin-left: 90px;
+    }
+
+}
+
