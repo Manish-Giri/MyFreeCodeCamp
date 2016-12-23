@@ -224,3 +224,14 @@ button span {
 
 
 }
+
+/* reduce margin on the left for large sizes 1200px-1400px */
+@media screen and (min-width: 1200px) and (max-width: 1300px) {
+  #ex {
+    margin-left: 350px;
+  }
+
+  #zero {
+    margin-left: 170px;
+  }
+}
