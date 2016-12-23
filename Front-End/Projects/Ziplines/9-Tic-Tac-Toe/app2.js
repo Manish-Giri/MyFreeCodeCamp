@@ -194,7 +194,7 @@ $(document).ready(function () {
 
             let player = playerChoice;
             setMessage(`Turn ${player}`);
-            $this.css("color", "rgba(84,84,84)");
+            $this.css("color", "rgb(84,84,84)");
             $this.html(player);
 
             //lookup cell position using id of current cell and remove it from movesLeft array

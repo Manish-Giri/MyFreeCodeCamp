@@ -59,8 +59,9 @@ input[type="text"]:focus {
     /*text-transform: uppercase;*/
 }
 
-table {
-    table-layout: fixed;
+table  {
+    table-layout: fixed !important;
+
 }
 
 #table-div {
@@ -77,18 +78,19 @@ table {
     width: 65%;
     margin: 0 auto;
     height: 300px;
+    /*table-layout: fixed !important;*/
 }
 
 #app tr td {
-    height: 85px;
+    height: 85px !important;
     border: 4px solid #0DA192;
-    padding-top: 25px;
+    padding: 0 !important;
+    padding-top: 20px !important;
 
 }
 
 .cell {
-    /*color: orangered;*/
-    font-size: 4rem;
+    font-size: 40px;
     text-align: center;
     font-family: 'Roboto', sans-serif;
     line-height: 85px;
