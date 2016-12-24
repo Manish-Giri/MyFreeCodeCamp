@@ -295,7 +295,20 @@ $(document).ready(function () {
 
             //create a delay so AI move can be drawn on screen
             setTimeout(function () {
-                alert(`Player ${currentTurn} won!!!`);
+
+                //test out swal alert here
+                swal({
+                        title: "Uh-Oh.",
+                        text: "Yikes, Computer Won!!!",
+                        type: "warning",
+                        //showCancelButton: true,
+                        //confirmButtonColor: "#DD6B55",
+                        //confirmButtonText: "Yes, delete it!",
+                        //closeOnConfirm: false
+                    });
+
+
+                //alert(`Player ${currentTurn} won!!!`);
                 //draw ai score
                 //computerScore++;
                 console.log(`AI score is ${computerScore}`);
@@ -312,6 +325,11 @@ $(document).ready(function () {
             // alert(`Player ${currentTurn} won!!!`);
             // reset();
             // return;
+        }
+
+        //a draw will happen when all cells on the board are filled and code has not yet "returned"
+        if(isGameDrawn()) {
+            draw();
         }
 
 
@@ -369,6 +387,21 @@ $(document).ready(function () {
         
     }
 
+    //function to check if game ended in draw
+    function isGameDrawn() {
+        //loop through the cells and check if all cells are filled
+        //clear the board
+        let gameDrawn = true;
+        $(".cell").each(function () {
+            if($(this).html() === "") {
+                gameDrawn = false;
+
+            }
+
+        });
+        return gameDrawn;
+    }
+
     //function to show if game ends in draw
     function draw() {
         //create the alert for fraw
@@ -377,6 +410,10 @@ $(document).ready(function () {
             text: "Well, that's a draw.",
             imageUrl: "handshake.png"
         });
+
+        //common reset
+        commonReset();
+        
     }
 
     //hook up restart function to restart button
