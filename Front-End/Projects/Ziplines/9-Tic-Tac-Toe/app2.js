@@ -427,6 +427,11 @@ $(document).ready(function () {
         //call common reset function
         commonReset();
 
+        //reset player scores to -
+        //test
+        $("#xScore").html("-");
+        $("#oScore").html("-");
+
     }
 
 
