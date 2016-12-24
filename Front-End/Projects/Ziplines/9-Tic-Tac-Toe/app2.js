@@ -236,6 +236,9 @@ $(document).ready(function () {
 
             //call restart
             restart();
+
+            //test draw implementation
+            //draw();
             // game resets
             // reset();
             return;
@@ -364,6 +367,16 @@ $(document).ready(function () {
         //call common reset function
         commonReset();
         
+    }
+
+    //function to show if game ends in draw
+    function draw() {
+        //create the alert for fraw
+        swal({
+            title: "Meh!",
+            text: "Well, that's a draw.",
+            imageUrl: "handshake.png"
+        });
     }
 
     //hook up restart function to restart button
