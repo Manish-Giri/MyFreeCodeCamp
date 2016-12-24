@@ -248,7 +248,18 @@ $(document).ready(function () {
             let currentPlayerScore = $("#xScore").html();
             console.log(`Current player score = ${currentPlayerScore}`);
 
-            $("#xScore").html(playerScore);
+            //bug - always increments player X's score, instead of the current player
+            //$("#xScore").html(playerScore);
+
+            //fix - check which player has 'currentTurn', and increment accordingly
+            if(currentTurn === "X") {
+                //increment player X's score
+                $("#xScore").html(playerScore);
+            }
+            else {
+                //increment player O's score
+                $("#oScore").html(playerScore);
+            }
 
             //call restart
             restart();
