@@ -165,11 +165,6 @@ $(document).ready(function () {
         console.log(`Player Move started = ${count}`);
         count++;
 
-        //check for win should happen before next click
-        // if(currentTurn !== "" && detectWin(currentTurn)) {
-        //     alert(`Player ${currentTurn} won!!!`);
-        //     reset();
-        // }
 
         //player clicks on a td cell
         $(".cell").click(function () {
@@ -186,11 +181,6 @@ $(document).ready(function () {
             }
 
             currentTurn = playerChoice;
-            // if(currentTurn !== "" && detectWin(currentTurn)) {
-            //     alert(`Player ${currentTurn} won!!!`);
-            //     reset();
-            //     return;
-            // }
 
             let player = playerChoice;
             setMessage(`Turn ${player}`);
@@ -233,15 +223,21 @@ $(document).ready(function () {
         if(currentTurn !== "" && detectWin(currentTurn)) {
             playerScore++;
             console.log(`Player score is ${playerScore}`);
-            //document.getElementById("x-score").innerHTML = playerScore;
-            //$("x-score").html(playerScore);
-            console.log("Inside aimove - 1");
-            alert(`Player ${currentTurn} won!!!`);
-            let currentPlayerScore = $("#xScore").html();
 
+            console.log("Inside aimove - 1");
+
+            //code for custom alerts - sweetalert library
+            //alert(`Player ${currentTurn} won!!!`);
+            swal("Good job!", `Player ${currentTurn} won!!!`, "success");
+            let currentPlayerScore = $("#xScore").html();
             console.log(`Current player score = ${currentPlayerScore}`);
+
             $("#xScore").html(playerScore);
-            reset();
+
+            //call restart
+            restart();
+            // game resets
+            // reset();
             return;
         }
 
@@ -273,11 +269,6 @@ $(document).ready(function () {
         console.log("After AI click,cells left array - ")
         console.log(cellsLeft);
 
-        // setTimeout(() => {
-        //     playerMove()
-        // }, 1000);
-
-        //playerMove();
 
         //detect AI win here
 
@@ -307,7 +298,11 @@ $(document).ready(function () {
                 console.log(`AI score is ${computerScore}`);
                 $("#oScore").html(computerScore);
 
-                reset();
+                //call restart
+                restart();
+
+                // resets by default
+                // reset();
                 return;
             }, 1000);
 
@@ -321,9 +316,8 @@ $(document).ready(function () {
 
     //aiMove();
 
-    function reset() {
-
-        console.log("-----GAME RESET-------");
+    function commonReset() {
+        //do reset procedures common to both reset and restart
 
         //reset cellsLeft array
         cellsLeft = Object.keys(cellToMoves);
@@ -350,7 +344,34 @@ $(document).ready(function () {
 
     }
 
-    //hook up reset to restart button
-    $("#restart").click(reset);
+    function reset() {
+
+        console.log("-----GAME RESET-------");
+        playerScore = 0;
+        computerScore = 0;
+
+        //call common reset function
+        commonReset();
+
+    }
+
+
+    //function to restart game 
+    function restart() {
+
+        console.log("-----GAME RESTART-------");
+
+        //call common reset function
+        commonReset();
+        
+    }
+
+    //hook up restart function to restart button
+    $("#restart").click(restart);
+
+    //hook up reset function to reset button
+    $("#reset").click(reset);
+
+
 
 })
