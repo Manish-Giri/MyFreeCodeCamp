@@ -371,12 +371,20 @@ $(document).ready(function () {
         //set message on top
         setMessage("Start game or select player");
 
+        //if a player choice button was selected at the start, the other button would be disabled
+        //enable both buttons
+        $("#xInp").prop("disabled", false);
+        $("#oInp").prop("disabled", false);
+
         //reset global variables
         isXSelected = false;
         isPlayerSelected = false;
         playerChoice = '';
         aiChoice = '';
         currentTurn = '';
+
+
+
 
 
     }
@@ -424,6 +432,8 @@ $(document).ready(function () {
         swal({
             title: "Meh!",
             text: "Well, that's a draw.",
+            //test image hosted on dropbox
+            //imageUrl: "https://dl.dropbox.com/s/xsd5cv1fuozvvz8/handshake.png?dl=0"
             imageUrl: "handshake.png"
         });
 
