@@ -253,12 +253,30 @@ $(document).ready(function () {
 
             //fix - check which player has 'currentTurn', and increment accordingly
             if(currentTurn === "X") {
-                //increment player X's score
-                $("#xScore").html(playerScore);
+                //increment player X's score - get the current score first
+                //for first run, score is -
+                let currentXScore = $("#xScore").html();
+                if (currentXScore == '-') {
+                    currentXScore = 0;
+                }
+                else {
+                    currentXScore = parseInt(currentXScore);
+                }
+                currentXScore++;
+                $("#xScore").html(currentXScore);
             }
             else {
                 //increment player O's score
-                $("#oScore").html(playerScore);
+                //for first run, score is -
+                let currentOScore = $("#oScore").html();
+                if(currentOScore == '-') {
+                    currentOScore = 0;
+                }
+                else {
+                    currentOScore = parseInt(currentOScore);
+                }
+                currentOScore++;
+                $("#oScore").html(currentOScore);
             }
 
             //call restart
