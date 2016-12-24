@@ -168,6 +168,22 @@ $(document).ready(function () {
 
         //player clicks on a td cell
         $(".cell").click(function () {
+
+            //let $this = $(this);
+
+            //check if click occured on an occupied cell
+            if($(this).html() !== "") {
+                //SHOW an alert
+                swal({
+                    title: "Duh!",
+                    text: "That cell is filled.",
+                    type: "warning"
+                });
+
+                restart();
+                return;
+
+            }
             console.log("Callback running");
             let $this = $(this);
             let cellID = this.id;
