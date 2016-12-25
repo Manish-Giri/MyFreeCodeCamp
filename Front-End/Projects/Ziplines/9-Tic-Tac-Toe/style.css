@@ -107,6 +107,7 @@ table  {
     min-height: 100% !important;
     margin: 0 auto -50px !important;
     padding-top: 0;
+    min-width: 320px;
 }
 
 /*
@@ -257,3 +258,29 @@ button span {
 
 }
 
+/* fix for bottom two buttons misalignment on <425px */
+
+@media screen and (max-width: 425px){
+    .button-holder button {
+        display: block;
+        margin: 20px auto;
+        width: 170px;
+    }
+
+    #reset {
+        margin: 10px auto;
+    }
+
+    #table-div table {
+        margin-left: 40px;
+        /*margin-right: 0;*/
+    }
+}
+
+@media screen and (max-width: 370px){
+
+    #table-div table {
+        margin-left: 10px;
+        margin-right: 0;
+    }
+}
