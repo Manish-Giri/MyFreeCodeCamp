@@ -100,20 +100,6 @@ $(document).ready(function () {
 
     }
 
-    //selectPlayer();
-
-    /*    //loop through board array and check contens
-     board.forEach(function (cellRow, outIndex) {
-     console.log("Row = " + outIndex);
-     cellRow.forEach(function (cell, inIndex) {
-     console.log(cell);
-     })
-     });*/
-
-
-
-
-
 
     //function to set message on top
     function setMessage(message) {
@@ -218,6 +204,10 @@ $(document).ready(function () {
             console.log("After player click,cells left array - ")
             console.log(cellsLeft);
 
+            //change message on top to indicate turn of ai - test
+            let nextTurn = currentTurn === 'X' ? 'O' : 'X';
+            setMessage(`Turn ${nextTurn}`);
+
             //test aiMove() here
             //aiMove();
             //test a delay before AI move
@@ -229,9 +219,8 @@ $(document).ready(function () {
 
         });
 
-
-
     }
+
 
     //test gameAlert here
     //gameAlert();
@@ -306,6 +295,8 @@ $(document).ready(function () {
         //set message on top
         setMessage(`Turn ${computerChoice}`);
 
+        //AI choice is computerChoice
+
 
         //pick a random cell from the cellsleft array
         let selectedCellPos = Math.floor(Math.random() * cellsLeft.length);
@@ -367,6 +358,8 @@ $(document).ready(function () {
                 console.log(`AI score is ${computerScore}`);
                 $("#oScore").html(computerScore);
 
+
+
                 //call restart
                 restart();
 
@@ -383,11 +376,14 @@ $(document).ready(function () {
             // return;
         }
 
+        //set message on top to indicate turn of next player
+        let nextTurn = computerChoice === 'X' ? 'O' : 'X';
+        setMessage(`Turn ${nextTurn}`);
+
         //a draw will happen when all cells on the board are filled and code has not yet "returned"
         if(isGameDrawn()) {
             draw();
         }
-
 
     }
 
@@ -422,10 +418,6 @@ $(document).ready(function () {
         playerChoice = '';
         aiChoice = '';
         currentTurn = '';
-
-
-
-
 
     }
 
