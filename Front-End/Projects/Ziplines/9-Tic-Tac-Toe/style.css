@@ -97,6 +97,10 @@ table  {
     vertical-align: center;
     font-weight: 900;
 }
+/* make cursor as pointer on hover, focus and active states */
+.cell:hover, .cell:focus, .cell:active {
+    cursor: pointer;
+}
 
 .wrapper {
     padding: 20px;
@@ -210,6 +214,8 @@ button span {
     position: relative;
 
 }
+
+
 
 /*Media Queries for responsiveness*/
 
