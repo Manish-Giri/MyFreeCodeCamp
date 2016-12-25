@@ -223,7 +223,7 @@ $(document).ready(function () {
 
 
     //test gameAlert here
-    //gameAlert();
+    gameAlert();
     playerMove();
 
     function aiMove() {
@@ -419,6 +419,9 @@ $(document).ready(function () {
         aiChoice = '';
         currentTurn = '';
 
+        //test if cells are clickable again - works
+        $(".cell").css("pointer-events", "auto");
+
     }
 
     function reset() {
@@ -493,7 +496,8 @@ $(document).ready(function () {
             text: "<ul><li>Select X or O, or directly begin the game as X.</li>" +
             "<li>Player makes the first move.</li> " +
             "<li>Next, the computer makes it's move after a second.</li>" +
-            "<li>Restart or Reset a game at any time.</li></ul>",
+            "<li>Restart or Reset a game at any time.</li>" +
+            "<li>NOTE - Restarting or Resetting will clear the current game state.</li></ul>",
             html: true,
             timer: 20000,
             showConfirmButton: true,
