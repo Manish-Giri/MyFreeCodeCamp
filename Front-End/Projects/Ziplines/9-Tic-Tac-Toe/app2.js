@@ -170,6 +170,9 @@ $(document).ready(function () {
         $(".cell").click(function () {
 
             //let $this = $(this);
+            //test unbinding of click events
+            //$(".cell").off("click");
+            $(".cell").css("pointer-events", "none");
 
             //check if click occured on an occupied cell
             if($(this).html() !== "") {
@@ -221,6 +224,8 @@ $(document).ready(function () {
             setTimeout(() => {
                 aiMove()
             }, 1000);
+            //$(".cell").bind("click");
+            //$(".cell").css("pointer-events", "auto");
 
         });
 
@@ -228,10 +233,12 @@ $(document).ready(function () {
 
     }
 
-    //test
+    //test gameAlert here
+    //gameAlert();
     playerMove();
 
     function aiMove() {
+        $(".cell").css("pointer-events", "auto");
 
         console.log("AI Move running");
 
@@ -338,6 +345,7 @@ $(document).ready(function () {
             //increment ai score
             computerScore++;
 
+
             //create a delay so AI move can be drawn on screen
             setTimeout(function () {
 
@@ -366,6 +374,9 @@ $(document).ready(function () {
                 // reset();
                 return;
             }, 1000);
+
+            $(".cell").css("pointer-events", "auto");
+
 
             // alert(`Player ${currentTurn} won!!!`);
             // reset();
@@ -483,5 +494,20 @@ $(document).ready(function () {
     $("#reset").click(reset);
 
 
+    //an alert at the beginning with instructions?
+    function gameAlert() {
+        swal({
+            title: "Tips and Tricks!",
+            text: "<ul><li>Select X or O, or directly begin the game as X.</li>" +
+            "<li>Player makes the first move.</li> " +
+            "<li>Next, the computer makes it's move after a second.</li>" +
+            "<li>Restart or Reset a game at any time.</li></ul>",
+            html: true,
+            timer: 20000,
+            showConfirmButton: true,
+            type: "warning",
+            confirmButtonColor: "#009933"
+        });
+    }
 
 })
