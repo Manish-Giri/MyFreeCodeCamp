@@ -11,11 +11,106 @@ body {
 
 .wrapper {
     min-height: 100%;
-    margin-bottom: -50px;
+    margin: 20px auto -50px auto;
+    text-align: center;
+
 }
+
+/* the nested circles */
+#main {
+    display: inline-block;
+    background-color: #444;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    position: relative;
+}
+
+#center {
+    display: inline-block;
+    background-color: #ECE7EE;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 20px solid #444;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    z-index: 999;
+}
+
+#green {
+    display: inline-block;
+    background-color: lightgreen;
+    width: 220px;
+    height: 220px;
+    border: 2px solid lightgreen;
+    border-top-left-radius: 100%;
+    position: absolute;
+    left:20px;
+    margin-top: 15px;
+    margin-left: -1px;
+
+}
+
+#red {
+    display: inline-block;
+    background-color: #CD5C5C;
+    width: 220px;
+    height: 220px;
+    border: 2px solid #CD5C5C;
+    border-top-right-radius: 100%;
+    position: absolute;
+    right:20px;
+    margin-top: 15px;
+    margin-right: -5px;
+
+}
+
+#blue {
+    display: inline-block;
+    background-color: lightblue;
+    width: 220px;
+    height: 220px;
+    border: 2px solid lightblue;
+    border-bottom-right-radius: 100%;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    margin-top: 5px;
+    margin-right: -5px;
+}
+
+#yellow {
+    display: inline-block;
+    background-color: lightyellow;
+    width: 220px;
+    height: 220px;
+    border: 2px solid lightyellow;
+    border-bottom-left-radius: 100%;
+    position: absolute;
+    left:20px;
+    top: 50%;
+    margin-top: 5px;
+    margin-left: -4px;
+}
+
+
+
+
+
+
+
+
+
+
+/* sticky footer */
 .footer, .push {
     height: 50px;
 }
+
+/* footer */
 
 footer {
     background: linear-gradient(black, #444);
