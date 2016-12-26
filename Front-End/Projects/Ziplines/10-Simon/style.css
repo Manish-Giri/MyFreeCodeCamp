@@ -27,7 +27,7 @@ body {
     position: relative;
 }
 
-#center {
+#inner {
     display: inline-block;
     background-color: #ECE7EE;
     width: 200px;
