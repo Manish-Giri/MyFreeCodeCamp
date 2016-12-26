@@ -17,6 +17,15 @@ body {
 
 }
 
+/*h1 {*/
+    /*font-family: 'Cormorant Garamond', serif;*/
+    /*font-size: 36px;*/
+    /*font-style: italic;*/
+    /*margin: 5px auto 20px auto;*/
+
+
+/*}*/
+
 /* the nested circles */
 #main {
     display: inline-block;
@@ -56,8 +65,8 @@ body {
 
 /* color for #green */
 .green-normal {
-    background-color: lightgreen;
-    border: 2px solid lightgreen;
+    background-color: #1b5e20;
+    border: 2px solid #1b5e20;
 }
 
 #red {
@@ -76,8 +85,8 @@ body {
 
 /* color for #red */
 .red-normal {
-    background-color: #CD5C5C;
-    border: 2px solid #CD5C5C;
+    background-color: #b71c1c;
+    border: 2px solid #b71c1c ;
 }
 
 
@@ -97,8 +106,8 @@ body {
 
 /* color for #blue */
 .blue-normal {
-    background-color: lightblue;
-    border: 2px solid lightblue;
+    background-color: #0d47a1;
+    border: 2px solid #0d47a1;
 }
 
 #yellow {
@@ -117,8 +126,8 @@ body {
 
 /* color for #yellow */
 .yellow-normal {
-    background-color: lightyellow;
-    border: 2px solid lightyellow;
+    background-color: #f57f17;
+    border: 2px solid #f57f17;
 }
 
 
