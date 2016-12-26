@@ -17,6 +17,12 @@ body {
     height: 50px;
 }
 
+footer {
+    background: linear-gradient(black, #444);
+    padding: 10px;
+    text-align: center;
+}
 footer span{
     font-family: 'Mirza', cursive;
+    color: burlywood;
 }
