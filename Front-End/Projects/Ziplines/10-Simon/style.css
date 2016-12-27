@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Mirza|Ravi+Prakash|Roboto');
 @import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:700');
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script');
+
 
 html, body {
     height: 100%;
@@ -39,7 +41,7 @@ body {
 
 #inner {
     display: inline-block;
-    background-color: #ECE7EE;
+    background-color: lavenderblush;
     width: 200px;
     height: 200px;
     border-radius: 50%;
@@ -126,13 +128,53 @@ body {
 
 /* color for #yellow */
 .yellow-normal {
-    background-color: #f57f17;
-    border: 2px solid #f57f17;
+    background-color: #f9a825;
+    border: 2px solid #f9a825;
+}
+
+/* styles for inner controls */
+
+.lines {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+#name {
+    margin: 20px auto 10px auto;
+
+}
+
+#name span {
+
+    font-family: 'Kaushan Script', cursive;
+    font-size: 30px;
+    color: #3e2723;
+}
+
+#count {
+    font-size: 17px;
+}
+
+#count span {
+    margin-left: -25px;
+    position: relative;
+    top: -10px;
+}
+
+#numbers {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(50,5,12);
+    border: 2px solid black;
+    margin-right: -25px;
+    border-radius: 5px;
 }
 
 
 
-
+.btns div {
+    display: inline-block;
+}
 
 
 
