@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Mirza|Ravi+Prakash|Roboto');
 @import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:700');
 @import url('https://fonts.googleapis.com/css?family=Kaushan+Script');
-
+@import url('https://fonts.googleapis.com/css?family=Kumar+One|Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Merriweather');
 
 html, body {
     height: 100%;
@@ -41,7 +42,7 @@ body {
 
 #inner {
     display: inline-block;
-    background-color: lavenderblush;
+    background-color: #eeeeee;
     width: 200px;
     height: 200px;
     border-radius: 50%;
@@ -135,7 +136,9 @@ body {
 /* styles for inner controls */
 
 .lines {
-    font-family: 'Cormorant Garamond', serif;
+    /*font-family: 'Cormorant Garamond', serif;*/
+
+    font-family: 'Merriweather', serif;
 }
 
 #name {
@@ -145,7 +148,8 @@ body {
 
 #name span {
 
-    font-family: 'Kaushan Script', cursive;
+    /*font-family: 'Kaushan Script', cursive;*/
+    font-family: 'Kumar One', cursive;
     font-size: 24px;
     color: #3e2723;
 }
@@ -181,6 +185,17 @@ body {
     margin-top: -10px;
     margin-left: 5px;
 }
+
+#row-1 p label {
+	color: #004d40;
+}
+
+
+#row-2 p label {
+	color: #e65100;
+}
+
+
 
 
 /* sticky footer */
