@@ -139,14 +139,14 @@ body {
 }
 
 #name {
-    margin: 20px auto 10px auto;
+    margin: 20px auto 0px auto;
 
 }
 
 #name span {
 
     font-family: 'Kaushan Script', cursive;
-    font-size: 30px;
+    font-size: 24px;
     color: #3e2723;
 }
 
@@ -158,6 +158,7 @@ body {
     margin-left: -25px;
     position: relative;
     top: -10px;
+    margin-right: 10px;
 }
 
 #numbers {
@@ -170,13 +171,16 @@ body {
     border-radius: 5px;
 }
 
+/* third row in inner circle */
 
-
-.btns div {
-    display: inline-block;
+#controls {
+    margin-top: -6px;
 }
 
-
+#row-2 {
+    margin-top: -10px;
+    margin-left: 5px;
+}
 
 
 /* sticky footer */
