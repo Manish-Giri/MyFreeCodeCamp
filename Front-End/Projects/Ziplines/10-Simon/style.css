@@ -161,18 +161,19 @@ body {
 #count span {
     margin-left: -25px;
     position: relative;
-    top: -10px;
+    top: 1px;
     margin-right: 10px;
 }
 
 #numbers {
     display: inline-block;
-    width: 30px;
+    width: 45px;
     height: 30px;
     background-color: rgb(50,5,12);
     border: 2px solid black;
     margin-right: -25px;
     border-radius: 5px;
+    color: #d32f2f;
 }
 
 /* third row in inner circle */
@@ -195,6 +196,9 @@ body {
 	color: #e65100;
 }
 
+#row-1 {
+    margin-top: 10px;
+}
 
 
 
