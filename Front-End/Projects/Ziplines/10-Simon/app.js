@@ -9,6 +9,10 @@ $(document).ready(function () {
 	var blueSound = '';
 	var yellowSound = '';
 
+	//array of colors
+    var colors = ["green", "red", "blue", "yellow"];
+
+
 
 
 
@@ -18,19 +22,24 @@ $(document).ready(function () {
 
 	//test sound play
 	$("#green").click(function() {
-		greenSound.play();
+		//greenSound.play();
+		//test function greenButtonPress
+        greenButtonPress();
 	});
 
 	$("#red").click(function() {
-		redSound.play();
+		//redSound.play();
+        redButtonPress();
 	});
 
 	$("#blue").click(function() {
-		blueSound.play();
+		//blueSound.play();
+        blueButtonPress();
 	});
 
 	$("#yellow").click(function() {
-		yellowSound.play();
+		//yellowSound.play();
+        yellowButtonPress();
 	});
 
 
@@ -70,10 +79,56 @@ $(document).ready(function () {
 
 
 
+    //------------------------------------------------------
+    //function to play sound and change color for each button press
+    function greenButtonPress() {
+
+        $("#green").removeClass("green-normal");
+        $("#green").addClass("green-flash");
+        greenSound.play();
+        setTimeout(() => {
+            $("#green").removeClass("green-flash");
+            $("#green").addClass("green-normal");
+        }, 300);
+    }
 
 
+    //red button
+    function redButtonPress() {
+        $("#red").removeClass("red-normal");
+        $("#red").addClass("red-flash");
+        redSound.play();
+        setTimeout(() => {
+            $("#red").removeClass("red-flash");
+            $("#red").addClass("red-normal");
+        }, 300);
+    }
 
+    //blue button
+    function blueButtonPress() {
+        //blue button sound
 
+        $("#blue").removeClass("blue-normal");
+        $("#blue").addClass("blue-flash");
+        blueSound.play();
+        setTimeout(() => {
+            $("#blue").removeClass("blue-flash");
+            $("#blue").addClass("blue-normal");
+        }, 300);
+    }
+
+    //red button
+    function yellowButtonPress() {
+        $("#yellow").removeClass("yellow-normal");
+        $("#yellow").addClass("yellow-flash");
+        yellowSound.play();
+        setTimeout(() => {
+            $("#yellow").removeClass("yellow-flash");
+            $("#yellow").addClass("yellow-normal");
+        }, 300);
+    }
+
+    //------------------------------------------------------
 
 
     //function to initalize sounds
@@ -96,6 +151,8 @@ $(document).ready(function () {
 		});
 
     }
+
+    //------------------------------------------------------
 
 
 
