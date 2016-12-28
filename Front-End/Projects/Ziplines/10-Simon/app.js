@@ -13,40 +13,18 @@ $(document).ready(function () {
     var colors = ["green", "red", "blue", "yellow"];
 
     var computerSequence = [];
+
     var userSequence = [];
     var turn = '';
     var sequenceMatch = false;
-
     //test notification
-    //`notifyUser();
-
-
+    //notifyUser();
+    var turnCount = 0;
 
 
 	//load sounds
 	loadSounds();
 
-	//test sound play
-	$("#green").click(function() {
-		//greenSound.play();
-		//test function greenButtonPress
-        greenButtonPress();
-	});
-
-	$("#red").click(function() {
-		//redSound.play();
-        redButtonPress();
-	});
-
-	$("#blue").click(function() {
-		//blueSound.play();
-        blueButtonPress();
-	});
-
-	$("#yellow").click(function() {
-		//yellowSound.play();
-        yellowButtonPress();
-	});
 
 
     $('#start').on('change', function() {
@@ -62,54 +40,56 @@ $(document).ready(function () {
 
     //------------------------------------------------------
     function computerTurn() {
+
+        console.log("Inside computer turn function - line 1");
+
         //call nextButton() to start the sequence
         nextButton();
-        //generate through the sequence
-        computerSequence.forEach(function (color) {
-            //check which color is the current one, and press the corresponding button
-            switch (color) {
-                case "blue": blueButtonPress();
-                    break;
-                case "red": redButtonPress();
-                    break;
-                case "green": greenButtonPress();
-                    break;
-                case "yellow": yellowButtonPress();
-                    break;
-                default: console.log("Incorrect value");
-            }
 
-        });
-
-        console.log("Currrent computer sequence: ");
+        console.log("Current computer sequence = ");
         console.log(computerSequence);
 
-        //test userTurn here
-        //setTimeout(userTurn(), 500);
-        userTurn();
 
-        /*if(sequenceMatch) {
-            console.log("Inside self call");
-            setTimeout(computerTurn(), 200);
+        //generate through the sequence
+        computerSequence.forEach(function (color, index) {
+            (function (index) {
+                setTimeout(function () {
+                    switch (color) {
+                        case "blue": blueButtonPress();
+                            break;
+                        case "red": redButtonPress();
+                            break;
+                        case "green": greenButtonPress();
+                            break;
+                        case "yellow": yellowButtonPress();
+                            break;
+                        default: console.log("Incorrect value");
+                    }
+                    //console.log("Waiting");
+                }, 1000 * index);
+            })(index);
 
-        }*/
 
+        });
 
     }
 
 
 
-
     //------------------------------------------------------
     function userTurn() {
-        turn = 'user';
+        console.log("Inside user turn function - line 1");
+        userSequence = [];
 
         //capture the button clicked
         $(".user-click").click(function () {
+            //userSequence = [];
             //fetch ID of current button pressed
             let currColor = this.id;
             console.log(`User clicked on ${currColor}`);
             //add it to user sequence
+            userButtonPress(currColor);
+
             userSequence.push(currColor);
 
             //show user sequence
@@ -125,26 +105,34 @@ $(document).ready(function () {
                 }
                 else {
                     sequenceMatch = true;
+                    //userSequence = [];
                     console.log("Sequence matches");
+                    //setTimeout(computerTurn, 300);
+
                 }
             }
 
-            //console.log(`Clicked on ${this.id}`);
             console.log(`Current value of sequenceMatch is ${sequenceMatch}`);
 
             if(sequenceMatch) {
-                setTimeout(() => {computerTurn()}, 1000);
+                userSequence = [];
+                setTimeout(()=>{computerTurn()}, 1500);
             }
+            //console.log(`Clicked on ${this.id}`);
+
         })
-
-
-       /* console.log("Current user sequence: ");
-        console.log(userSequence);*/
 
 
     }
 
-    //------------------------------------------------------
+
+
+    //-------------------------------------------------------
+
+            //--------UTILITIES--------------
+
+    //-------------------------------------------------------
+
 
     function nextButton() {
         //generate a random number to pick next button to be pressed
@@ -157,25 +145,20 @@ $(document).ready(function () {
         return pickedColor;
     }
 
+    //function for computer to simulate button press without actual clicks on buttons
+    function userButtonPress(color) {
+        console.log(`User's button to be pressed - ${color}`);
+        switch(color) {
+            case "green": greenButtonPress(); break;
+            case "red": redButtonPress(); break;
+            case "blue": blueButtonPress(); break;
+            case "yellow": yellowButtonPress(); break;
+            default: console.log("Incorrect button press");
+        }
+
+    }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //------------------------------------------------------
     function notifyUser() {
         swal({
             title: "Uh-Oh!",
@@ -266,8 +249,9 @@ $(document).ready(function () {
 
     //------------------------------------------------------
     //gameplay
+    //loadSequence();
     computerTurn();
-    //userTurn();
+    userTurn();
 
 
 
