@@ -15,6 +15,7 @@ $(document).ready(function () {
     var computerSequence = [];
     var userSequence = [];
     var turn = '';
+    var sequenceMatch = false;
 
     //test notification
     //`notifyUser();
@@ -83,6 +84,16 @@ $(document).ready(function () {
         console.log("Currrent computer sequence: ");
         console.log(computerSequence);
 
+        //test userTurn here
+        //setTimeout(userTurn(), 500);
+        userTurn();
+
+        /*if(sequenceMatch) {
+            console.log("Inside self call");
+            setTimeout(computerTurn(), 200);
+
+        }*/
+
 
     }
 
@@ -108,14 +119,22 @@ $(document).ready(function () {
             for(let i = 0; i < computerSequence.length; i++) {
                 if(computerSequence[i] !== userSequence[i]) {
                     console.log("Incorrect button press");
-                    notifyUser();
+                    sequenceMatch = false;
+                    //uncomment later
+                    //notifyUser();
                 }
                 else {
+                    sequenceMatch = true;
                     console.log("Sequence matches");
                 }
             }
 
             //console.log(`Clicked on ${this.id}`);
+            console.log(`Current value of sequenceMatch is ${sequenceMatch}`);
+
+            if(sequenceMatch) {
+                setTimeout(() => {computerTurn()}, 1000);
+            }
         })
 
 
@@ -248,7 +267,7 @@ $(document).ready(function () {
     //------------------------------------------------------
     //gameplay
     computerTurn();
-    userTurn();
+    //userTurn();
 
 
 
