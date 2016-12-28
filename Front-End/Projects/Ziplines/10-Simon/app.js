@@ -12,8 +12,10 @@ $(document).ready(function () {
 	//array of colors
     var colors = ["green", "red", "blue", "yellow"];
 
+    var computerSequence = [];
+
     //test notification
-    //notifyUser();
+    //`notifyUser();
 
 
 
@@ -70,6 +72,15 @@ $(document).ready(function () {
     }
 
     //------------------------------------------------------
+
+    function nextButton() {
+        //generate a random number to pick next button to be pressed
+        let randomNumber = Math.floor(Math.random() * colors.length);
+        console.log(`Random number is ${randomNumber}`);
+        let pickedColor = colors[randomNumber];
+        console.log(`Picked color is ${pickedColor}`);
+        return pickedColor;
+    }
 
 
 
