@@ -59,6 +59,24 @@ $(document).ready(function () {
 
     //------------------------------------------------------
     function computerTurn() {
+        //call nextButton() to start the sequence
+        nextButton();
+        //generate through the sequence
+        computerSequence.forEach(function (color) {
+            //check which color is the current one, and press the corresponding button
+            switch (color) {
+                case "blue": blueButtonPress();
+                    break;
+                case "red": redButtonPress();
+                    break;
+                case "green": greenButtonPress();
+                    break;
+                case "yellow": yellowButtonPress();
+                    break;
+                default: console.log("Incorrect value");
+            }
+
+        })
 
 
     }
@@ -79,6 +97,8 @@ $(document).ready(function () {
         console.log(`Random number is ${randomNumber}`);
         let pickedColor = colors[randomNumber];
         console.log(`Picked color is ${pickedColor}`);
+        //add picked color to sequence array
+        computerSequence.push(pickedColor);
         return pickedColor;
     }
 
@@ -190,6 +210,9 @@ $(document).ready(function () {
     }
 
     //------------------------------------------------------
+    //gameplay
+    computerTurn();
+
 
 
 
