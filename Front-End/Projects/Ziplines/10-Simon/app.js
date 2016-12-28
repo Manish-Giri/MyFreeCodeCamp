@@ -12,7 +12,8 @@ $(document).ready(function () {
 	//array of colors
     var colors = ["green", "red", "blue", "yellow"];
 
-
+    //test notification
+    //notifyUser();
 
 
 
@@ -57,6 +58,7 @@ $(document).ready(function () {
     //------------------------------------------------------
     function computerTurn() {
 
+
     }
 
 
@@ -87,7 +89,18 @@ $(document).ready(function () {
 
 
 
-
+    //------------------------------------------------------
+    function notifyUser() {
+        swal({
+            title: "Uh-Oh!",
+            text: "<p style='color: red;'>You messed up.</p>",
+            html: true,
+            timer: 20000,
+            showConfirmButton: true,
+            type: "warning",
+            confirmButtonColor: '#004d40'
+        });
+    }
 
 
 
