@@ -13,6 +13,7 @@ $(document).ready(function () {
     var colors = ["green", "red", "blue", "yellow"];
 
     var computerSequence = [];
+    var turn = '';
 
     //test notification
     //`notifyUser();
@@ -86,6 +87,12 @@ $(document).ready(function () {
 
     //------------------------------------------------------
     function userTurn() {
+        turn = 'user';
+
+        //capture the button clicked
+        $(".user-click").click(function () {
+            console.log(`Clicked on ${this.id}`);
+        })
 
     }
 
@@ -211,7 +218,8 @@ $(document).ready(function () {
 
     //------------------------------------------------------
     //gameplay
-    computerTurn();
+    //computerTurn();
+    userTurn();
 
 
 
