@@ -13,6 +13,7 @@ $(document).ready(function () {
     var colors = ["green", "red", "blue", "yellow"];
 
     var computerSequence = [];
+    var userSequence = [];
     var turn = '';
 
     //test notification
@@ -77,7 +78,10 @@ $(document).ready(function () {
                 default: console.log("Incorrect value");
             }
 
-        })
+        });
+
+        console.log("Currrent computer sequence: ");
+        console.log(computerSequence);
 
 
     }
@@ -91,8 +95,33 @@ $(document).ready(function () {
 
         //capture the button clicked
         $(".user-click").click(function () {
-            console.log(`Clicked on ${this.id}`);
+            //fetch ID of current button pressed
+            let currColor = this.id;
+            console.log(`User clicked on ${currColor}`);
+            //add it to user sequence
+            userSequence.push(currColor);
+
+            //show user sequence
+            console.log("Current user sequence: ");
+            console.log(userSequence);
+            //check if it matches the position for the same button in computer sequence
+            for(let i = 0; i < computerSequence.length; i++) {
+                if(computerSequence[i] !== userSequence[i]) {
+                    console.log("Incorrect button press");
+                    notifyUser();
+                }
+                else {
+                    console.log("Sequence matches");
+                }
+            }
+
+            //console.log(`Clicked on ${this.id}`);
         })
+
+
+       /* console.log("Current user sequence: ");
+        console.log(userSequence);*/
+
 
     }
 
@@ -218,7 +247,7 @@ $(document).ready(function () {
 
     //------------------------------------------------------
     //gameplay
-    //computerTurn();
+    computerTurn();
     userTurn();
 
 
