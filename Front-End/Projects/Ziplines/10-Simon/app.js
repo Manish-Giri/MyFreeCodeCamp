@@ -9,6 +9,8 @@ $(document).ready(function () {
 	var blueSound = '';
 	var yellowSound = '';
 
+	var $numbers = $("#numbers");
+
 	//array of colors
     var colors = ["green", "red", "blue", "yellow"];
 
@@ -19,8 +21,8 @@ $(document).ready(function () {
     var sequenceMatch = false;
     //test notification
     //notifyUser();
-    var turnCount = 0;
-
+    var turnCount = 1;
+    $numbers.html(turnCount);
 
 	//load sounds
 	loadSounds();
@@ -42,6 +44,7 @@ $(document).ready(function () {
     function computerTurn() {
 
         console.log("Inside computer turn function - line 1");
+
 
         //call nextButton() to start the sequence
         nextButton();
@@ -115,8 +118,14 @@ $(document).ready(function () {
             console.log(`Current value of sequenceMatch is ${sequenceMatch}`);
 
             if(sequenceMatch) {
+                turnCount++;
+
                 userSequence = [];
-                setTimeout(()=>{computerTurn()}, 1500);
+                setTimeout(()=>{
+                    //update score
+                    $numbers.html(turnCount);
+                    computerTurn()
+                }, 1500);
             }
             //console.log(`Clicked on ${this.id}`);
 
