@@ -154,6 +154,13 @@ body {
     color: #3e2723;
 }
 
+#name span i {
+    font-size: 18px;
+    font-style: normal;
+    position: relative;
+    top: -5px;
+}
+
 #count {
     font-size: 17px;
 }
