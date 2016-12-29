@@ -18,20 +18,26 @@ $(document).ready(function () {
     var colors = ["green", "red", "blue", "yellow"];
 
     var computerSequence = [];
-    //use if user gets sequence wrong
-    var isUserSequenceWrong = false;
-
     var userSequence = [];
-    var turn = '';
+
+    var compSequenceLength = computerSequence.length;
+    var userSequenceLength = userSequence.length;
+
+    //-----flag variables-----
     var sequenceMatch = false;
+    var currentUserColor = 0;
+    var iterCount = 1;
+
     //test notification
     //notifyUser();
+
+    //for displaying count in box
     var turnCount = 1;
     $numbers.html(turnCount);
 
+
     //load sounds
     loadSounds();
-
 
 
     $('#start').on('change', function() {
@@ -44,7 +50,6 @@ $(document).ready(function () {
 
 
 
-
     //------------------------------------------------------
     function computerTurn(lastSeq = false) {
 
@@ -52,7 +57,7 @@ $(document).ready(function () {
 
         //test - play last sequence
 
-        if(!lastSeq) {
+        if(lastSeq) {
             //if default parameter is not true, then add new button to sequence
             nextButton();
         }
@@ -94,71 +99,93 @@ $(document).ready(function () {
     function userTurn() {
         console.log("Inside user turn function - line 1");
         userSequence = [];
+        let incorrectSequence = false;
+        let userColorNum = 0;
 
         //capture the button clicked
         $(".user-click").click(function () {
+
+            userColorNum++;
+
+            sequenceMatch = false;
             //userSequence = [];
             //fetch ID of current button pressed
             let currColor = this.id;
             console.log(`User clicked on ${currColor}`);
-            //add it to user sequence
             userButtonPress(currColor);
+            incorrectSequence = false;
 
-            //add only if sequence is correct?
+            // //show user sequence
+            // console.log("Current user sequence: ");
+            // console.log(userSequence);
+            
+            //-------------------------------------------
+            //add it to user sequence
+
             userSequence.push(currColor);
-
             //show user sequence
             console.log("Current user sequence: ");
             console.log(userSequence);
-            //check if it matches the position for the same button in computer sequence
-            for(let i = 0; i < computerSequence.length; i++) {
-                if(computerSequence[i] !== userSequence[i]) {
-                    console.log("Incorrect button press");
-                    sequenceMatch = false;
-                    //console.log(`Incorrect sequence`);
-                    //uncomment later
-                    //notifyUser();
-                    userSequence.pop();
 
-                    //if sequence doesn't match, begin next round with last sequence
-                    //lastComputerSequence = Array.from(computerSequence);
-                    isUserSequenceWrong = true;
-                    setTimeout(() => {
-                        computerTurn(isUserSequenceWrong);
-                    }, 1500);
+            //test lodash
+            if(_.isEqual(userSequence, computerSequence)) {
+                console.log("Inside lodash");
+                console.log("Current computer sequence = ");
+                console.log(computerSequence);
+                console.log("Current user sequence: ");
+                console.log(userSequence);
+                userSequence = [];
+                sequenceMatch = true;
 
+            }
+            else {
 
+                if(userSequence.length <= computerSequence.length) {
+                    console.log("Inside else");
+                    if(userSequence[userColorNum-1] !== computerSequence[userColorNum-1]) {
+                        console.log(`Wrong color pressed---`);
+                        console.log(`Comp color was ${computerSequence[userColorNum]} but user color is ${userSequence[userColorNum]} `);
+                        userSequence.pop();
+                        incorrectSequence = true;
+                        userColorNum = 0;
 
-                }
-                else {
-                    isUserSequenceWrong = false;
-                    sequenceMatch = true;
-                    userSequence.push(currColor);
-                    //userSequence = [];
-                    console.log("Sequence matches");
-                    //setTimeout(computerTurn, 300);
+                    }
 
                 }
+
+
+
+                // userSequence.pop();
+                // incorrectSequence = true;
+            }
+            //userColorNum++;
+
+
+            //if sequence is incorrect, repeat last sequence
+            if(incorrectSequence) {
+                incorrectSequence = false;
+                userSequence = [];
+                setTimeout(() => {
+                    computerTurn();
+                }, 1500);
             }
 
-            console.log(`Current value of sequenceMatch is ${sequenceMatch}`);
-
-            //if sequence matches, begin next round of game, with new color added
-
             if(sequenceMatch) {
+                console.log("Inside sequence match if");
+                userSequence = [];
                 turnCount++;
+                sequenceMatch = false;
+
+                userColorNum = 0;
 
                 //userSequence = [];
                 setTimeout(()=>{
+                    iterCount++;
                     //update score
                     $numbers.html(turnCount);
-                    computerTurn()
+                    computerTurn(true);
                 }, 1500);
             }
-            //console.log(`Clicked on ${this.id}`);
-
-            //if sequence doesn't match, begin next round with same sequence
-
 
         })
 
@@ -179,7 +206,7 @@ $(document).ready(function () {
         let randomNumber = Math.floor(Math.random() * colors.length);
         console.log(`Random number is ${randomNumber}`);
         let pickedColor = colors[randomNumber];
-        console.log(`Picked color is ${pickedColor}`);
+        //console.log(`Picked color is ${pickedColor}`);
         //add picked color to sequence array
         computerSequence.push(pickedColor);
         return pickedColor;
@@ -290,7 +317,7 @@ $(document).ready(function () {
     //------------------------------------------------------
     //gameplay
     //loadSequence();
-    computerTurn();
+    computerTurn(true);
     userTurn();
 
 
