@@ -20,14 +20,6 @@ body {
 
 }
 
-/*h1 {*/
-    /*font-family: 'Cormorant Garamond', serif;*/
-    /*font-size: 36px;*/
-    /*font-style: italic;*/
-    /*margin: 5px auto 20px auto;*/
-
-
-/*}*/
 
 /* the nested circles */
 #main {
@@ -181,6 +173,7 @@ body {
     margin-right: -25px;
     border-radius: 5px;
     color: #d32f2f;
+    padding-top: 1px;
 }
 
 /* third row in inner circle */
@@ -208,30 +201,26 @@ body {
 }
 
 
-/* colors that will be applied to the div on button press "flash" */
-.green-flash {
+/* colors that will be applied to the div on button press "lighter" */
+.green-lighter {
 	background-color: #4caf50;
 	border: 2px solid #4caf50;  
 }
 
-.red-flash {
+.red-lighter {
 	background-color: #f44336;
 	border: 2px solid #f44336;
 }
 
-.blue-flash {
+.blue-lighter {
 	background-color: #2196f3;
 	border: 2px solid #2196f3;
 }
 
-.yellow-flash {
+.yellow-lighter {
 	background-color: #ffeb3b;
 	border: 2px solid #ffeb3b; 
 }
-
-
-
-
 
 
 /* sticky footer */

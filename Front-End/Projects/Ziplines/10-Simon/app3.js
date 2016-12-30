@@ -221,6 +221,10 @@ $(document).ready(function () {
                     computerSequence = [];
                     userSequence = [];
                     setTimeout(() => {
+                        //begins a new sequence, so set count to 0
+                        //notifyIncorrectButton();
+                        turnCount = 0;
+                        $numbers.html(turnCount);
                         computerTurn(true);
                     }, 1500);
                 }
@@ -291,7 +295,7 @@ $(document).ready(function () {
 
     }
 
-
+    //---currently unused-----
     function notifyIncorrectButton() {
         swal({
             title: "Uh-Oh!",
@@ -399,12 +403,6 @@ $(document).ready(function () {
         });
 
     }
-
-    //------------------------------------------------------
-    //gameplay
-    //loadSequence();
-    // computerTurn(true);
-    // userTurn();
 
 
 });
