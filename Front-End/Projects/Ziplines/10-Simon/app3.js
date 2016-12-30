@@ -216,12 +216,25 @@ $(document).ready(function () {
 
             //if sequence is incorrect, repeat last sequence
             if(incorrectSequence) {
-                incorrectSequence = false;
-                userSequence = [];
-                setTimeout(() => {
-                    computerTurn();
-                }, 1500);
+                if(isStrictChecked) {
+                    incorrectSequence = false;
+                    computerSequence = [];
+                    userSequence = [];
+                    setTimeout(() => {
+                        computerTurn(true);
+                    }, 1500);
+                }
+                else {
+                    incorrectSequence = false;
+                    userSequence = [];
+                    setTimeout(() => {
+                        computerTurn();
+                    }, 1500);
+                }
+
             }
+
+            //if last sequence was correct, begin next sequence with a new button included
 
             if(sequenceMatch) {
                 console.log("Inside sequence match if");
