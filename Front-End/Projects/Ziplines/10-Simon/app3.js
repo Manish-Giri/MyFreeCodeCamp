@@ -47,6 +47,9 @@ $(document).ready(function () {
             computerTurn(true);
             userTurn();
         }
+        else {
+            reset();
+        }
         //console.log($(this).is(":checked"));
     });
     //console.log("outside");
@@ -240,6 +243,20 @@ $(document).ready(function () {
             type: "warning",
             confirmButtonColor: '#004d40'
         });
+    }
+
+
+    function reset() {
+        console.log("Reset called");
+        computerSequence = [];
+        console.log(`Computer sequence = `);
+        console.log(computerSequence);
+        //console.log("");
+        userSequence = [];
+        console.log(`User sequence = `);
+        console.log(userSequence);
+        turnCount = 0;
+        $numbers.html(turnCount);
     }
 
 
