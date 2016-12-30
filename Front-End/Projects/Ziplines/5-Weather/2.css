@@ -1,0 +1,67 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:700);
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+@import url('https://fonts.googleapis.com/css?family=Lemonada|Playfair+Display');
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+header {
+    font-family: 'Roboto Slab', serif;
+    margin: 20px auto;
+}
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+}
+#weather {
+    padding: 10px;
+}
+#row-1 {
+    margin: 30px auto;
+}
+
+
+#temp {
+    height: 50px;
+}
+
+#row-2 {
+    margin: 30px auto;
+}
+
+#row-2 div {
+    background-color: #DFDEDD;
+    height: 60px;
+    margin-right: 20px;
+    padding: 10px;
+    text-align: center;
+}
+
+
+
+/* STICKY FOOTER */
+
+#wrapper {
+    min-height: 100%;
+
+    /* Equal to height of footer */
+    /* But also accounting for potential margin-bottom of last child */
+    margin-bottom: -50px;
+}
+.footer, .push {
+    height: 50px;
+}
+
+footer {
+    background-color: black;
+    line-height: 50px;
+    text-align: center;
+}
+
+footer span {
+    /*font-family: 'Pacifico', cursive;*/
+    font-family: 'Lemonada', cursive;
+    color: floralwhite;
+    font-size: 11px;
+}
