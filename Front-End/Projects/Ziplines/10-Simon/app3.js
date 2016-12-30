@@ -136,6 +136,11 @@ $(document).ready(function () {
 
             //test lodash
             if(_.isEqual(userSequence, computerSequence)) {
+                if(turnCount === 20) {
+                    notifyGameWin();
+                    reset();
+                    return;
+                }
                 console.log("Inside lodash");
                 console.log("Current computer sequence = ");
                 console.log(computerSequence);
@@ -233,7 +238,7 @@ $(document).ready(function () {
     }
 
 
-    function notifyUser() {
+    function notifyIncorrectButton() {
         swal({
             title: "Uh-Oh!",
             text: "<p style='color: red;'>You messed up.</p>",
@@ -244,6 +249,12 @@ $(document).ready(function () {
             confirmButtonColor: '#004d40'
         });
     }
+    
+    function notifyGameWin() {
+        swal("Good job!", "You won the game!", "success");
+    }
+
+
 
 
     function reset() {
