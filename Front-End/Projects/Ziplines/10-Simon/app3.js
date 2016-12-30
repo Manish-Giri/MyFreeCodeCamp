@@ -27,6 +27,7 @@ $(document).ready(function () {
     //-----flag variables-----
     var sequenceMatch = false;
     var iterCount = 1;
+    let isStrictChecked = false;
 
     //test notification
     //notifyUser();
@@ -53,6 +54,18 @@ $(document).ready(function () {
         //console.log($(this).is(":checked"));
     });
     //console.log("outside");
+
+    $("#strict").on('change', function () {
+       if($(this).is(":checked")) {
+           console.log(`Strict checked`);
+           isStrictChecked = true;
+
+       }
+       else {
+           console.log(`Strict not checked`);
+           isStrictChecked = false;
+       }
+    });
 
 
 
@@ -121,7 +134,7 @@ $(document).ready(function () {
                     //console.log("Waiting");
                 }, speedValue * index);
             })(index);
-            
+
 
 
         });
@@ -271,7 +284,7 @@ $(document).ready(function () {
             title: "Uh-Oh!",
             text: "<p style='color: red;'>You messed up.</p>",
             html: true,
-            timer: 20000,
+            timer: 6000,
             showConfirmButton: true,
             type: "warning",
             confirmButtonColor: '#004d40'
@@ -306,10 +319,10 @@ $(document).ready(function () {
     function greenButtonPress() {
 
         $("#green").removeClass("green-normal");
-        $("#green").addClass("green-flash");
+        $("#green").addClass("green-lighter");
         greenSound.play();
         setTimeout(() => {
-            $("#green").removeClass("green-flash");
+            $("#green").removeClass("green-lighter");
             $("#green").addClass("green-normal");
         }, 300);
     }
@@ -318,10 +331,10 @@ $(document).ready(function () {
     //red button
     function redButtonPress() {
         $("#red").removeClass("red-normal");
-        $("#red").addClass("red-flash");
+        $("#red").addClass("red-lighter");
         redSound.play();
         setTimeout(() => {
-            $("#red").removeClass("red-flash");
+            $("#red").removeClass("red-lighter");
             $("#red").addClass("red-normal");
         }, 300);
     }
@@ -331,10 +344,10 @@ $(document).ready(function () {
         //blue button sound
 
         $("#blue").removeClass("blue-normal");
-        $("#blue").addClass("blue-flash");
+        $("#blue").addClass("blue-lighter");
         blueSound.play();
         setTimeout(() => {
-            $("#blue").removeClass("blue-flash");
+            $("#blue").removeClass("blue-lighter");
             $("#blue").addClass("blue-normal");
         }, 300);
     }
@@ -342,10 +355,10 @@ $(document).ready(function () {
     //red button
     function yellowButtonPress() {
         $("#yellow").removeClass("yellow-normal");
-        $("#yellow").addClass("yellow-flash");
+        $("#yellow").addClass("yellow-lighter");
         yellowSound.play();
         setTimeout(() => {
-            $("#yellow").removeClass("yellow-flash");
+            $("#yellow").removeClass("yellow-lighter");
             $("#yellow").addClass("yellow-normal");
         }, 300);
     }
