@@ -68,12 +68,39 @@ $(document).ready(function () {
             turnCount++;
             nextButton();
         }
+
         $numbers.html(turnCount);
         //call nextButton() to start the sequence
         //nextButton();
 
+
         console.log("Current computer sequence = ");
         console.log(computerSequence);
+
+        //feature - decrease time between button presses as game progresses
+        let speedValue = 1000;
+
+        //when turnCount is between 1 and 5, speedValue = 1000
+        //when turnCount is between 5 and 10, speedValue = 700
+        //when turnCount is between 10 and 15, speedValue = 500
+        //when turnCount is between 15 and 20, speedValue = 300
+
+        if(turnCount >= 0 && turnCount < 5) {
+            speedValue = 1000;
+        }
+
+        else if(turnCount >= 5 && turnCount < 10) {
+            speedValue = 700;
+        }
+
+        else if(turnCount >= 10 && turnCount < 15) {
+            speedValue = 500;
+        }
+
+        else if(turnCount >= 15 && turnCount <= 20) {
+            speedValue = 300;
+        }
+
 
 
         //generate through the sequence
@@ -92,8 +119,9 @@ $(document).ready(function () {
                         default: console.log("Incorrect value");
                     }
                     //console.log("Waiting");
-                }, 1000 * index);
+                }, speedValue * index);
             })(index);
+            
 
 
         });
