@@ -370,7 +370,21 @@ $('document').ready(function() {
         console.log($("input:radio[id='option1']").is(':checked'));
         console.log("-------------------------------------------------");
 
-        $(".target").change(function() {
+        $("#unit").change(function () {
+            console.log("Inside metric/imp");
+            if($(this).is(":checked")) {
+                console.log("Checked");
+                metric = false;
+                getWeather();
+            }
+            else {
+                metric = true;
+                console.log("Not checked");
+                getWeather();
+            }
+        })
+
+        /*$(".target").change(function() {
             console.log("Handler for .change() called.");
             if ($("input[id='option1']").is(':checked')) {
                 console.log("Inside metric");
@@ -383,7 +397,7 @@ $('document').ready(function() {
                 getWeather();
             }
 
-        });
+        });*/
 
     });
 });
