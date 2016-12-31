@@ -13,6 +13,7 @@ header {
 h1 {
     text-align: center;
     text-transform: uppercase;
+    font-size: 36px;
 }
 #weather {
     padding: 10px;
@@ -20,7 +21,12 @@ h1 {
 #row-1 {
     margin: 30px auto;
 }
-
+#picture {
+    background-color: #DFDEDD;
+    opacity: 0.6;
+    margin: 0 auto;
+    text-align: center;
+}
 
 #temp {
     height: 50px;
@@ -36,8 +42,20 @@ h1 {
     margin-right: 20px;
     padding: 10px;
     text-align: center;
+    opacity: 0.6;
+}
+#row-3 {
+    margin-top: 50px;
 }
 
+#weather {
+    margin-top: 5%;
+    background-color: transparent;
+}
+
+#picture {
+    font-size: 26px;
+}
 
 
 /* STICKY FOOTER */
@@ -54,7 +72,7 @@ h1 {
 }
 
 footer {
-    background-color: black;
+    background: linear-gradient(to right,black, #444);
     line-height: 50px;
     text-align: center;
 }
