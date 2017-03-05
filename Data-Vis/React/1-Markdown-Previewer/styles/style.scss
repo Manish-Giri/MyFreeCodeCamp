@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Playball|Playfair+Display');
-@import url('https://fonts.googleapis.com/css?family=Kaushan+Script|Lobster');
+@import url('https://fonts.googleapis.com/css?family=Courgette|Lobster|Open+Sans');
+
 html {
   height: 100%;
 }
@@ -32,6 +32,7 @@ body {
 
 .display {
   padding: 10px;
+  font-family: 'Open Sans', sans-serif;
 
   #entry {
     height: 450px;
@@ -48,8 +49,9 @@ body {
 
 
 footer {
-  font-family: 'Kaushan Script', cursive;
+  font-family: 'Courgette', cursive;
   text-align: center;
+  padding-top: 20px;
   span {
     margin-top: 10px;
     color: whitesmoke;
