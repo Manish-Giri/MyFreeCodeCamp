@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Playball|Playfair+Display');
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script|Lobster');
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+}
+.content {
+  flex: 1;
+}
+
+
+
+.header {
+  padding: 10px;
+  color: whitesmoke;
+  h1 {
+    font-family: 'Lobster', cursive;
+
+
+    margin-bottom: 20px;
+  }
+
+  text-align: center;
+
+}
+
+.display {
+  padding: 10px;
+
+  #entry {
+    height: 450px;
+  }
+
+  #rendered {
+    background-color: white;
+    height: 450px;
+  }
+}
+
+
+
+footer {
+  font-family: 'Kaushan Script', cursive;
+  text-align: center;
+  span {
+    margin-top: 10px;
+    color: whitesmoke;
+    font-size: 16px;
+    position: relative;
+    bottom: 0;
+    i {
+      color: red;
+    }
+  }
+}
