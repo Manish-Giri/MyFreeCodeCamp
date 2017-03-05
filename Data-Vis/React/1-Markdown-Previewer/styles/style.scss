@@ -35,11 +35,14 @@ body {
 
   #entry {
     height: 450px;
+    white-space: pre;
+
   }
 
   #rendered {
     background-color: white;
     height: 450px;
+    overflow-y: scroll;
   }
 }
 
@@ -50,7 +53,7 @@ footer {
   span {
     margin-top: 10px;
     color: whitesmoke;
-    font-size: 16px;
+    font-size: 14px;
     position: relative;
     bottom: 0;
     i {
