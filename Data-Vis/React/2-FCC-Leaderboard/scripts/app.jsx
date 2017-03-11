@@ -28,6 +28,22 @@ class LeaderBoardTableCategory extends React.Component {
         )
     }
 }
+
+class LeaderBoardTableRow extends React.Component {
+    render() {
+        let entries = this.props.entries;
+        let rows = [];
+        entries.map((entry, index) => {
+            let pos = index + 1;
+           rows.push("<tr><td>" + pos + "</td><td>" + entry.username + "</td><td>" + entry.recent + "</td><td>"+ entry.alltime +"</td></tr>");
+        });
+        return (
+            <tbody>
+            {rows}
+            </tbody>
+        )
+    }
+}
 class DummyTable extends React.Component {
     render() {
         return (
@@ -35,15 +51,21 @@ class DummyTable extends React.Component {
             <div className="table-holder">
                 <table className="table table-bordered">
                     <thead>
+                    <LeaderBoardTableCategory/>
+                    {/*
                     <tr>
                         <th className="cat">#</th>
                         <th className="cat">Camper Name</th>
                         <th className="cat">Points in past 30 days</th>
                         <th className="cat">All time points</th>
                     </tr>
+                    */}
                     </thead>
 
                     <tbody>
+                    <LeaderBoardTableRow entries={this.props.entries}/>
+
+                    {/*
                     <tr>
                         <td>Alvin</td>
                         <td>Eclair</td>
@@ -59,6 +81,7 @@ class DummyTable extends React.Component {
                         <td>Lollipop</td>
                         <td>$7.00</td>
                     </tr>
+                    */}
                     </tbody>
                 </table>
 
@@ -101,7 +124,7 @@ class LeaderBoardTable extends React.Component {
                     <TableControls/>
                 </div>
 
-                <DummyTable/>
+                <DummyTable entries={this.props.results}/>
             </div>
         )
     }
@@ -143,7 +166,7 @@ class FilterableLeaderBoard extends React.Component {
 
         return (
             <div className="main-container light-green darken-4">
-                <LeaderBoardTable />
+                <LeaderBoardTable results={this.state.thirtyDayBoard}/>
             </div>
         )
     }
