@@ -14,7 +14,7 @@ $white: #FFF;
     STICKY FOOTER
   ---------------------------
 
- */
+*/
 
 html {
   height: 100%;
@@ -33,7 +33,14 @@ body {
 }
 
 
- // page header
+
+/*
+  ---------------------------
+    PAGE HEADER
+  ---------------------------
+
+*/
+
 @font-face {
   font-family: saxMono;
   src: url(assets/saxMono/saxMono.ttf);
@@ -43,7 +50,7 @@ body {
   color: $white;
   width: 100%;
   //background-image: linear-gradient(rgb(0,100,0), rgb(3,95,29));
-  @include background-lin-grad();
+  @include background-lin-grad;
   text-align: center;
 
   a {
@@ -62,7 +69,18 @@ body {
 
 }
 
+#root {
+  background-color: #333;
+}
 
+.main-container {
+  width: 90%;
+  text-align: center;
+  margin: 0 auto;
+  padding: 30px;
+  color: $white;
+
+}
 
 
 
