@@ -1,4 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=VT323');
+
+
+$white: #FFF;
+
+@mixin background-lin-grad() {
+  background-image: linear-gradient(rgb(0,100,0), rgb(3,95,29));
+}
+
 
 /*
   ---------------------------
@@ -6,8 +15,6 @@
   ---------------------------
 
  */
-
-$white: #FFF;
 
 html {
   height: 100%;
@@ -35,7 +42,8 @@ body {
 .header {
   color: $white;
   width: 100%;
-  background-image: linear-gradient(rgb(0,100,0), rgb(3,95,29));
+  //background-image: linear-gradient(rgb(0,100,0), rgb(3,95,29));
+  @include background-lin-grad();
   text-align: center;
 
   a {
@@ -50,6 +58,28 @@ body {
         }
      }
 
+  }
+
+}
+
+
+
+
+
+
+
+footer {
+  text-align: center;
+  @include background-lin-grad;
+  color: whitesmoke;
+  font-family: 'VT323', monospace;
+
+  span {
+    font-size: 18px;
+    i {
+      color: red;
+      margin: -5px;
+    }
   }
 
 }
