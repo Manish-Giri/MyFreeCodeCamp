@@ -31,16 +31,24 @@ class LeaderBoardTableCategory extends React.Component {
 
 class LeaderBoardTableRow extends React.Component {
     render() {
-        let entries = this.props.entries;
+        let rank = this.props.rank;
+        let name = this.props.name;
+        let recent = this.props.recent;
+        let alltime = this.props.alltime;
         let rows = [];
-        entries.map((entry, index) => {
-            let pos = index + 1;
+        /*
+          entries.map((entry, index) => {
+           let pos = index + 1;
            rows.push("<tr><td>" + pos + "</td><td>" + entry.username + "</td><td>" + entry.recent + "</td><td>"+ entry.alltime +"</td></tr>");
-        });
+        });*/
+
         return (
-            <tbody>
-            {rows}
-            </tbody>
+            <tr>
+                <td>{rank}</td>
+                <td>{name}</td>
+                <td>{recent}</td>
+                <td>{alltime}</td>
+            </tr>
         )
     }
 }
@@ -74,6 +82,13 @@ class TableControls extends React.Component {
 class LeaderBoardTable extends React.Component {
 
     render() {
+        let results = this.props.results;
+        let userList = results.map((entry, index) => {
+            let pos = index+1;
+            return (
+                <LeaderBoardTableRow rank={pos} name={entry.username} recent={entry.recent} alltime={entry.alltime} />
+            )
+        });
         return (
             <div>
                 <div className="tb-top">
@@ -87,8 +102,9 @@ class LeaderBoardTable extends React.Component {
                         </thead>
 
                         <tbody>
+                        {userList}
 
-
+                        {/*
                          <tr>
                          <td>Alvin</td>
                          <td>Eclair</td>
@@ -107,6 +123,7 @@ class LeaderBoardTable extends React.Component {
                          <td>$7.00</td>
                              <td>$0.87</td>
                          </tr>
+                         */}
 
 
                         </tbody>
