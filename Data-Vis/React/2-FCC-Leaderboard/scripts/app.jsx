@@ -44,51 +44,7 @@ class LeaderBoardTableRow extends React.Component {
         )
     }
 }
-class DummyTable extends React.Component {
-    render() {
-        return (
 
-            <div className="table-holder">
-                <table className="table table-bordered">
-                    <thead>
-                    <LeaderBoardTableCategory/>
-                    {/*
-                    <tr>
-                        <th className="cat">#</th>
-                        <th className="cat">Camper Name</th>
-                        <th className="cat">Points in past 30 days</th>
-                        <th className="cat">All time points</th>
-                    </tr>
-                    */}
-                    </thead>
-
-                    <tbody>
-                    <LeaderBoardTableRow entries={this.props.entries}/>
-
-                    {/*
-                    <tr>
-                        <td>Alvin</td>
-                        <td>Eclair</td>
-                        <td>$0.87</td>
-                    </tr>
-                    <tr>
-                        <td>Alan</td>
-                        <td>Jellybean</td>
-                        <td>$3.76</td>
-                    </tr>
-                    <tr>
-                        <td>Jonathan</td>
-                        <td>Lollipop</td>
-                        <td>$7.00</td>
-                    </tr>
-                    */}
-                    </tbody>
-                </table>
-
-            </div>
-        );
-    }
-}
 
 class TableHeader extends React.Component {
     render() {
@@ -114,6 +70,7 @@ class TableControls extends React.Component {
         );
     }
 }
+
 class LeaderBoardTable extends React.Component {
 
     render() {
@@ -123,8 +80,40 @@ class LeaderBoardTable extends React.Component {
                     <TableHeader />
                     <TableControls/>
                 </div>
+                <div className="table-holder">
+                    <table className="table table-bordered">
+                        <thead>
+                        <LeaderBoardTableCategory/>
+                        </thead>
 
-                <DummyTable entries={this.props.results}/>
+                        <tbody>
+
+
+                         <tr>
+                         <td>Alvin</td>
+                         <td>Eclair</td>
+                         <td>$0.87</td>
+                             <td>$0.87</td>
+                         </tr>
+                         <tr>
+                         <td>Alan</td>
+                         <td>Jellybean</td>
+                         <td>$3.76</td>
+                             <td>$0.87</td>
+                         </tr>
+                         <tr>
+                         <td>Jonathan</td>
+                         <td>Lollipop</td>
+                         <td>$7.00</td>
+                             <td>$0.87</td>
+                         </tr>
+
+
+                        </tbody>
+                    </table>
+
+                </div>
+
             </div>
         )
     }
