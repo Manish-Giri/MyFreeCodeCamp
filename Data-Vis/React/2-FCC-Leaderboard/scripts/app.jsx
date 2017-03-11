@@ -1,7 +1,6 @@
 //the app will have these components -
 /**
  * --- FilterableLeaderBoard
- * -------- PageHeader
  * -------- LeaderBoardTable
  * -------------- TableHeader
  * -------------- TableControls
@@ -9,15 +8,6 @@
  * -------------- LeaderBoardTableRow
  */
 
-
-class PageHeader extends React.Component {
-    render() {
-        return (
-            <div className="header">
-            </div>
-        )
-    }
-}
 
 
 class FilterableLeaderBoard extends React.Component {
@@ -38,7 +28,6 @@ class FilterableLeaderBoard extends React.Component {
 
         return (
             <div>
-                <PageHeader />
             </div>
         )
     }
