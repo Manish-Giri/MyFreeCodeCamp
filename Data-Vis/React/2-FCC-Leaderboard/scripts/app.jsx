@@ -1,7 +1,7 @@
 //the app will have these components -
 /**
  * --- FilterableLeaderBoard
- * -------- Header
+ * -------- PageHeader
  * -------- LeaderBoardTable
  * -------------- TableHeader
  * -------------- TableControls
@@ -9,10 +9,38 @@
  * -------------- LeaderBoardTableRow
  */
 
+
+class PageHeader extends React.Component {
+    render() {
+        return (
+            <div className="header">
+            </div>
+        )
+    }
+}
+
+
 class FilterableLeaderBoard extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {showAllTimePoints: false};
+        this.state = {
+            showAllTimePoints: false,
+            thirtyDayBoard: [],
+            allTimeBoard: []
+
+        };
+    }
+
+    render() {
+
+
+
+
+        return (
+            <div>
+                <PageHeader />
+            </div>
+        )
     }
 }
 
