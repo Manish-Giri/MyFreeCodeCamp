@@ -79,13 +79,35 @@ body {
   margin: 0 auto;
   padding: 30px;
   color: $white;
+  font-family: 'Lato', sans-serif;
 
 }
 
+.tb-head {
+  //border-bottom: 4px solid $white;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
 
+.switch {
+  margin: 20px;
+  label{
+    color: $white;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
 
+}
 
+.tb-top {
+  //border-bottom: 4px solid $white;
+  margin-bottom: 5px;
+}
 
+tr:hover {
+  background-color: #333333;
+}
 footer {
   text-align: center;
   @include background-lin-grad;

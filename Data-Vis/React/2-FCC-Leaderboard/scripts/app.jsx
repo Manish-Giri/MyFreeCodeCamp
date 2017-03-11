@@ -1,26 +1,45 @@
 //the app will have these components -
 /**
  * --- FilterableLeaderBoard
- * -------- LeaderBoardTable
- * -------------- TableHeader
- * -------------- TableControls
+ * -------- LeaderBoardTable - done
+ * -------------- TableHeader - done
+ * -------------- TableControls - done
  * -------------- LeaderBoardTableCategory
  * -------------- LeaderBoardTableRow
  */
 
 
+class LeaderBoardTableCategory extends React.Component {
+    render() {
+        const headings = {
+            rank : "#",
+            name : "Camper User-Name",
+            thirty: "Points in past 30 days",
+            all: "All time points"
+        };
 
-class LeaderBoardTable extends React.Component {
-
+        return (
+            <tr>
+                <td>{headings.rank}</td>
+                <td>{headings.name}</td>
+                <td>{headings.thirty}</td>
+                <td>{headings.all}</td>
+            </tr>
+        )
+    }
+}
+class DummyTable extends React.Component {
     render() {
         return (
+
             <div className="table-holder">
-                <table className="bordered">
+                <table className="table table-bordered">
                     <thead>
                     <tr>
-                        <th data-field="id">Name</th>
-                        <th data-field="name">Item Name</th>
-                        <th data-field="price">Item Price</th>
+                        <th className="cat">#</th>
+                        <th className="cat">Camper Name</th>
+                        <th className="cat">Points in past 30 days</th>
+                        <th className="cat">All time points</th>
                     </tr>
                     </thead>
 
@@ -44,6 +63,46 @@ class LeaderBoardTable extends React.Component {
                 </table>
 
             </div>
+        );
+    }
+}
+
+class TableHeader extends React.Component {
+    render() {
+        return (
+            <div className="tb-head">
+                LEADERBOARD
+            </div>
+        )
+    }
+}
+
+class TableControls extends React.Component {
+    render() {
+        return (
+            <div className="switch">
+                <label>
+                    Thirty Days
+                    <input type="checkbox" />
+                        <span className="lever"></span>
+                        All Time
+                </label>
+            </div>
+        );
+    }
+}
+class LeaderBoardTable extends React.Component {
+
+    render() {
+        return (
+            <div>
+                <div className="tb-top">
+                    <TableHeader />
+                    <TableControls/>
+                </div>
+
+                <DummyTable/>
+            </div>
         )
     }
 
@@ -62,9 +121,24 @@ class FilterableLeaderBoard extends React.Component {
         };
     }
 
+    componentDidMount() {
+         axios.get("https://fcctop100.herokuapp.com/api/fccusers/top/recent").then(res => {
+             const thirty = res.data;
+             console.log(thirty);
+             this.setState({thirtyDayBoard: thirty});
+
+
+         });
+
+         axios.get("https://fcctop100.herokuapp.com/api/fccusers/top/alltime").then(res => {
+             const allTime = res.data;
+             console.log(allTime);
+             this.setState({allTimeBoard: allTime});
+         });
+
+    }
+
     render() {
-
-
 
 
         return (
