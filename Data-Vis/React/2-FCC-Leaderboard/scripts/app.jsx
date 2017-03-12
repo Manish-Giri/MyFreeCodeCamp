@@ -13,7 +13,7 @@ class LeaderBoardTableCategory extends React.Component {
     render() {
         const headings = {
             rank : "#",
-            name : "Camper User-Name",
+            name : "Camper Name",
             thirty: "Points in past 30 days",
             all: "All time points"
         };
@@ -39,7 +39,6 @@ class LeaderBoardTableRow extends React.Component {
         let name = this.props.name;
         let recent = this.props.recent;
         let alltime = this.props.alltime;
-        let rows = [];
         let rowStyle = {
             lineheight: 50
         };
@@ -160,7 +159,7 @@ class FilterableLeaderBoard extends React.Component {
          axios.get("https://fcctop100.herokuapp.com/api/fccusers/top/recent").then(res => {
              const thirty = res.data;
              console.log(thirty);
-             this.setState({thirtyDayBoard: thirty});
+             this.setState({thirtyDayBoard: thirty, resultsToShow: thirty});
 
 
          });
@@ -192,29 +191,6 @@ class FilterableLeaderBoard extends React.Component {
         )
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ReactDOM.render(<FilterableLeaderBoard />, document.getElementById("root"));
