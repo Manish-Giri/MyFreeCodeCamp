@@ -17,9 +17,12 @@ class LeaderBoardTableCategory extends React.Component {
             thirty: "Points in past 30 days",
             all: "All time points"
         };
+        let rowStyle = {
+            height: 40
+        };
 
         return (
-            <tr>
+            <tr style={rowStyle}>
                 <td>{headings.rank}</td>
                 <td>{headings.name}</td>
                 <td>{headings.thirty}</td>
@@ -32,10 +35,21 @@ class LeaderBoardTableCategory extends React.Component {
 class LeaderBoardTableRow extends React.Component {
     render() {
         let rank = this.props.rank;
+        let image = this.props.image;
         let name = this.props.name;
         let recent = this.props.recent;
         let alltime = this.props.alltime;
         let rows = [];
+        let rowStyle = {
+            lineheight: 50
+        };
+        let imageStyles = {
+            width: 50,
+            height: 50,
+            marginRight: 40,
+            border: "2px solid #33691e",
+            borderRadius: "100%"
+        };
         /*
           entries.map((entry, index) => {
            let pos = index + 1;
@@ -43,9 +57,9 @@ class LeaderBoardTableRow extends React.Component {
         });*/
 
         return (
-            <tr>
+            <tr style={rowStyle}>
                 <td>{rank}</td>
-                <td>{name}</td>
+                <td><img src={image} alt={name} title={name} style={imageStyles}/> {name}</td>
                 <td>{recent}</td>
                 <td>{alltime}</td>
             </tr>
@@ -65,12 +79,23 @@ class TableHeader extends React.Component {
 }
 
 class TableControls extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(e) {
+        let isChecked = e.target.checked;
+        this.props.onInputChange(isChecked);
+    }
+
     render() {
+        let isChecked = this.props.checked;
         return (
             <div className="switch">
                 <label>
                     Thirty Days
-                    <input type="checkbox" />
+                    <input type="checkbox" checked={isChecked} ref="choice" onChange={this.handleChange}/>
                         <span className="lever"></span>
                         All Time
                 </label>
@@ -86,14 +111,14 @@ class LeaderBoardTable extends React.Component {
         let userList = results.map((entry, index) => {
             let pos = index+1;
             return (
-                <LeaderBoardTableRow rank={pos} name={entry.username} recent={entry.recent} alltime={entry.alltime} />
+                <LeaderBoardTableRow key={pos} rank={pos} image={entry.img} name={entry.username} recent={entry.recent} alltime={entry.alltime} />
             )
         });
         return (
             <div>
                 <div className="tb-top">
                     <TableHeader />
-                    <TableControls/>
+                    <TableControls checked={this.props.checked} onInputChange={this.props.onInputChange}/>
                 </div>
                 <div className="table-holder">
                     <table className="table table-bordered">
@@ -103,27 +128,6 @@ class LeaderBoardTable extends React.Component {
 
                         <tbody>
                         {userList}
-
-                        {/*
-                         <tr>
-                         <td>Alvin</td>
-                         <td>Eclair</td>
-                         <td>$0.87</td>
-                             <td>$0.87</td>
-                         </tr>
-                         <tr>
-                         <td>Alan</td>
-                         <td>Jellybean</td>
-                         <td>$3.76</td>
-                             <td>$0.87</td>
-                         </tr>
-                         <tr>
-                         <td>Jonathan</td>
-                         <td>Lollipop</td>
-                         <td>$7.00</td>
-                             <td>$0.87</td>
-                         </tr>
-                         */}
 
 
                         </tbody>
@@ -142,10 +146,12 @@ class LeaderBoardTable extends React.Component {
 class FilterableLeaderBoard extends React.Component {
     constructor(props) {
         super(props);
+        this.handleInputChange = this.handleInputChange.bind(this);
         this.state = {
-            showAllTimePoints: false,
+            isChecked: false,
             thirtyDayBoard: [],
-            allTimeBoard: []
+            allTimeBoard: [],
+            resultsToShow: [],
 
         };
     }
@@ -167,12 +173,21 @@ class FilterableLeaderBoard extends React.Component {
 
     }
 
+    handleInputChange(value) {
+        if(value) {
+            this.setState({isChecked:true, resultsToShow: this.state.allTimeBoard});
+        }
+        else {
+            this.setState({isChecked:false, resultsToShow: this.state.thirtyDayBoard});
+        }
+    }
+
     render() {
 
 
         return (
             <div className="main-container light-green darken-4">
-                <LeaderBoardTable results={this.state.thirtyDayBoard}/>
+                <LeaderBoardTable results={this.state.resultsToShow} checked={this.state.isChecked} onInputChange={this.handleInputChange}/>
             </div>
         )
     }
