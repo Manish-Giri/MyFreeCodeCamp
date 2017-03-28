@@ -1,0 +1,112 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display:400,700,700italic);
+@import url(https://fonts.googleapis.com/css?family=Exo:700italic);
+@import url(https://fonts.googleapis.com/css?family=Iceland);
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+@import url(https://fonts.googleapis.com/css?family=Mirza);
+
+body {
+    background: url('twinkle_twinkle/twinkle_twinkle_@2X.png');
+    padding-top: 70px;
+}
+
+.navbar-inverse {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+}
+
+#nav-head {
+    font-family: 'Iceland', cursive;
+    color: lightblue;
+    padding: 5px;
+    text-align: center;
+    margin: 1% auto;
+    font-size: 4.5em;
+}
+
+#main {
+    margin-top: 2%;
+}
+
+
+#channels {
+    padding: 1%;
+    font-family: 'Lobster', cursive;
+}
+
+#results-div {
+    padding: 10px;
+}
+
+#results-div div {
+    border-bottom: 2px solid black;
+    padding: 5px;
+}
+
+/*
+#results-div h2 {
+    font-family: 'Lato', sans-serif;
+    color: azure;
+    text-align: center;
+    font-weight: 900;
+}*/
+
+#results-div h3 {
+    font-family: 'Open Sans', sans-serif;
+    color: burlywood;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.online-game-name h2, .online-channel-status h2 {
+    font-family: 'Exo', sans-serif !important;
+    font-weight: 700 !important;
+    font-style: italic !important;
+    color: lightgreen! important;
+    /*
+    text-align: left !important;
+    margin-left: 20% !important;
+    */
+}
+
+#results-div h2 {
+    font-family: 'Lato', sans-serif;
+    color: azure;
+    text-align: center;
+    font-weight: 900;
+    transition: color 1.2s ease;
+    transition: font-size 1.2s ease;
+    /*transition: letter-spacing 1.2s ease;*/
+}
+#results-div h2:hover{
+    color: #e3ecbf !important;
+    font-size:40px !important;
+    /*letter-spacing: 2px !important;*/
+}
+
+footer {
+    display: none;
+    color: lightblue;
+    font-size: 1.2em;
+    margin: 10px;
+    padding: 15px;
+}
+
+footer p {
+    margin: 5px auto;
+    text-align: center;
+    font-family: 'Mirza', cursive;
+    margin-top: 0px;
+
+}
+
+/* use media queries to override bootstrap xs styles for screens lesser than 710 px */
+
+@media screen and (max-width: 709px) {
+    .ultra-xs {
+        width: 100%;
+        text-align: center;
+        margin-left: 0;
+    }
+}
