@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css?family=Lato");
+@import url("https://fonts.googleapis.com/css?family=VT323");
+/*
+  ---------------------------
+    STICKY FOOTER
+  ---------------------------
+
+*/
+html {
+  height: 100%; }
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column; }
+
+.content {
+  flex: 1;
+  padding: 20px; }
+
+.footer {
+  padding: 20px; }
+
+/*
+  ---------------------------
+    PAGE HEADER
+  ---------------------------
+
+*/
+@font-face {
+  font-family: saxMono;
+  src: url(assets/saxMono/saxMono.ttf); }
+.header {
+  color: #FFF;
+  width: 100%;
+  background-image: linear-gradient(darkgreen, #035f1d);
+  text-align: center; }
+  .header a {
+    text-decoration: none;
+    color: #FFF;
+    font-family: saxMono, monospace; }
+    .header a h1 {
+      font-size: 42px; }
+      .header a h1 i {
+        margin-left: 20px; }
+
+#root {
+  background-color: #333; }
+
+.main-container {
+  width: 90%;
+  text-align: center;
+  margin: 0 auto;
+  padding: 30px;
+  color: #FFF;
+  font-family: 'Lato', sans-serif; }
+
+.tb-head {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  font-size: 24px; }
+
+.switch {
+  margin: 20px; }
+  .switch label {
+    color: #FFF;
+    font-size: 14px;
+    text-transform: uppercase; }
+
+.tb-top {
+  margin-bottom: 5px; }
+
+tr:hover {
+  background-color: #333333; }
+
+footer {
+  text-align: center;
+  background-image: linear-gradient(darkgreen, #035f1d);
+  color: whitesmoke;
+  font-family: 'VT323', monospace; }
+  footer span {
+    font-size: 18px; }
+    footer span i {
+      color: red;
+      margin: -5px; }
+
+/*# sourceMappingURL=style.css.map */
