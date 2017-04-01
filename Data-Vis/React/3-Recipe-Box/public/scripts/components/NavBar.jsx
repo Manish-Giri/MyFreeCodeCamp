@@ -1,11 +1,17 @@
 var React = require('react');
 class NavBar extends React.Component{
     render() {
+
+        let brandStyle = {
+                fontFamily: "'Spirax', cursive"
+        };
+
+
         return (
             <div className="navbar-fixed">
                 <nav>
                     <div className="nav-wrapper">
-                        <a href="#!" className="brand-logo center">Recipe-Box</a>
+                        <a href="#!" className="brand-logo center" style={brandStyle}>Recipe-Box</a>
 
                     </div>
                     <div className="nav-content">
