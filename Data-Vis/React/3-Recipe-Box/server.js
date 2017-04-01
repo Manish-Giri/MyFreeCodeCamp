@@ -2,6 +2,7 @@
  * Created by manishgiri on 3/31/17.
  */
 var express = require('express');
+var path = require('path');
 
 var app = express();
 app.use(express.static('public'));

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Spirax");
+@import url("https://fonts.googleapis.com/css?family=Macondo");
 /*
   ---------------------------
     STICKY FOOTER
@@ -10,12 +12,30 @@ html {
 body {
   min-height: 100%;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  background: url(../assets/recipe-bg.jpg); }
 
 .content {
   flex: 1; }
 
 .footer {
-  padding: 20px; }
+  padding: 20px;
+  padding-bottom: 5px; }
+
+/*
+  ---------------------------
+    FOOTER
+  ---------------------------
+
+*/
+footer {
+  text-align: center;
+  color: whitesmoke;
+  font-family: 'Macondo', cursive; }
+  footer span {
+    font-size: 16px; }
+    footer span i {
+      color: red;
+      margin: -2px; }
 
 /*# sourceMappingURL=style.css.map */
