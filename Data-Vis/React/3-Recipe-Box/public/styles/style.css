@@ -1,24 +1,21 @@
-
 /*
   ---------------------------
     STICKY FOOTER
   ---------------------------
 
 */
-
 html {
-  height: 100%;
-}
+  height: 100%; }
+
 body {
   min-height: 100%;
   display: flex;
-  flex-direction: column;
-}
-.content {
-  flex: 1;
-  
-}
-.footer {
-  padding: 20px;
-}
+  flex-direction: column; }
 
+.content {
+  flex: 1; }
+
+.footer {
+  padding: 20px; }
+
+/*# sourceMappingURL=style.css.map */
