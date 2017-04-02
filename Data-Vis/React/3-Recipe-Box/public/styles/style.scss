@@ -35,10 +35,10 @@ body {
 
 .box{
   margin: 50px auto;
-  width: 300px;
+  width: 350px;
   height: 50px;
   background: #343d46;
-  opacity:0.7;
+  opacity:0.85;
 
   /*
        container-1 styles
@@ -55,7 +55,7 @@ body {
      */
 
     input#search{
-        width: 300px;
+        width: 350px;
         height: 50px;
         background: #2b303b;
         border: none;
@@ -71,22 +71,28 @@ body {
         outline:none;
         background: #ffffff;
       }
+
+      -webkit-transition: background .55s ease;
+      -moz-transition: background .55s ease;
+      -ms-transition: background .55s ease;
+      -o-transition: background .55s ease;
+      transition: background .55s ease;
     }
 
     input#search::-webkit-input-placeholder {
-      color: #65737e;
+      color: white;
     }
 
     input#search:-moz-placeholder { /* Firefox 18- */
-      color: #65737e;
+      color: white;
     }
 
     input#search::-moz-placeholder {  /* Firefox 19+ */
-      color: #65737e;
+      color: white;
     }
 
     input#search:-ms-input-placeholder {
-      color: #65737e;
+      color: white;
     }
 
     /*
