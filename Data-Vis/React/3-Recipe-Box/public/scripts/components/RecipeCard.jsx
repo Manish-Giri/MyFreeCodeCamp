@@ -3,20 +3,25 @@ var React = require('react');
 let styles = {
   cardContent: {
     title: {
-        color: "#212121",
+        color: "#4e342e",
         fontFamily:"'Playfair Display SC', serif",
         fontSize: 34,
-        marginTop: -5
+        marginTop: -10,
+        marginBottom: 10
+    },
+
+    tags: {
+      marginBottom: -5
     },
 
     deleteButton: {
-
+        marginTop: -5
     }
   },
 
   cardReveal: {
       header: {
-          color: "#5d4037",
+          color: "#212121",
           fontFamily:"'Playfair Display SC', serif",
           padding: 5,
           margin: 10
@@ -45,7 +50,18 @@ class RecipeCard extends React.Component {
                     <span className="card-title activator grey-text text-darken-2"><i className="material-icons brown-text text-darken-4 right">more_vert</i></span>
                     <h1 style={styles.cardContent.title}>Sphagetti</h1>
                     {/*<p><a href="#">This is a link</a></p>*/}
-                    <a className="btn-floating btn-large waves-effect waves-light red right"><i className="material-icons right">delete</i></a>
+                    <div id="tags" style={styles.cardContent.tags}>
+                        <div className="chip">
+                            Italian
+                            <i className="close material-icons">close</i>
+                        </div>
+                        <div className="chip">
+                            Spicy
+                            <i className="close material-icons">close</i>
+                        </div>
+
+                    </div>
+                    <a className="btn-floating btn-large pulse waves-effect waves-light red right" style={styles.cardContent.deleteButton}><i className="material-icons right">delete</i></a>
                 </div>
                 <div className="card-reveal">
                     <span className="card-title grey-text text-darken-4"><i className="material-icons right">close</i></span>
@@ -58,7 +74,7 @@ class RecipeCard extends React.Component {
                         <a href="#!" className="collection-item"><span className="badge">1</span>Alvin</a>
 
                     </div>
-                    <a className="btn-floating btn-large waves-effect waves-light cyan darken-4 right"><i className="material-icons right">mode_edit</i></a>
+                    <a className="btn-floating btn-large waves-effect waves-light cyan darken-4 right pulse"><i className="material-icons right">mode_edit</i></a>
                 </div>
             </div>
         )
