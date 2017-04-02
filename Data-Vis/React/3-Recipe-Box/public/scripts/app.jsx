@@ -1,5 +1,5 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var NavBar = require('./components/NavBar');
+var RecipeBox = require('./components/RecipeBoxApp');
 
-ReactDOM.render(<NavBar/>, document.getElementById('root'));
+ReactDOM.render(<RecipeBox/>, document.getElementById('root'));
