@@ -3,12 +3,12 @@ var React = require('react');
 class RecipeCard extends React.Component {
     render() {
         return (
-            <div className="card">
+            <div className="card small">
                 <div className="card-image waves-effect waves-block waves-light">
-                    <img className="activator" src="images/office.jpg"/>
+                    <img className="activator" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQTr2pKKrAkoMKtvigT1fxPq1Ifc0mT40HVHou5gOE4tFoJKr7"/>
                 </div>
                 <div className="card-content">
-                    <span className="card-title activator grey-text text-darken-4">Card Title<i className="material-icons right">more_vert</i></span>
+                    <span className="card-title activator grey-text text-darken-2">Card Title<i className="material-icons orange-text text-darken-4 right">more_vert</i></span>
                     <p><a href="#">This is a link</a></p>
                 </div>
                 <div className="card-reveal">

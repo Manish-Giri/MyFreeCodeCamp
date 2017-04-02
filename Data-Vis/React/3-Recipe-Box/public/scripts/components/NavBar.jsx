@@ -9,11 +9,6 @@ class NavBar extends React.Component{
             }
         };
 
-        let brandStyle = {
-                fontFamily: "'Spirax', cursive"
-        };
-
-
         return (
             <div className="navbar-fixed">
                 <nav>

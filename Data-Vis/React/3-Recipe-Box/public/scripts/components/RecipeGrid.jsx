@@ -11,9 +11,9 @@ class RecipeGrid extends React.Component {
         return (
             <div className="container">
                 <div className="row">
-                    <div className="col s12 m4 l4"><p><RecipeCard/></p></div>
-                    <div className="col s12 m4 l4"><p><RecipeCard/></p></div>
-                    <div className="col s12 m4 l4"><p><RecipeCard/></p></div>
+                    <div className="col s12 m4 l4"><RecipeCard/></div>
+                    <div className="col s12 m4 l4"><RecipeCard/></div>
+                    <div className="col s12 m4 l4"><RecipeCard/></div>
                 </div>
             </div>
         )
