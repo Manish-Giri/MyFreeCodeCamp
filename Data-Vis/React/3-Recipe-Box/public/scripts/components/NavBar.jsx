@@ -3,9 +3,18 @@ class NavBar extends React.Component{
     render() {
 
         let style = {
-            brandStyle:  {
+            brand:  {
                 fontFamily: "'Spirax', cursive",
                 fontSize: "34px"
+            },
+
+            modal: {
+
+                header: {
+                    fontFamily: "'Macondo', cursive",
+                    color: "#00897b"
+                }
+
             }
         };
 
@@ -14,7 +23,7 @@ class NavBar extends React.Component{
                 <div className="navbar-fixed">
                     <nav>
                         <div className="nav-wrapper">
-                            <a href="#!" className="brand-logo center" style={style.brandStyle}>Recipe-Box</a>
+                            <a href="#!" className="brand-logo center" style={style.brand}>Recipe-Box</a>
 
                         </div>
                         <div className="nav-content">
@@ -27,11 +36,35 @@ class NavBar extends React.Component{
                 </div>
                 <div id="modal1" className="modal">
                     <div className="modal-content">
-                        <h4>Modal Header</h4>
-                        <p>A bunch of text</p>
+                        <h2 style={style.modal.header}>Add A New Recipe</h2>
+                        <div className="row">
+                            <form className="col s12">
+                                <div className="row">
+                                    <div className="input-field col s6">
+                                        <input id="input_text" type="text" data-length="10" />
+                                            <label htmlFor="input_text">Name</label>
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <div className="input-field col s12">
+                                        <textarea id="textarea1" className="materialize-textarea" data-length="120"></textarea>
+                                        <label htmlFor="textarea1">Ingredients (separate with commas)</label>
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <div className="input-field col s12">
+                                        <textarea id="textarea2" className="materialize-textarea" data-length="30"></textarea>
+                                        <label htmlFor="textarea2">Tags (separate with commas)</label>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        {/*<h4>Modal Header</h4>*/}
+                        {/*<p>A bunch of text</p>*/}
                     </div>
                     <div className="modal-footer">
-                        <a href="#!" className="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                        <a href="#!" className="modal-action modal-close waves-effect waves-green btn btn-floating btn-large green darken-4 pulse"><i className="material-icons">done</i></a>
                     </div>
                 </div>
             </div>
