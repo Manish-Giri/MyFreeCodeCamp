@@ -14,13 +14,28 @@ var NavBar = require('./NavBar');
 var SearchBar = require('./SearchBar');
 var RecipeCollection = require('./RecipeCollection');
 
+
+
+
 class RecipeBoxApp extends React.Component {
+    constructor(props) {
+        super(props);
+        var localData = localStorage.getItem("recipes");
+        var recipes = (localData === "null") ? [] : JSON.parse(localData);
+        this.state = {
+            recipes: recipes,
+            userSearch: ""
+
+        };
+
+    }
+
     render() {
         return (
             <div>
                 <NavBar/>
                 <SearchBar/>
-                <RecipeCollection/>
+                <RecipeCollection recipes={this.state.recipes}/>
 
             </div>
         );

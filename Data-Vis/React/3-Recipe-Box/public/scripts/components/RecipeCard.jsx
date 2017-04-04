@@ -61,7 +61,7 @@ class RecipeCard extends React.Component {
                         </div>
 
                     </div>
-                    <a className="btn-floating btn-large pulse waves-effect waves-light red right" style={styles.cardContent.deleteButton}><i className="material-icons right">delete</i></a>
+                    <a className="btn-floating pulse waves-effect waves-light red right" style={styles.cardContent.deleteButton}><i className="material-icons right">delete</i></a>
                 </div>
                 <div className="card-reveal">
                     <span className="card-title grey-text text-darken-4"><i className="material-icons right">close</i></span>
