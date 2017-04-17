@@ -20,6 +20,11 @@ var recipes = [
         name: "Indian Eggplant - Bhurtha", ingredients: "1 eggplant, 2 tablespoons vegetable oil, 1/2 teaspoon cumin seeds, 1 medium onion sliced, 1/2 teaspoon ground turmeric",
         tags: "indian, entree, prep-moderate"
 
+    },
+    {
+        name: "Indian Eggplant - Bhurtha", ingredients: "1 eggplant, 2 tablespoons vegetable oil, 1/2 teaspoon cumin seeds, 1 medium onion sliced, 1/2 teaspoon ground turmeric",
+        tags: "indian, entree, prep-moderate"
+
     }
 
 ];
