@@ -37,8 +37,31 @@ class RecipeBoxApp extends React.Component {
             userSearch: ""
 
         };
+        this.handleRecipeNameInput = this.handleRecipeNameInput.bind(this);
+        this.handleRecipeIngredientsInput = this.handleRecipeIngredientsInput.bind(this);
+        this.handleRecipeTagsInput = this.handleRecipeTagsInput.bind(this);
+        this.newRecipe = {};
+
 
     }
+
+    //event handlers
+    // for NavBar
+    handleRecipeNameInput(recipeName) {
+        this.newRecipe.name = recipeName;
+    }
+
+    handleRecipeIngredientsInput(recipeIngredients) {
+        let ings = recipeIngredients.split(",");
+        this.newRecipe.ingredients = ings;
+    }
+
+    handleRecipeTagsInput(recipeTags) {
+        let tags = recipeTags.split(",");
+        this.newRecipe.tags = tags;
+    }
+
+
 
     render() {
         return (
