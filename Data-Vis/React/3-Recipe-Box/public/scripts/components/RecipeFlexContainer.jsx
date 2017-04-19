@@ -1,5 +1,6 @@
 var React = require('react');
 var RecipeCard = require('./RecipeCard');
+
 class RecipeFlexContainer extends React.Component {
     render() {
         var gridRecipes = this.props.recipes;
