@@ -78,7 +78,15 @@ class RecipeBoxApp extends React.Component {
     render() {
         return (
             <div>
-                <NavBar/>
+                <NavBar onRecipeNameChange={this.handleRecipeNameInput}
+                        onRecipeIngredientsChange={this.handleRecipeIngredientsInput}
+                        onRecipeTagsChange={this.handleRecipeTagsInput}
+                        onSubmit={this.handleSubmit}
+                        filterNameText={this.newRecipeObj.name}
+                        filterIngredientsText={this.newRecipeObj.ingredients}
+                        filterTagsText={this.newRecipeObj.tags}
+
+                />
                 <SearchBar/>
                 <RecipeFlexContainer recipes={this.state.recipes}/>
 
