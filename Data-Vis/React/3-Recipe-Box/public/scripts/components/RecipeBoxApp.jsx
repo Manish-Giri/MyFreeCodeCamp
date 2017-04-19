@@ -37,10 +37,14 @@ class RecipeBoxApp extends React.Component {
             userSearch: ""
 
         };
+        this.newRecipeObj = {};
+
+        //bind event handlers
         this.handleRecipeNameInput = this.handleRecipeNameInput.bind(this);
         this.handleRecipeIngredientsInput = this.handleRecipeIngredientsInput.bind(this);
         this.handleRecipeTagsInput = this.handleRecipeTagsInput.bind(this);
-        this.newRecipe = {};
+        this.handleSubmit = this.handleSubmit.bind(this);
+
 
 
     }
@@ -48,17 +52,25 @@ class RecipeBoxApp extends React.Component {
     //event handlers
     // for NavBar
     handleRecipeNameInput(recipeName) {
-        this.newRecipe.name = recipeName;
+        this.newRecipeObj.name = recipeName;
     }
 
     handleRecipeIngredientsInput(recipeIngredients) {
-        let ings = recipeIngredients.split(",");
-        this.newRecipe.ingredients = ings;
+        //let ings = recipeIngredients.split(",");
+        this.newRecipeObj.ingredients = recipeIngredients;
     }
 
     handleRecipeTagsInput(recipeTags) {
-        let tags = recipeTags.split(",");
-        this.newRecipe.tags = tags;
+        //let tags = recipeTags.split(",");
+        this.newRecipeObj.tags = recipeTags;
+    }
+
+    handleSubmit() {
+        let newRecipeArr = [this.newRecipeObj];
+        let updatedRecipes = this.state.recipes.concat(newRecipeArr);
+        //update local storage
+        localStorage.setItem("recipes", JSON.stringify(updatedRecipes));
+        this.setState({recipes: updatedRecipes});
     }
 
 
