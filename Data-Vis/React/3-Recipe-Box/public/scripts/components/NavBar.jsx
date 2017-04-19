@@ -1,5 +1,25 @@
 var React = require('react');
 class NavBar extends React.Component{
+
+    constructor(props) {
+        super(props);
+        this.handleRecipeNameChange = this.handleRecipeNameChange.bind(this);
+        this.handleRecipeIngredientsChange = this.handleRecipeIngredientsChange.bind(this);
+        this.handleRecipeTagsChange = this.handleRecipeTagsChange.bind(this);
+    }
+
+    handleRecipeNameChange(e) {
+        this.props.onRecipeNameChange(e.target.value);
+    }
+
+    handleRecipeIngredientsChange(e) {
+        this.props.onRecipeIngredientsChange(e.target.value);
+    }
+
+    handleRecipeTagsChange(e) {
+        this.props.onRecipeTagsChange(e.target.value);
+    }
+
     render() {
 
         let style = {
@@ -41,19 +61,19 @@ class NavBar extends React.Component{
                             <form className="col s12">
                                 <div className="row">
                                     <div className="input-field col s6">
-                                        <input id="input_text" type="text" data-length="10" />
+                                        <input id="input_text" type="text" data-length="10" value={this.props.filterName}/>
                                             <label htmlFor="input_text">Name</label>
                                     </div>
                                 </div>
                                 <div className="row">
                                     <div className="input-field col s12">
-                                        <textarea id="textarea1" className="materialize-textarea" data-length="120"></textarea>
+                                        <textarea id="textarea1" className="materialize-textarea" data-length="120" value={this.props.filterIngredientsText}></textarea>
                                         <label htmlFor="textarea1">Ingredients (separate with commas)</label>
                                     </div>
                                 </div>
                                 <div className="row">
                                     <div className="input-field col s12">
-                                        <textarea id="textarea2" className="materialize-textarea" data-length="30"></textarea>
+                                        <textarea id="textarea2" className="materialize-textarea" data-length="30" value={this.props.filterTagsText}></textarea>
                                         <label htmlFor="textarea2">Tags (separate with commas)</label>
                                     </div>
                                 </div>
