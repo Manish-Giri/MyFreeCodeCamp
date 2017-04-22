@@ -5,7 +5,7 @@ let styles = {
     title: {
         color: "#4e342e",
         fontFamily:"'Playfair Display SC', serif",
-        fontSize: 34,
+        fontSize: 26,
         marginTop: -10,
         marginBottom: 10
     },
@@ -41,6 +41,14 @@ let styles = {
 
 class RecipeCard extends React.Component {
     render() {
+        var recipeName = this.props.recipe.name;
+        var ingredients = this.props.recipe.ingredients.split(",").map(function (ingredient, index) {
+            return <a href="#!" className="collection-item" key={index}>{ingredient}</a>
+        });
+        var tags = this.props.recipe.tags.split(",").map(function (tag, index) {
+            return  <div className="chip" key={index}>{tag}<i className="close material-icons">close</i></div>
+        });
+
         return (
             <div className="card medium hoverable">
                 <div className="card-image waves-effect waves-block waves-light">
@@ -48,31 +56,19 @@ class RecipeCard extends React.Component {
                 </div>
                 <div className="card-content">
                     <span className="card-title activator grey-text text-darken-2"><i className="material-icons brown-text text-darken-4 right">more_vert</i></span>
-                    <h1 style={styles.cardContent.title}>Sphagetti</h1>
+                    <h1 style={styles.cardContent.title}>{recipeName}</h1>
                     {/*<p><a href="#">This is a link</a></p>*/}
                     <div id="tags" style={styles.cardContent.tags}>
-                        <div className="chip">
-                            Italian
-                            <i className="close material-icons">close</i>
-                        </div>
-                        <div className="chip">
-                            Spicy
-                            <i className="close material-icons">close</i>
-                        </div>
-
+                        {tags}
                     </div>
                     <a className="btn-floating pulse waves-effect waves-light red right" style={styles.cardContent.deleteButton}><i className="material-icons right">delete</i></a>
                 </div>
                 <div className="card-reveal">
                     <span className="card-title grey-text text-darken-4"><i className="material-icons right">close</i></span>
-                    <h4 style={styles.cardReveal.header}>Sphagetti</h4>
+                    <h4 style={styles.cardReveal.header}>{recipeName}</h4>
                     {/*<h5>Ingredients</h5>*/}
                     <div className="collection">
-                        <a href="#!" className="collection-item"><span className="badge">1</span>Alvin</a>
-                        <a href="#!" className="collection-item active"><span className="badge">1</span>Alvin</a>
-                        <a href="#!" className="collection-item"><span className="badge">1</span>Alvin</a>
-                        <a href="#!" className="collection-item"><span className="badge">1</span>Alvin</a>
-
+                        {ingredients}
                     </div>
                     <a className="btn-floating btn-large waves-effect waves-light cyan darken-4 right pulse"><i className="material-icons right">mode_edit</i></a>
                 </div>

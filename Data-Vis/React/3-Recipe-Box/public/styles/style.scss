@@ -18,6 +18,8 @@ body {
   min-height: 100%;
   display: flex;
   flex-direction: column;
+  //background: black;
+
   background: url(../assets/recipe-bg.jpg);
   background-size: cover;
 }
@@ -115,8 +117,25 @@ body {
 }
 
 
+/*
+     FLEX-CONTAINER
+ */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+
+}
 
 
+
+
+/*
+     FLEX ITEMS - Recipe card
+ */
+.recipe-item {
+  padding: 10px;
+  width: 33.3333%;
+}
 
 
 
