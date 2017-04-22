@@ -73,6 +73,10 @@ class RecipeBoxApp extends React.Component {
         this.setState({recipes: updatedRecipes});
     }
 
+    handleDelete() {
+
+    }
+
 
 
     render() {
