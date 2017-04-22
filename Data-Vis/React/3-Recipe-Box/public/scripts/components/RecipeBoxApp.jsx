@@ -44,6 +44,7 @@ class RecipeBoxApp extends React.Component {
         this.handleRecipeIngredientsInput = this.handleRecipeIngredientsInput.bind(this);
         this.handleRecipeTagsInput = this.handleRecipeTagsInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
 
 
 
@@ -73,8 +74,13 @@ class RecipeBoxApp extends React.Component {
         this.setState({recipes: updatedRecipes});
     }
 
-    handleDelete() {
-
+    handleDelete(key) {
+        //use filter to filter out the deleted recipe
+        let editedRecipes = this.state.recipes.filter((element, index) => index !== key);
+        //set localstorage to editedRecipes
+        localStorage.setItem("recipes", JSON.stringify(editedRecipes));
+        //call this.setState to set recipes to editedRecipes
+        this.setState({recipes: editedRecipes});
     }
 
 
@@ -92,7 +98,7 @@ class RecipeBoxApp extends React.Component {
 
                 />
                 <SearchBar/>
-                <RecipeFlexContainer recipes={this.state.recipes}/>
+                <RecipeFlexContainer recipes={this.state.recipes} onRecipeDelete={this.handleDelete}/>
 
             </div>
         );

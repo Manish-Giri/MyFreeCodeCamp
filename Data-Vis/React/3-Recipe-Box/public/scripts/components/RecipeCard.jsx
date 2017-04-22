@@ -42,17 +42,18 @@ let styles = {
 class RecipeCard extends React.Component {
     constructor(props) {
         super(props);
-        this.onRecipeDelete = this.onRecipeDelete.bind(this);
+        this.handleRecipeDelete = this.handleRecipeDelete.bind(this);
 
     }
 
-    onRecipeDelete(e) {
+    handleRecipeDelete(e) {
         console.log(e.target.value);
         console.log(this.props.index);
+        //call onDelete event handler with number of recipecard to be deleted
+        this.props.onDelete(this.props.index);
     }
 
     render() {
-        var recipeKey = this.props.key;
         var recipeName = this.props.recipe.name;
         var ingredients = this.props.recipe.ingredients.split(",").map(function (ingredient, index) {
             return <a href="#!" className="collection-item" key={index}>{ingredient}</a>
@@ -73,7 +74,7 @@ class RecipeCard extends React.Component {
                     <div id="tags" style={styles.cardContent.tags}>
                         {tags}
                     </div>
-                    <a className="btn-floating pulse waves-effect waves-light red right" style={styles.cardContent.deleteButton} onClick={this.onRecipeDelete}><i className="material-icons right">delete</i></a>
+                    <a className="btn-floating pulse waves-effect waves-light red right" style={styles.cardContent.deleteButton} onClick={this.handleRecipeDelete}><i className="material-icons right">delete</i></a>
                 </div>
                 <div className="card-reveal">
                     <span className="card-title grey-text text-darken-4"><i className="material-icons right">close</i></span>
