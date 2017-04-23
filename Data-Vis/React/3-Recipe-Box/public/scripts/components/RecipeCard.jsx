@@ -98,24 +98,24 @@ class RecipeCard extends React.Component {
                 </div>
                 <div id="modal2" className="modal">
                     <div className="modal-content">
-                        <h2 style={styles.modal.header}>Add A New Recipe</h2>
+                        <h2 style={styles.modal.header}>Edit Recipe</h2>
                         <div className="row">
                             <form className="col s12">
                                 <div className="row">
                                     <div className="input-field col s6">
-                                        <input id="input_text" type="text" data-length="10" value={this.props.filterName} onChange={this.handleRecipeNameChange}/>
+                                        <input id="input_text" type="text" data-length="10" value={recipeName} onChange={this.handleRecipeNameChange}/>
                                         <label htmlFor="input_text">Name</label>
                                     </div>
                                 </div>
                                 <div className="row">
                                     <div className="input-field col s12">
-                                        <textarea id="textarea1" className="materialize-textarea" data-length="120" value={this.props.filterIngredientsText} onChange={this.handleRecipeIngredientsChange}></textarea>
+                                        <textarea id="textarea1" className="materialize-textarea" data-length="120" value={this.props.recipe.ingredients} onChange={this.handleRecipeIngredientsChange}></textarea>
                                         <label htmlFor="textarea1">Ingredients (separate with commas)</label>
                                     </div>
                                 </div>
                                 <div className="row">
                                     <div className="input-field col s12">
-                                        <textarea id="textarea2" className="materialize-textarea" data-length="30" value={this.props.filterTagsText} onChange={this.handleRecipeTagsChange}></textarea>
+                                        <textarea id="textarea2" className="materialize-textarea" data-length="30" value={this.props.recipe.tags} onChange={this.handleRecipeTagsChange}></textarea>
                                         <label htmlFor="textarea2">Tags (separate with commas)</label>
                                     </div>
                                 </div>
