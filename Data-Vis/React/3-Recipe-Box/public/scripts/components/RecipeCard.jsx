@@ -52,11 +52,50 @@ class RecipeCard extends React.Component {
     constructor(props) {
         super(props);
         this.handleRecipeDelete = this.handleRecipeDelete.bind(this);
+        this.handleRecipeNameChange = this.handleRecipeNameChange.bind(this);
+        this.handleRecipeIngredientsChange = this.handleRecipeIngredientsChange.bind(this);
+        this.handleRecipeTagsChange = this.handleRecipeTagsChange.bind(this);
+        this.handleEditRecipeSubmit = this.handleEditRecipeSubmit.bind(this);
+        this.handleRecipeEditSelection = this.handleRecipeEditSelection.bind(this);
+
+        //test key of index
+        //this.cardKey = this.props.index;
+
+
+    }
+
+    handleRecipeNameChange(e) {
+        this.props.onRecNameEdit(e.target.value);
+
+    }
+
+    handleRecipeIngredientsChange(e) {
+        this.props.onRecIngredientsEdit(e.target.value);
+    }
+
+    handleRecipeTagsChange(e) {
+        this.props.onRecTagsEdit(e.target.value);
+    }
+
+    handleRecipeEditSelection() {
+        console.log(this.props.index);
+        this.props.onRecipeEdit(this.props.index);
+    }
+
+
+    handleEditRecipeSubmit(e) {
+
+        console.log(this.props.index);
+
+        let pos = this.props.index;
+        //let pos = this.cardKey;
+        console.log(`Recipe to be edited = #${pos}`);
+        this.props.onRecEditSubmit(pos);
 
     }
 
     handleRecipeDelete(e) {
-        console.log(e.target.value);
+        //console.log(e.target.value);
         console.log(this.props.index);
         //call onDelete event handler with number of recipecard to be deleted
         this.props.onDelete(this.props.index);
@@ -78,7 +117,7 @@ class RecipeCard extends React.Component {
                         <img className="activator" src="https://search.chow.com/thumbnail/320/0/www.chowstatic.com/s/recipe_placeholder_main_img-710dbe7756144f55f01c42cc4892e6de.jpg"/>
                     </div>
                     <div className="card-content">
-                        <span className="card-title activator grey-text text-darken-2"><i className="material-icons brown-text text-darken-4 right">more_vert</i></span>
+                        <span className="card-title activator grey-text text-darken-2" onClick={this.handleRecipeEditSelection}><i className="material-icons brown-text text-darken-4 right">more_vert</i></span>
                         <h1 style={styles.cardContent.title}>{recipeName}</h1>
                         {/*<p><a href="#">This is a link</a></p>*/}
                         <div id="tags" style={styles.cardContent.tags}>
@@ -103,30 +142,27 @@ class RecipeCard extends React.Component {
                             <form className="col s12">
                                 <div className="row">
                                     <div className="input-field col s6">
-                                        <input id="input_text" type="text" data-length="10" value={recipeName} onChange={this.handleRecipeNameChange}/>
-                                        <label htmlFor="input_text">Name</label>
+                                        <input id="input_text2" type="text" data-length="10" value={this.props.filterNameEdit} onChange={this.handleRecipeNameChange}/>
+                                        <label htmlFor="input_text2">Name</label>
                                     </div>
                                 </div>
                                 <div className="row">
                                     <div className="input-field col s12">
-                                        <textarea id="textarea1" className="materialize-textarea" data-length="120" value={this.props.recipe.ingredients} onChange={this.handleRecipeIngredientsChange}></textarea>
-                                        <label htmlFor="textarea1">Ingredients (separate with commas)</label>
+                                        <textarea id="textarea3" className="materialize-textarea" data-length="120" value={this.props.filterIngredientsEdit} onChange={this.handleRecipeIngredientsChange}></textarea>
+                                        <label htmlFor="textarea3">Ingredients (separate with commas)</label>
                                     </div>
                                 </div>
                                 <div className="row">
                                     <div className="input-field col s12">
-                                        <textarea id="textarea2" className="materialize-textarea" data-length="30" value={this.props.recipe.tags} onChange={this.handleRecipeTagsChange}></textarea>
-                                        <label htmlFor="textarea2">Tags (separate with commas)</label>
+                                        <textarea id="textarea4" className="materialize-textarea" data-length="30" value={this.props.filterTagsEdit} onChange={this.handleRecipeTagsChange}></textarea>
+                                        <label htmlFor="textarea4">Tags (separate with commas)</label>
                                     </div>
                                 </div>
                             </form>
                         </div>
-
-                        {/*<h4>Modal Header</h4>*/}
-                        {/*<p>A bunch of text</p>*/}
                     </div>
                     <div className="modal-footer">
-                        <a href="#!" className="modal-action modal-close waves-effect waves-green btn btn-floating btn-large green darken-4 pulse" onClick={this.props.onSubmit}><i className="material-icons">done</i></a>
+                        <a href="#!" className="modal-action modal-close waves-effect waves-green btn btn-floating btn-large green darken-4 pulse" onClick={this.handleEditRecipeSubmit}><i className="material-icons">done</i></a>
                     </div>
                 </div>
             </div>
