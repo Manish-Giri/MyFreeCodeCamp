@@ -20,8 +20,8 @@ body {
   flex-direction: column;
   //background: black;
 
-  background: url(../assets/recipe-bg.jpg);
-  background-size: cover;
+  //background: url(../assets/recipe-bg.jpg);
+  //background-size: cover;
 }
 .content {
   flex: 1;
@@ -32,7 +32,10 @@ body {
   padding-bottom:5px;
 }
 
-
+#bckg {
+  background: url(../assets/recipe-bg.jpg);
+  background-size: cover;
+}
 /*
      SEARCH BAR
  */

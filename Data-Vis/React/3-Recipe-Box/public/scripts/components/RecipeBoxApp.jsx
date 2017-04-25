@@ -1,12 +1,3 @@
-/*
-    This is the main container component - which will nest other presentational components
-    - RecipeBoxApp
-    ----- NavBar
-    ----- SearchBar
-    ----- RecipeCollection
-    --------- RecipeGrid
-    --------- Recipe (card)
- */
 
 /*
  This is the main container component - which will nest other presentational components
@@ -18,23 +9,25 @@
  */
 
 var React = require('react');
-var ReactDOM = require('react-dom');
 var NavBar = require('./NavBar');
 var SearchBar = require('./SearchBar');
 var RecipeCollection = require('./RecipeCollection');
 var RecipeFlexContainer = require('./RecipeFlexContainer');
 
 
-
-
 class RecipeBoxApp extends React.Component {
     constructor(props) {
         super(props);
-        var localData = localStorage.getItem("recipes");
-        var recipes = (localData === "null") ? [] : JSON.parse(localData);
+        let localData = localStorage.getItem("nixxRecipes");
+        let recipes = (localData === "null") ? [] : JSON.parse(localData);
         this.state = {
             recipes: recipes,
             userSearch: "",
+
+            //test new recipe
+            newRecipeName: "",
+            newRecipeIng: "",
+            newRecipeTags: "",
             //test
             editedRecObj: {},
 
@@ -70,30 +63,41 @@ class RecipeBoxApp extends React.Component {
 
     }
 
+    componentWillReceiveProps() {
+        this.newRecipeObj = {};
+        this.setState({newRecipeName: "", newRecipeTags: "", newRecipeIng: ""});
+
+    }
+
     // event handlers
+
     //--------------------------------------------------
-    // for NavBar
+    // for NavBar -- add new recipe
     //--------------------------------------------------
     handleRecipeNameInput(recipeName) {
-        this.newRecipeObj.name = recipeName;
+        //this.newRecipeObj.name = recipeName;
+        this.setState({newRecipeName: recipeName});
 
     }
 
     handleRecipeIngredientsInput(recipeIngredients) {
         //let ings = recipeIngredients.split(",");
-        this.newRecipeObj.ingredients = recipeIngredients;
+        //this.newRecipeObj.ingredients = recipeIngredients;
+        this.setState({newRecipeIng: recipeIngredients});
     }
 
     handleRecipeTagsInput(recipeTags) {
         //let tags = recipeTags.split(",");
-        this.newRecipeObj.tags = recipeTags;
+        //this.newRecipeObj.tags = recipeTags;
+        this.setState({newRecipeTags: recipeTags});
     }
 
     handleSubmit() {
-        let newRecipeArr = [this.newRecipeObj];
+        //let newRecipeArr = [this.newRecipeObj];
+        let newRecipeArr = [{name: this.state.newRecipeName, ingredients: this.state.newRecipeIng, tags: this.state.newRecipeTags}];
         let updatedRecipes = this.state.recipes.concat(newRecipeArr);
         //update local storage
-        localStorage.setItem("recipes", JSON.stringify(updatedRecipes));
+        localStorage.setItem("nixxRecipes", JSON.stringify(updatedRecipes));
         this.setState({recipes: updatedRecipes});
     }
 
@@ -152,7 +156,7 @@ class RecipeBoxApp extends React.Component {
         });
 
         //update local storage
-        localStorage.setItem("recipes", JSON.stringify(updatedRecipes));
+        localStorage.setItem("nixxRecipes", JSON.stringify(updatedRecipes));
 
         //set state
         this.setState({recipes: updatedRecipes});
@@ -163,7 +167,7 @@ class RecipeBoxApp extends React.Component {
         //use filter to filter out the deleted recipe
         let editedRecipes = this.state.recipes.filter((element, index) => index !== key);
         //set localstorage to editedRecipes
-        localStorage.setItem("recipes", JSON.stringify(editedRecipes));
+        localStorage.setItem("nixxRecipes", JSON.stringify(editedRecipes));
         //call this.setState to set recipes to editedRecipes
         this.setState({recipes: editedRecipes});
     }
@@ -177,9 +181,10 @@ class RecipeBoxApp extends React.Component {
                         onRecipeIngredientsChange={this.handleRecipeIngredientsInput}
                         onRecipeTagsChange={this.handleRecipeTagsInput}
                         onSubmit={this.handleSubmit}
-                        filterNameText={this.newRecipeObj.name}
-                        filterIngredientsText={this.newRecipeObj.ingredients}
-                        filterTagsText={this.newRecipeObj.tags}
+
+                        filterNameText={this.state.newRecipeName}
+                        filterIngredientsText={this.state.newRecipeIng}
+                        filterTagsText={this.state.newRecipeTags}
 
                 />
                 <SearchBar/>
