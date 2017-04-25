@@ -30,6 +30,6 @@ var recipes = [
 ];
 
 //setup local storage
-localStorage.setItem("recipes", JSON.stringify(recipes));
+localStorage.setItem("nixxRecipes", JSON.stringify(recipes));
 
 ReactDOM.render(<RecipeBox recipes={recipes}/>, document.getElementById('root'));
