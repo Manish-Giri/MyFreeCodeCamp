@@ -14,9 +14,7 @@ html {
 body {
   min-height: 100%;
   display: flex;
-  flex-direction: column;
-  background: url(../assets/recipe-bg.jpg);
-  background-size: cover; }
+  flex-direction: column; }
 
 .content {
   flex: 1; }
@@ -24,6 +22,10 @@ body {
 .footer {
   padding: 20px;
   padding-bottom: 5px; }
+
+#bckg {
+  background: url(../assets/recipe-bg.jpg);
+  background-size: cover; }
 
 /*
      SEARCH BAR
