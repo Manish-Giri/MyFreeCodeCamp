@@ -162,7 +162,7 @@ class RecipeCard extends React.Component {
                         </div>
                     </div>
                     <div className="modal-footer">
-                        <a href="#!" className="modal-action modal-close waves-effect waves-green btn btn-floating btn-large green darken-4 pulse" onClick={this.handleEditRecipeSubmit}><i className="material-icons">done</i></a>
+                        <a href="#!" className="modal-action modal-close waves-effect waves-green btn btn-floating btn-large green darken-4 pulse"><i className="material-icons">done</i></a>
                     </div>
                 </div>
             </div>
