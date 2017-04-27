@@ -14,18 +14,15 @@ html {
 body {
   min-height: 100%;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  background: url(../assets/recipe-bg.jpg);
+  background-size: cover; }
 
 .content {
   flex: 1; }
 
 .footer {
-  padding: 20px;
-  padding-bottom: 5px; }
-
-#bckg {
-  background: url(../assets/recipe-bg.jpg);
-  background-size: cover; }
+  padding: 20px 20px 50px 20px; }
 
 /*
      SEARCH BAR
