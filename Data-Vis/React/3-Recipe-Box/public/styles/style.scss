@@ -20,22 +20,17 @@ body {
   flex-direction: column;
   //background: black;
 
-  //background: url(../assets/recipe-bg.jpg);
-  //background-size: cover;
+  background: url(../assets/recipe-bg.jpg);
+  background-size: cover;
 }
 .content {
   flex: 1;
 
 }
 .footer {
-  padding: 20px;
-  padding-bottom:5px;
+  padding: 20px 20px 50px 20px;
 }
 
-#bckg {
-  background: url(../assets/recipe-bg.jpg);
-  background-size: cover;
-}
 /*
      SEARCH BAR
  */

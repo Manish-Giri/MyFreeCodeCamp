@@ -46,6 +46,9 @@ class RecipeBoxApp extends React.Component {
         this.handleRecipeTagsInput = this.handleRecipeTagsInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
 
+        // searchbar event handlers
+        this.handleUserSearchInput = this.handleUserSearchInput.bind(this);
+
 
         //recipe card event handlers
         this.handleRecipeNameEdit = this.handleRecipeNameEdit.bind(this);
@@ -172,6 +175,12 @@ class RecipeBoxApp extends React.Component {
         this.setState({recipes: editedRecipes});
     }
 
+    //--------------------------------------------------
+        // for NavBar -- add new recipe
+    //--------------------------------------------------
+    handleUserSearchInput(searchItem) {
+        this.setState({userSearch: searchItem});
+    }
 
 
     render() {
@@ -187,7 +196,9 @@ class RecipeBoxApp extends React.Component {
                         filterTagsText={this.state.newRecipeTags}
 
                 />
-                <SearchBar/>
+                <SearchBar onSearch={this.handleUserSearchInput} filterSearch={this.state.userSearch}/>
+
+
                 <RecipeFlexContainer recipes={this.state.recipes} onRecipeDelete={this.handleDelete}
                                      onRecipeNameEdit={this.handleRecipeNameEdit}
                                      onRecipeIngredientsEdit={this.handleRecipeIngredientsEdit}
@@ -197,6 +208,7 @@ class RecipeBoxApp extends React.Component {
                                      filterIngredientsEdit={this.state.editedRecipeIng}
                                      filterTagsEdit={this.state.editedRecipeTags}
                                      onRecipeEditSelect={this.getRecipeToEdit}
+                                     searchItem={this.state.userSearch}
 
                 />
 

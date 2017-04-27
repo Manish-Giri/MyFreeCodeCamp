@@ -22,8 +22,8 @@ var recipes = [
 
     },
     {
-        name: "Indian Eggplant - Bhurtha", ingredients: "1 eggplant, 2 tablespoons vegetable oil, 1/2 teaspoon cumin seeds, 1 medium onion sliced, 1/2 teaspoon ground turmeric",
-        tags: "indian, entree, prep-moderate"
+        name: "Banana Cupcakes", ingredients: "2 large eggs, 3/4 cup sugar, 1 teaspoon salt, 1 teaspoon baking powder, 1/2 cup melted butter, 1/2 teaspoon vanilla extract",
+        tags: "dessert, prep-moderate"
 
     }
 
