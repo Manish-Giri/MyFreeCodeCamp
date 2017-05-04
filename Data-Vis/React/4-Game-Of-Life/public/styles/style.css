@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Inknut+Antiqua");
 /*
   ---------------------------
     STICKY FOOTER
@@ -19,5 +20,27 @@ body {
 .footer {
   background-color: lightblue;
   padding: 20px; }
+
+/*
+  ---------------------------
+    HEADER
+  ---------------------------
+
+*/
+.head {
+  font-family: 'Inknut Antiqua', serif;
+  margin: 0px;
+  margin-bottom: 10px;
+  font-size: 2rem;
+  padding: 20px;
+  background: #000000;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #000000, #434343);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #000000, #434343);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
+  .head h1 {
+    margin: 0 0 20px 0;
+    color: #7cb342; }
 
 /*# sourceMappingURL=style.css.map */
