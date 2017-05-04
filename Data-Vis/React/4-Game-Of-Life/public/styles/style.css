@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Inknut+Antiqua");
+@import url("https://fonts.googleapis.com/css?family=Inknut+Antiqua|Ravi+Prakash");
 /*
   ---------------------------
     STICKY FOOTER
@@ -24,8 +24,14 @@ body {
   flex: 1; }
 
 .footer {
-  background-color: lightblue;
-  padding: 20px; }
+  padding: 20px;
+  font-family: 'Ravi Prakash', cursive;
+  color: #4caf50;
+  text-align: center; }
+  .footer span {
+    font-size: 20px; }
+    .footer span i {
+      color: red; }
 
 /*
   ---------------------------
@@ -41,7 +47,6 @@ body {
   padding: 20px; }
   .head h1 {
     margin: 0 0 20px 0;
-    color: #7cb342;
     color: #388e3c; }
 
 /*
