@@ -15,9 +15,9 @@ body {
   background-size: cover;
   background: #000000;
   /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #000000, #434343);
+  background: -webkit-linear-gradient(to bottom, #000000, #222);
   /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #000000, #434343);
+  background: linear-gradient(to bottom, #000000, #222);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
 
 .content {
@@ -25,11 +25,11 @@ body {
 
 .footer {
   padding: 20px;
-  font-family: 'Ravi Prakash', cursive;
-  color: #4caf50;
+  font-family: 'Inknut Antiqua', serif;
+  color: #388e3c;
   text-align: center; }
   .footer span {
-    font-size: 20px; }
+    font-size: 14px; }
     .footer span i {
       color: red; }
 
