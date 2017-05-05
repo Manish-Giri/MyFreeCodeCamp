@@ -19,7 +19,7 @@ class Controls extends React.Component {
                         <a className="waves-effect waves-light btn green darken-4"><i className="material-icons left">clear_all</i>Clear</a>
                     </div>
                     <div className="col s3">
-                        <a className='dropdown-button btn green darken-4' href='#' data-activates='dropdown1 green darken-4'><i className="material-icons left">settings</i>Speed</a>
+                        <a className='dropdown-button btn green darken-4' href='#' data-activates='dropdown1'><i className="material-icons left">settings</i>Speed</a>
 
                         <ul id='dropdown1' className='dropdown-content'>
                             <li><a href="#!">Slow</a></li>
