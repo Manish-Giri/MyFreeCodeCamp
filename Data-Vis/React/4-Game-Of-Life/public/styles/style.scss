@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Inknut+Antiqua|Ravi+Prakash');
+@import url('https://fonts.googleapis.com/css?family=Kalam');
 
 @mixin body-gradient {
   background: #000000;  /* fallback for old browsers */
@@ -86,4 +87,35 @@ body {
 
 .controls {
   color: #aed581;
+
+}
+
+.container {
+  .row {
+    text-align: center;
+  }
+}
+
+/*
+  ---------------------------
+    SCORE BAR
+  ---------------------------
+
+*/
+
+.flex-container {
+  margin-top: 50px;
+  display: flex;
+  color: #2e7d32;
+  font-family: 'Kalam', cursive;
+  justify-content: center;
+  font-size: 34px;
+
+  div {
+    margin-right: 50px;
+  }
+
+  #title {
+    text-transform: uppercase;
+  }
 }
