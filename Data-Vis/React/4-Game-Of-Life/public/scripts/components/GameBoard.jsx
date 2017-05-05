@@ -1,14 +1,6 @@
 const React = require('react');
-const GameScore = require('./GameScore');
+let GameCell = require('./GameCell');
 
 class GameBoard extends React.Component {
-    render() {
-        return (
-            <div>
-                <GameScore/>
-            </div>
-        )
-    }
-}
 
-module.exports = GameBoard;
+}

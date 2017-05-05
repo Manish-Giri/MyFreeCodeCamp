@@ -1,7 +1,7 @@
 const React = require('react');
 let Header = require('./Header');
 let Controls = require('./Controls');
-let GameBoard = require('./GameBoard');
+let GameBoardContainer = require('./GameBoardContainer');
 
 class GameOfLife extends React.Component {
     render() {
@@ -9,7 +9,7 @@ class GameOfLife extends React.Component {
             <div>
                 <Header/>
                 <Controls/>
-                <GameBoard/>
+                <GameBoardContainer/>
             </div>
         )
     }
