@@ -1,11 +1,13 @@
 const React = require('react');
-const GameScore = require('./GameScore');
+let GameScore = require('./GameScore');
+let GameBoard = require('./GameBoard');
 
 class GameBoardContainer extends React.Component {
     render() {
         return (
             <div>
                 <GameScore/>
+                <GameBoard/>
             </div>
         )
     }
