@@ -3,8 +3,8 @@
 
 @mixin body-gradient {
   background: #000000;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #000000, #222);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #000000, #222); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -webkit-linear-gradient(to bottom, #000000, #222) fixed;  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #000000, #222) fixed; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 /*
@@ -73,6 +73,7 @@ body {
   h1 {
     margin: 0 0 20px 0;
     color: #388e3c;
+    font-size: 3rem;
   }
 
 }
@@ -105,6 +106,7 @@ body {
 
 .flex-container {
   margin-top: 50px;
+  margin-bottom: 5px;
   display: flex;
   color: #2e7d32;
   font-family: 'Kalam', cursive;
@@ -117,5 +119,40 @@ body {
 
   #title {
     text-transform: uppercase;
+  }
+}
+
+
+/*
+  ---------------------------
+    GAME BOARD
+  ---------------------------
+
+*/
+
+.board {
+  display: flex;
+  flex-direction: row;
+  //justify-content: space-between;
+  // align-items: center;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  width: 840px;
+  //height: 600px;
+  // max-width: 620px;
+  //min-height: 90vh;
+  margin: 0 auto;
+  //padding: 1px;
+  background-color: #111;
+  padding: 0;
+
+  .cell {
+    // display: block;
+    //background-color: green;
+    width: 12px;
+    height:12px;
+    //margin: 1px;
+    border: 1px solid black;
+
   }
 }

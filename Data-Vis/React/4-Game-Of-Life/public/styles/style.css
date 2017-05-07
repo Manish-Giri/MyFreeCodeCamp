@@ -16,9 +16,9 @@ body {
   background-size: cover;
   background: #000000;
   /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #000000, #222);
+  background: -webkit-linear-gradient(to bottom, #000000, #222) fixed;
   /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #000000, #222);
+  background: linear-gradient(to bottom, #000000, #222) fixed;
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
 
 .content {
@@ -48,7 +48,8 @@ body {
   padding: 20px; }
   .head h1 {
     margin: 0 0 20px 0;
-    color: #388e3c; }
+    color: #388e3c;
+    font-size: 3rem; }
 
 /*
   ---------------------------
@@ -70,6 +71,7 @@ body {
 */
 .flex-container {
   margin-top: 50px;
+  margin-bottom: 5px;
   display: flex;
   color: #2e7d32;
   font-family: 'Kalam', cursive;
@@ -79,5 +81,25 @@ body {
     margin-right: 50px; }
   .flex-container #title {
     text-transform: uppercase; }
+
+/*
+  ---------------------------
+    GAME BOARD
+  ---------------------------
+
+*/
+.board {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  width: 840px;
+  margin: 0 auto;
+  background-color: #111;
+  padding: 0; }
+  .board .cell {
+    width: 12px;
+    height: 12px;
+    border: 1px solid black; }
 
 /*# sourceMappingURL=style.css.map */
