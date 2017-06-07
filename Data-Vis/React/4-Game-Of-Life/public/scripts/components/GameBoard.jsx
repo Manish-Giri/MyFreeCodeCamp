@@ -27,9 +27,21 @@ class GameBoard extends React.Component {
             board.push(cells);
         }
         console.log(board);
+        
+        // generate playing board
+        let gameBoard = board.map(function (row, i) {
+            
+            return row.map(function (cell, index) {
+
+                return (
+                    <GameCell rowPos={i} cellPos={index} key={i.toString()+"-"+index.toString() }/>
+                )
+            })
+            
+        })
         return (
             <div className="board">
-                {cells}
+                {gameBoard}
             </div>
         )
     }
