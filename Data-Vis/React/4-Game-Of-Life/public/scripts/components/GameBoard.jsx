@@ -7,18 +7,26 @@ class GameBoard extends React.Component {
         let colors = ["lightgreen", "green"];
         const ROWS = 38;
         const COLS = 70;
+        let board = [];
         let cells = [];
         for(let i = 0; i < ROWS; i++) {
-            for(let i = 0; i < COLS; i++) {
-                let pos = Math.random() < 0.5;
-                if(pos) {
-                    cells.push(<GameCell bckg={colors[0]}/>)
-                }
-                else {
-                    cells.push(<GameCell bckg={colors[1]}/>)
-                }
+            cells = [];
+            for(let j = 0; j < COLS; j++) {
+
+                Math.random() < 0.5 ? cells.push(true) : cells.push(false);
+                // if(pos) {
+                //     //cells.push(<GameCell bckg={colors[0]} val={pos}/>)
+                //     cells.push(true);
+                // }
+                // else {
+                //     //cells.push(<GameCell bckg={colors[1]} val={pos}/>)
+                //     cells.push(false);
+                // }
             }
+            //console.log(cells);
+            board.push(cells);
         }
+        console.log(board);
         return (
             <div className="board">
                 {cells}
