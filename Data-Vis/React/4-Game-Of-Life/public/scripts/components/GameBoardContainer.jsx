@@ -6,8 +6,8 @@ class GameBoardContainer extends React.Component {
     render() {
         return (
             <div>
-                <GameScore/>
-                <GameBoard/>
+                <GameScore gen={this.props.generations}/>
+                <GameBoard board={this.props.board}/>
             </div>
         )
     }

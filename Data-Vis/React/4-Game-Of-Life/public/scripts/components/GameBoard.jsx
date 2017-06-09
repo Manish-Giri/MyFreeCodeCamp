@@ -5,7 +5,7 @@ class GameBoard extends React.Component {
 
     render() {
         let colors = ["lightgreen", "green"];
-        const ROWS = 38;
+        /*const ROWS = 38;
         const COLS = 70;
         let board = [];
         let cells = [];
@@ -26,9 +26,10 @@ class GameBoard extends React.Component {
             //console.log(cells);
             board.push(cells);
         }
-        console.log(board);
+        console.log(board);*/
         
-        // generate playing board
+        // generate playing board from board passed as props
+        let board = this.props.board;
         let gameBoard = board.map(function (row, i) {
             
             return row.map(function (cell, index) {
