@@ -62,7 +62,7 @@ class GameOfLife extends React.Component {
             <div>
                 <Header/>
                 <Controls/>
-                <GameBoardContainer generations={this.state.generations}/>
+                <GameBoardContainer generations={this.state.generations} board={this.state.gameBoard}/>
             </div>
         )
     }
