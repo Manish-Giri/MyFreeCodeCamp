@@ -9,8 +9,10 @@ class GameCell extends React.Component {
         //let content = this.props.val;
         //let test = this.props.children;
         //let dummy = test ? true : false;
+        let isAlive = this.props.isAlive;
+
         let style = {
-            backgroundColor: colors[0]
+            backgroundColor: isAlive ? colors[0] : colors[1]
         }
         return (
             <span className="cell" style={style}></span>

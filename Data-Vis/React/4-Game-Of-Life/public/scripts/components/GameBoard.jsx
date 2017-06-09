@@ -35,7 +35,7 @@ class GameBoard extends React.Component {
             return row.map(function (cell, index) {
 
                 return (
-                    <GameCell rowPos={i} cellPos={index} key={i.toString()+"-"+index.toString() }/>
+                    <GameCell rowPos={i} cellPos={index} key={i.toString()+"-"+index.toString()} isAlive={cell}/>
                 )
             })
             

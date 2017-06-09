@@ -40,10 +40,15 @@ class GameOfLife extends React.Component {
             generations: 1
         }
         this.tick = this.tick.bind(this);
+        this.nextBoard = this.nextBoard.bind(this);
     }
 
     tick() {
-        this.setState(prevState => ({generations: prevState.generations + 1}));
+        this.setState(prevState => ({
+            generations: prevState.generations + 1,
+            gameBoard: this.nextBoard()
+
+        }));
     }
 
     componentDidMount() {
@@ -54,6 +59,15 @@ class GameOfLife extends React.Component {
 
     componentWillUnmount() {
         clearInterval(this.timer);
+    }
+
+    nextBoard() {
+        let currentBoard = this.state.gameBoard;
+        return currentBoard.map((boardRow, boardRowPos) => {
+            return boardRow.map((cell, cellPos) => {
+                return cell = !cell;
+            });
+        });
     }
 
 
