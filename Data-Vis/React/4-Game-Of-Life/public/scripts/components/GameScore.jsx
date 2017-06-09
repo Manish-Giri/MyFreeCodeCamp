@@ -5,7 +5,7 @@ class GameScore extends React.Component {
         return (
             <div className="flex-container">
                 <div id="title">Generations</div>
-                <div id="gen">500</div>
+                <div id="gen">{this.props.gen}</div>
             </div>
         )
     }
