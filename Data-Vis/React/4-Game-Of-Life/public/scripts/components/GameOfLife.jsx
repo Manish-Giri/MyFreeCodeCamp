@@ -48,7 +48,7 @@ function neighborOne(rowPos, cellPos, board) {
 
         // if not first cell
         else {
-            if(board[ROWS-1][index-1]) {
+            if(board[ROWS-1][cellPos-1]) {
                 return true;
             }
         }
@@ -318,7 +318,7 @@ class GameOfLife extends React.Component {
         let currentBoard = this.state.gameBoard;
         return currentBoard.map((boardRow, boardRowPos) => {
             return boardRow.map((cell, cellPos) => {
-                return cell = !cell;
+                //return cell = !cell;
 
                 /*
                   -------------------------------------------------
@@ -330,42 +330,88 @@ class GameOfLife extends React.Component {
                 let neighborCount = 0;
 
                 // FIND FIRST NEIGHBOR STATUS
+                if(neighborOne(boardRowPos, cellPos, currentBoard)) {
+                    neighborCount += 1;
+                }
 
 
+                // FIND SECOND NEIGHBOR STATUS
+                if(neighborTwo(boardRowPos, cellPos, currentBoard)) {
+                    neighborCount += 1;
+                }
+
+                // FIND THIRD NEIGHBOR STATUS
+                if(neighborThree(boardRowPos, cellPos, currentBoard)) {
+                    neighborCount += 1;
+                }
 
 
+                // FIND FOUTH NEIGHBOR STATUS
+                if(neighborFour(boardRowPos, cellPos, currentBoard)) {
+                    neighborCount += 1;
+                }
+
+                // FIND FIFTH NEIGHBOR STATUS
+                if(neighborFive(boardRowPos, cellPos, currentBoard)) {
+                    neighborCount += 1;
+                }
 
 
+                // FIND SIXTH NEIGHBOR STATUS
+                if(neighborSix(boardRowPos, cellPos, currentBoard)) {
+                    neighborCount += 1;
+                }
 
 
+                // FIND SEVENth NEIGHBOR STATUS
+                if(neighborSeven(boardRowPos, cellPos, currentBoard)) {
+                    neighborCount += 1;
+                }
 
 
+                // FIND EIGTH NEIGHBOR STATUS
+                if(neighborEight(boardRowPos, cellPos, currentBoard)) {
+                    neighborCount += 1;
+                }
+
+                // based on count of neighbors, decide if cell lives or dies in next gen
+
+                /*
+                    1. A live cell with
+                     a. 4 + neighbors - dies of overcrowding
+                     b. 0 or 1 neighbors - dies of isolation
+                     c. 2 or 3 live neighbors - lives on to next gen
+
+                    2. A dead cell with 3 live neighbors - becomes alive
+                 */
 
 
+                // CASE 1 - cell is alive
+                if(cell) {
+                    // 1.a
+                    if(neighborCount >= 4) {
+                        return false;
+                    }
 
+                    // 1.b
+                    else if(neighborCount === 0 || neighborCount === 1) {
+                        return false;
+                    }
 
+                    // 1.c
+                    else if(neighborCount === 2 || neighborCount === 3) {
+                        return true;
+                    }
+                }
 
+                // CASE 2 - cell is not alive
+                else if(!cell) {
 
-
-
-
-
-
-
-
-                // based on count of it's neighbors, return if cell should be dead/alive in next gen
-
-
-
-
-
-
-
-
-
-
-
-
+                    //2.a
+                    if(neighborCount === 3) {
+                        return true;
+                    }
+                }
 
 
 

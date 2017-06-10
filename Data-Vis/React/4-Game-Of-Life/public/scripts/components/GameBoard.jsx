@@ -4,7 +4,7 @@ let GameCell = require('./GameCell');
 class GameBoard extends React.Component {
 
     render() {
-        let colors = ["lightgreen", "green"];
+        let colors = ["lightgreen", "green", "black"];
         /*const ROWS = 38;
         const COLS = 70;
         let board = [];
