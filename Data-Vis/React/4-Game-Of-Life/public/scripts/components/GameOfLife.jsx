@@ -4,6 +4,9 @@ let Controls = require('./Controls');
 let GameBoardContainer = require('./GameBoardContainer');
 
 
+const ROWS = 38;
+const COLS = 70;
+
 function defaultBoard() {
     const ROWS = 38;
     const COLS = 70;
@@ -29,6 +32,78 @@ function defaultBoard() {
     //console.log(board);
     return board;
 }
+
+function neighborOne(rowPos, cellPos, board) {
+
+    // TOP LEFT CELL
+
+    // check first one
+    if(rowPos === 0) {
+        //check first cell
+        if(cellPos === 0) {
+            if(board[ROWS-1][COLS-1]) {
+                return true;
+            }
+        }
+
+        // if not first cell
+        else {
+            if(board[ROWS-1][index-1]) {
+                return true;
+            }
+        }
+
+    }
+
+    // all other rows
+    else {
+        // check first cell
+        if(cellPos === 0) {
+            if(board[rowPos-1][COLS-1]) {
+                return true;
+            }
+        }
+
+        else {
+            if(board[rowPos-1][cellPos-1]) {
+                return true;
+            }
+        }
+    }
+
+    return false;
+}
+
+function neighborTwo(rowPos, cellPos, board) {
+
+    // TOP CELL
+    // check row one
+    if(rowPos === 0) {
+
+        //if last cell
+        if(cellPos === COLS - 1) {
+            if(board[0][0]) {
+                return true;
+            }
+        }
+
+        // all other cells
+        else {
+            if(board[0][cellPos+1]) {
+                return true;
+            }
+        }
+    }
+
+
+    // all other rows
+    else {
+        //if last cell
+
+    }
+
+}
+
 
 
 class GameOfLife extends React.Component {
@@ -66,6 +141,56 @@ class GameOfLife extends React.Component {
         return currentBoard.map((boardRow, boardRowPos) => {
             return boardRow.map((cell, cellPos) => {
                 return cell = !cell;
+
+                /*
+                  -------------------------------------------------
+                 for every cell, find count of it's neighbors
+                 -------------------------------------------------
+
+                */
+
+                let neighborCount = 0;
+
+                // FIND FIRST NEIGHBOR STATUS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                // based on count of it's neighbors, return if cell should be dead/alive in next gen
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             });
         });
     }
