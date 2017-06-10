@@ -33,6 +33,258 @@ function defaultBoard() {
     return board;
 }
 
+function neighborCheckAtPos(rowPos, cellPos, board, position) {
+
+    // switch on position
+    switch (position) {
+        case "one" :  // TOP LEFT CELL
+
+            // check first one
+            if(rowPos === 0) {
+                //check first cell
+                if(cellPos === 0) {
+                    if(board[ROWS-1][COLS-1]) {
+                        return true;
+                    }
+                }
+
+                // if not first cell
+                else {
+                    if(board[ROWS-1][cellPos-1]) {
+                        return true;
+                    }
+                }
+
+            }
+
+            // all other rows
+            else {
+                // check first cell
+                if(cellPos === 0) {
+                    if(board[rowPos-1][COLS-1]) {
+                        return true;
+                    }
+                }
+
+                else {
+                    if(board[rowPos-1][cellPos-1]) {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+            break;
+
+
+        case "two":
+            // TOP CELL
+            // check row one
+            if(rowPos === 0) {
+                if(board[ROWS-1][cellPos]) {
+                    return true;
+                }
+            }
+
+            // all other rows
+
+            else {
+                if(board[rowPos-1][cellPos]) {
+                    return true;
+                }
+
+            }
+
+            return false;
+            break;
+
+        case "three":      // TOP RIGHT CELL
+
+            //check first row
+            if(rowPos === 0) {
+
+                // check if last cell
+                if(cellPos === COLS-1) {
+
+                    if(board[ROWS-1][0]) {
+                        return true;
+                    }
+                }
+
+                // for all other cells
+                if(board[ROWS-1][cellPos+1]) {
+                    return true;
+                }
+            }
+
+            // for all other rows
+            else {
+
+                // if last cell
+                if(cellPos === COLS-1) {
+                    if(board[rowPos-1][0]) {
+                        return true;
+                    }
+                }
+
+                else {
+                    if(board[rowPos-1][cellPos+1]) {
+                        return true;
+                    }
+                }
+
+            }
+
+            return false;
+            break;
+
+
+        case "four":
+            // LEFT CELL
+            // if last cell in row
+            if(cellPos === 0) {
+                if(board[rowPos][COLS-1]) {
+                    return true;
+                }
+            }
+
+            // for all other cells
+            else {
+                if(board[rowPos][cellPos-1]) {
+                    return true;
+                }
+            }
+
+            return false;
+            break;
+
+
+        case "five":
+            // / FIFTH CELL
+
+            // if last cell in row
+            if(cellPos === 0) {
+                if(board[rowPos][0]) {
+                    return true;
+                }
+            }
+
+            // for al other cells
+            else {
+                if(board[rowPos][cellPos+1]) {
+                    return true;
+                }
+            }
+
+            return false;
+            break;
+
+
+        case "six":  // BOTTOM LEFT CELL
+
+            //if last row
+            if(rowPos === ROWS-1) {
+
+                // if first cell
+                if(cellPos === 0) {
+                    if(board[0][COLS-1]) {
+                        return true;
+                    }
+                }
+
+                else {
+                    if(board[0][cellPos-1]) {
+                        return true;
+                    }
+                }
+            }
+
+            // all other rows
+            else {
+
+                // if first cell
+                if(cellPos === 0) {
+                    if(board[rowPos+1][COLS-1]) {
+                        return true;
+                    }
+                }
+
+                // all other cells
+                else {
+                    if(board[rowPos+1][cellPos-1]) {
+                        return true;
+                    }
+                }
+
+            }
+
+            return false;
+            break;
+
+        case "seven":
+            // BOTTOM CELL
+
+            //if last row
+            if(rowPos === ROWS - 1) {
+                if(board[0][cellPos]) {
+                    return true;
+                }
+            }
+
+            // all other rows
+            else {
+                if(board[rowPos+1][cellPos]) {
+                    return true;
+                }
+            }
+
+            return false;
+            break;
+
+        case "eight":
+            // BOTTOM RIGHT CELL
+
+            // if last row
+            if(rowPos === ROWS - 1) {
+                // if last cell
+                if(cellPos === COLS - 1) {
+                    if(board[0][0]) {
+                        return true;
+                    }
+                }
+
+                // other cells
+                else {
+                    if(board[0][cellPos + 1]) {
+                        return true;
+                    }
+                }
+            }
+
+            // all other rows
+            else {
+                // if last cell
+                if(cellPos === COLS - 1) {
+                    if(board[rowPos+1][0]) {
+                        return true;
+                    }
+                }
+
+                // other cells
+                else {
+                    if(board[rowPos+1][cellPos+1]) {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+            break;
+    }
+
+}
+
+
 function neighborOne(rowPos, cellPos, board) {
 
     // TOP LEFT CELL
@@ -135,6 +387,8 @@ function neighborThree(rowPos, cellPos, board) {
         }
 
     }
+
+    return false;
 }
 
 function neighborFour(rowPos, cellPos, board) {
@@ -329,6 +583,8 @@ class GameOfLife extends React.Component {
 
                 let neighborCount = 0;
 
+                /*
+
                 // FIND FIRST NEIGHBOR STATUS
                 if(neighborOne(boardRowPos, cellPos, currentBoard)) {
                     neighborCount += 1;
@@ -371,6 +627,40 @@ class GameOfLife extends React.Component {
 
                 // FIND EIGTH NEIGHBOR STATUS
                 if(neighborEight(boardRowPos, cellPos, currentBoard)) {
+                    neighborCount += 1;
+                }
+
+                */
+
+                if(neighborCheckAtPos(boardRowPos, cellPos, currentBoard, "one")) {
+                    neighborCount += 1;
+                }
+
+                if(neighborCheckAtPos(boardRowPos, cellPos, currentBoard, "two")) {
+                    neighborCount += 1;
+                }
+
+                if(neighborCheckAtPos(boardRowPos, cellPos, currentBoard, "three")) {
+                    neighborCount += 1;
+                }
+
+                if(neighborCheckAtPos(boardRowPos, cellPos, currentBoard, "four")) {
+                    neighborCount += 1;
+                }
+
+                if(neighborCheckAtPos(boardRowPos, cellPos, currentBoard, "five")) {
+                    neighborCount += 1;
+                }
+
+                if(neighborCheckAtPos(boardRowPos, cellPos, currentBoard, "six")) {
+                    neighborCount += 1;
+                }
+
+                if(neighborCheckAtPos(boardRowPos, cellPos, currentBoard, "seven")) {
+                    neighborCount += 1;
+                }
+
+                if(neighborCheckAtPos(boardRowPos, cellPos, currentBoard, "eight")) {
                     neighborCount += 1;
                 }
 
