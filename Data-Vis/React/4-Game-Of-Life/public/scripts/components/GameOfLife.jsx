@@ -155,7 +155,27 @@ function neighborFour(rowPos, cellPos, board) {
     }
 
     return false;
-    
+
+}
+
+function neighborFive(rowPos, cellPos, board) {
+    // FIFTH CELL
+
+    // if last cell in row
+    if(cellPos === 0) {
+        if(board[rowPos][0]) {
+            return true;
+        }
+    }
+
+    // for al other cells
+    else {
+        if(board[rowPos][cellPos+1]) {
+            return true;
+        }
+    }
+
+    return false;
 }
 
 
