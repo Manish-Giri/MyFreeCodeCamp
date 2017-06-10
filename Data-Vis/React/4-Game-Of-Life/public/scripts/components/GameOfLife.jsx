@@ -137,6 +137,27 @@ function neighborThree(rowPos, cellPos, board) {
     }
 }
 
+function neighborFour(rowPos, cellPos, board) {
+    // LEFT CELL
+
+    // if last cell in row
+    if(cellPos === 0) {
+        if(board[rowPos][COLS-1]) {
+            return true;
+        }
+    }
+
+    // for all other cells
+    else {
+        if(board[rowPos][cellPos-1]) {
+            return true;
+        }
+    }
+
+    return false;
+    
+}
+
 
 
 class GameOfLife extends React.Component {
