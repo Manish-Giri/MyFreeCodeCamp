@@ -178,11 +178,110 @@ function neighborFive(rowPos, cellPos, board) {
     return false;
 }
 
-
 function neighborSix(rowPos, cellPos, board) {
-    
+    // BOTTOM LEFT CELL
+
+    //if last row
+    if(rowPos === ROWS-1) {
+
+        // if first cell
+        if(cellPos === 0) {
+            if(board[0][COLS-1]) {
+                return true;
+            }
+        }
+
+        else {
+            if(board[0][cellPos-1]) {
+                return true;
+            }
+        }
+    }
+
+    // all other rows
+    else {
+
+        // if first cell
+        if(cellPos === 0) {
+            if(board[rowPos+1][COLS-1]) {
+                return true;
+            }
+        }
+
+        // all other cells
+        else {
+            if(board[rowPos+1][cellPos-1]) {
+                return true;
+            }
+        }
+
+    }
+
+    return false;
+
 }
 
+
+function neighborSeven(rowPos, cellPos, board) {
+    // BOTTOM CELL
+
+    //if last row
+    if(rowPos === ROWS - 1) {
+        if(board[0][cellPos]) {
+            return true;
+        }
+    }
+
+    // all other rows
+    else {
+        if(board[rowPos+1][cellPos]) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+
+function neighborEight(rowPos, cellPos, board) {
+    // BOTTOM RIGHT CELL
+
+    // if last row
+    if(rowPos === ROWS - 1) {
+        // if last cell
+        if(cellPos === COLS - 1) {
+            if(board[0][0]) {
+                return true;
+            }
+        }
+
+        // other cells
+        else {
+            if(board[0][cellPos + 1]) {
+                return true;
+            }
+        }
+    }
+
+    // all other rows
+    else {
+        // if last cell
+        if(cellPos === COLS - 1) {
+            if(board[rowPos+1][0]) {
+                return true;
+            }
+        }
+
+        // other cells
+        else {
+            if(board[rowPos+1][cellPos+1]) {
+                return true;
+            }
+        }
+    }
+
+    return false;
+}
 
 
 class GameOfLife extends React.Component {
