@@ -79,28 +79,21 @@ function neighborTwo(rowPos, cellPos, board) {
     // TOP CELL
     // check row one
     if(rowPos === 0) {
-
-        //if last cell
-        if(cellPos === COLS - 1) {
-            if(board[0][0]) {
-                return true;
-            }
-        }
-
-        // all other cells
-        else {
-            if(board[0][cellPos+1]) {
-                return true;
-            }
+        if(board[ROWS-1][cellPos]) {
+            return true;
         }
     }
-
 
     // all other rows
+
     else {
-        //if last cell
+        if(board[rowPos-1][cellPos]) {
+            return true;
+        }
 
     }
+
+    return false;
 
 }
 
