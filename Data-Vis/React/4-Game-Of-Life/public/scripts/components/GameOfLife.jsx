@@ -179,6 +179,11 @@ function neighborFive(rowPos, cellPos, board) {
 }
 
 
+function neighborSix(rowPos, cellPos, board) {
+    
+}
+
+
 
 class GameOfLife extends React.Component {
 
