@@ -551,6 +551,7 @@ class GameOfLife extends React.Component {
         this.nextBoard = this.nextBoard.bind(this);
         this.play = this.play.bind(this);
         this.pause = this.pause.bind(this);
+        this.randomize = this.randomize.bind(this);
     }
 
     tick() {
@@ -728,12 +729,26 @@ class GameOfLife extends React.Component {
 
     }
 
+    // randomize - clear board, setup new board, set state to 0
+    randomize() {
+        //clear current game
+        clearInterval(this.timer);
+        // setup new board, new state info
+        this.setState({
+           generations: 0,
+           isPlaying: false,
+           gameBoard: defaultBoard()
+        });
+
+    }
+
 
     render() {
         return (
             <div>
                 <Header/>
-                <Controls inPlay={this.state.isPlaying} onPlayClick={this.play} onPauseClick={this.pause}/>
+                <Controls inPlay={this.state.isPlaying} onPlayClick={this.play} onPauseClick={this.pause}
+                          onRandomizeClick={this.randomize}/>
                 <GameBoardContainer generations={this.state.generations} board={this.state.gameBoard} inPlay={this.state.isPlaying}/>
             </div>
         )

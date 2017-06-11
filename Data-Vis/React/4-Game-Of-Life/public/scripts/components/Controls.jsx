@@ -6,6 +6,7 @@ class Controls extends React.Component {
         let isPlaying = this.props.inPlay;
         let handlePause = this.props.onPauseClick;
         let handlePlay = this.props.onPlayClick;
+        let handleRandomize = this.props.onRandomizeClick;
         return (
             <div className="controls container">
                 <div className="row">
@@ -16,7 +17,7 @@ class Controls extends React.Component {
                         <a className="waves-effect waves-light btn green darken-4" onClick={isPlaying ? handlePause: handlePlay}><i className="material-icons left">play_arrow</i>{isPlaying ? "Pause" : "Play"}</a>
                     </div>
                     <div className="col s3">
-                        <a className="waves-effect waves-light btn green darken-4"><i className="material-icons left">shuffle</i>Randomize</a>
+                        <a className="waves-effect waves-light btn green darken-4" onClick={handleRandomize}><i className="material-icons left">shuffle</i>Randomize</a>
 
                     </div>
                     <div className="col s3">
