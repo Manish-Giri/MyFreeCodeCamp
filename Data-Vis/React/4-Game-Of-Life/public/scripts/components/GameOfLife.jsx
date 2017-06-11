@@ -546,7 +546,8 @@ class GameOfLife extends React.Component {
             gameBoard: defaultBoard(),
             generations: 1,
             isPlaying: true,
-            isCleared: false
+            isCleared: false,
+            gameSpeed: 300
         }
         this.tick = this.tick.bind(this);
         this.nextBoard = this.nextBoard.bind(this);
@@ -554,6 +555,9 @@ class GameOfLife extends React.Component {
         this.pause = this.pause.bind(this);
         this.randomize = this.randomize.bind(this);
         this.clear = this.clear.bind(this);
+
+        //speed functions
+        this.handleSlowSpeed = this.handleSlowSpeed.bind(this);
     }
 
     tick() {
@@ -565,6 +569,7 @@ class GameOfLife extends React.Component {
     }
 
     componentDidMount() {
+
         this.timer = setInterval( () =>{
             this.tick()
         }, 300);
@@ -718,12 +723,13 @@ class GameOfLife extends React.Component {
 
     // resume playing
     play() {
+        let speedVal = this.state.gameSpeed;
         if(this.state.isCleared) {
             this.setState({gameBoard: defaultBoard(), isCleared: false})
         }
         this.timer = setInterval( () =>{
             this.tick()
-        }, 300);
+        }, speedVal);
         this.setState({isPlaying: true})
 
     }
@@ -770,13 +776,25 @@ class GameOfLife extends React.Component {
         })
     }
 
+    handleSlowSpeed() {
+        //lower game speed, pause game play, player restarts game
+        this.setState({gameSpeed: 400})
+
+        // pause game
+        this.pause();
+    }
+
 
     render() {
         return (
             <div>
                 <Header/>
                 <Controls inPlay={this.state.isPlaying} onPlayClick={this.play} onPauseClick={this.pause}
-                          onRandomizeClick={this.randomize} onClearClick={this.clear}/>
+                          onRandomizeClick={this.randomize} onClearClick={this.clear}
+                          onSlowSpeed={this.handleSlowSpeed}
+
+
+                />
                 <GameBoardContainer generations={this.state.generations} board={this.state.gameBoard} inPlay={this.state.isPlaying}/>
             </div>
         )
