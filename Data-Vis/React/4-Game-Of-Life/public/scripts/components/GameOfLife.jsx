@@ -558,6 +558,8 @@ class GameOfLife extends React.Component {
 
         //speed functions
         this.handleSlowSpeed = this.handleSlowSpeed.bind(this);
+        this.handleMediumSpeed = this.handleMediumSpeed.bind(this);
+        this.handleFastSpeed = this.handleFastSpeed.bind(this);
     }
 
     tick() {
@@ -778,7 +780,23 @@ class GameOfLife extends React.Component {
 
     handleSlowSpeed() {
         //lower game speed, pause game play, player restarts game
-        this.setState({gameSpeed: 400})
+        this.setState({gameSpeed: 400});
+
+        // pause game
+        this.pause();
+    }
+
+    handleMediumSpeed() {
+        //medium game speed, pause game play, player restarts game
+        this.setState({gameSpeed: 300});
+
+        // pause game
+        this.pause();
+    }
+
+    handleFastSpeed() {
+        //increase game speed, pause game play, player restarts game
+        this.setState({gameSpeed: 200});
 
         // pause game
         this.pause();
@@ -791,8 +809,8 @@ class GameOfLife extends React.Component {
                 <Header/>
                 <Controls inPlay={this.state.isPlaying} onPlayClick={this.play} onPauseClick={this.pause}
                           onRandomizeClick={this.randomize} onClearClick={this.clear}
-                          onSlowSpeed={this.handleSlowSpeed}
-
+                          onSlowSpeed={this.handleSlowSpeed} onMediumSpeed={this.handleMediumSpeed}
+                          onFastSpeed={this.handleFastSpeed}
 
                 />
                 <GameBoardContainer generations={this.state.generations} board={this.state.gameBoard} inPlay={this.state.isPlaying}/>
