@@ -2,6 +2,10 @@ const React = require('react');
 
 class Controls extends React.Component {
     render() {
+
+        let isPlaying = this.props.inPlay;
+        let handlePause = this.props.onPauseClick;
+        let handlePlay = this.props.onPlayClick;
         return (
             <div className="controls container">
                 <div className="row">
@@ -9,7 +13,7 @@ class Controls extends React.Component {
                     <div className="col s3">
                         {/*<i className="material-icons">play_arrow</i>*/}
                         {/*<i className="material-icons">pause</i>*/}
-                        <a className="waves-effect waves-light btn green darken-4"><i className="material-icons left">play_arrow</i>Play</a>
+                        <a className="waves-effect waves-light btn green darken-4" onClick={isPlaying ? handlePause: handlePlay}><i className="material-icons left">play_arrow</i>{isPlaying ? "Pause" : "Play"}</a>
                     </div>
                     <div className="col s3">
                         <a className="waves-effect waves-light btn green darken-4"><i className="material-icons left">shuffle</i>Randomize</a>
