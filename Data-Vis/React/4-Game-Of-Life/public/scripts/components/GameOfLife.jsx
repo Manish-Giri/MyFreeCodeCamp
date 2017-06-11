@@ -544,10 +544,13 @@ class GameOfLife extends React.Component {
         super(props);
         this.state = {
             gameBoard: defaultBoard(),
-            generations: 1
+            generations: 1,
+            isPlaying: true
         }
         this.tick = this.tick.bind(this);
         this.nextBoard = this.nextBoard.bind(this);
+        this.play = this.play.bind(this);
+        this.pause = this.pause.bind(this);
     }
 
     tick() {
@@ -559,7 +562,7 @@ class GameOfLife extends React.Component {
     }
 
     componentDidMount() {
-        this.timer = setInterval(()=>{
+        this.timer = setInterval( () =>{
             this.tick()
         }, 300);
     }
@@ -710,12 +713,28 @@ class GameOfLife extends React.Component {
     }
 
 
+    // resume playing
+    play() {
+        this.timer = setInterval( () =>{
+            this.tick()
+        }, 300);
+        this.setState({isPlaying: true})
+
+    }
+    // pause the game
+    pause() {
+        clearInterval(this.timer);
+        this.setState({isPlaying: false})
+
+    }
+
+
     render() {
         return (
             <div>
                 <Header/>
-                <Controls/>
-                <GameBoardContainer generations={this.state.generations} board={this.state.gameBoard}/>
+                <Controls inPlay={this.state.isPlaying} onPlayClick={this.play} onPauseClick={this.pause}/>
+                <GameBoardContainer generations={this.state.generations} board={this.state.gameBoard} inPlay={this.state.isPlaying}/>
             </div>
         )
     }
