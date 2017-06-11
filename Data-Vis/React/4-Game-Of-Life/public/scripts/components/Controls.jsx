@@ -7,6 +7,7 @@ class Controls extends React.Component {
         let handlePause = this.props.onPauseClick;
         let handlePlay = this.props.onPlayClick;
         let handleRandomize = this.props.onRandomizeClick;
+        let handleClear = this.props.onClearClick;
         return (
             <div className="controls container">
                 <div className="row">
@@ -21,7 +22,7 @@ class Controls extends React.Component {
 
                     </div>
                     <div className="col s3">
-                        <a className="waves-effect waves-light btn green darken-4"><i className="material-icons left">clear_all</i>Clear</a>
+                        <a className="waves-effect waves-light btn green darken-4" onClick={handleClear}><i className="material-icons left">clear_all</i>Clear</a>
                     </div>
                     <div className="col s3">
                         <a className='dropdown-button btn green darken-4' href='#' data-activates='dropdown1'><i className="material-icons left">settings</i>Speed</a>

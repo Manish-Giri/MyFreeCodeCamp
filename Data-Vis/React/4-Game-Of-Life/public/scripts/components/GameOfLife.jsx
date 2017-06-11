@@ -545,13 +545,15 @@ class GameOfLife extends React.Component {
         this.state = {
             gameBoard: defaultBoard(),
             generations: 1,
-            isPlaying: true
+            isPlaying: true,
+            isCleared: false
         }
         this.tick = this.tick.bind(this);
         this.nextBoard = this.nextBoard.bind(this);
         this.play = this.play.bind(this);
         this.pause = this.pause.bind(this);
         this.randomize = this.randomize.bind(this);
+        this.clear = this.clear.bind(this);
     }
 
     tick() {
@@ -716,6 +718,9 @@ class GameOfLife extends React.Component {
 
     // resume playing
     play() {
+        if(this.state.isCleared) {
+            this.setState({gameBoard: defaultBoard(), isCleared: false})
+        }
         this.timer = setInterval( () =>{
             this.tick()
         }, 300);
@@ -742,13 +747,36 @@ class GameOfLife extends React.Component {
 
     }
 
+    // clear - clear all game state
+    clear() {
+        //clear current game
+        clearInterval(this.timer);
+
+        //clear out board - all cells false
+        let currentBoard = this.state.gameBoard;
+
+        let clearedBoard = currentBoard.map((row, rowPos) => {
+            return row.map((cell, cellPos) => {
+               return false;
+            });
+        })
+
+        //update state
+        this.setState({
+            generations: 0,
+            isPlaying: false,
+            gameBoard: clearedBoard,
+            isCleared: true
+        })
+    }
+
 
     render() {
         return (
             <div>
                 <Header/>
                 <Controls inPlay={this.state.isPlaying} onPlayClick={this.play} onPauseClick={this.pause}
-                          onRandomizeClick={this.randomize}/>
+                          onRandomizeClick={this.randomize} onClearClick={this.clear}/>
                 <GameBoardContainer generations={this.state.generations} board={this.state.gameBoard} inPlay={this.state.isPlaying}/>
             </div>
         )
