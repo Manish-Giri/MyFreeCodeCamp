@@ -35,8 +35,6 @@ class Controls extends React.Component {
                 <div className="row">
 
                     <div className="col s3">
-                        {/*<i className="material-icons">play_arrow</i>*/}
-                        {/*<i className="material-icons">pause</i>*/}
                         <a className="waves-effect waves-light btn green darken-4" onClick={isPlaying ? handlePause: handlePlay}><i className="material-icons left">play_arrow</i>{isPlaying ? "Pause" : "Play"}</a>
                     </div>
                     <div className="col s3">
