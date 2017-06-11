@@ -1,6 +1,28 @@
 const React = require('react');
 
 class Controls extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.handleSlowClick = this.handleSlowClick.bind(this);
+        this.handleMediumClick = this.handleMediumClick.bind(this);
+        this.handleFastClick = this.handleFastClick.bind(this);
+
+    }
+
+    // speed selection
+    handleSlowClick(e) {
+        this.props.onSlowSpeed();
+    }
+
+    handleMediumClick(e) {
+        this.props.onMediumSpeed();
+    }
+
+    handleFastClick(e) {
+        this.props.onFastSpeed();
+    }
+
     render() {
 
         let isPlaying = this.props.inPlay;
@@ -28,9 +50,9 @@ class Controls extends React.Component {
                         <a className='dropdown-button btn green darken-4' href='#' data-activates='dropdown1'><i className="material-icons left">settings</i>Speed</a>
 
                         <ul id='dropdown1' className='dropdown-content'>
-                            <li><a href="#!">Slow</a></li>
-                            <li><a href="#!">Medium</a></li>
-                            <li><a href="#!">Fast</a></li>
+                            <li><a href="#!" onClick={this.handleSlowClick}>Slow</a></li>
+                            <li><a href="#!" onClick={this.handleMediumClick}>Medium</a></li>
+                            <li><a href="#!" onClick={this.handleFastClick}>Fast</a></li>
                         </ul>
 
                     </div>
