@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css?family=Lato");
+@import url("https://fonts.googleapis.com/css?family=VT323");
+/*
+  ---------------------------
+    STICKY FOOTER
+  ---------------------------
+
+*/
+html, body {
+  height: 100%; }
+
+body {
+  display: flex;
+  flex-direction: column; }
+
+.content {
+  flex: 1 0 auto; }
+
+body {
+  background-color: black; }
+
+/*
+  ---------------------------
+     FOOTER
+  ---------------------------
+
+*/
+footer {
+  text-align: center;
+  color: whitesmoke; }
+  footer span {
+    font-size: 18px; }
+    footer span i {
+      color: red;
+      margin: -5px; }
+
+/*# sourceMappingURL=style.css.map */
