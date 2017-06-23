@@ -52,6 +52,8 @@ h1 {
   .chart rect {
     fill: #212121;
     cursor: pointer; }
+    .chart rect:hover {
+      fill: #81c784; }
 
 /*
   ---------------------------
@@ -63,10 +65,11 @@ h1 {
   position: absolute;
   text-align: center;
   padding: 20px;
-  background-color: lightgray;
-  width: 100px;
-  height: 50px;
-  padding: 2px;
+  background-color: #212121;
+  color: whitesmoke;
+  width: 140px;
+  height: 60px;
+  padding: 10px 2px 2px 5px;
   font-size: 12px;
   font-family: 'Open Sans', sans-serif;
   border: 0px;

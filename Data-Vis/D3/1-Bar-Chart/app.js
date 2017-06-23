@@ -43,12 +43,6 @@ d3.json("https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
         .range([height, 0])
 
 
-    console.log(`Min = ${d3.min(data.map(row => d3.timeParse("%Y-%m-%d")(row[0])))}`);
-    console.log(`Max = ${d3.max(data.map(row => d3.timeParse("%Y-%m-%d")(row[0])))}`);
-    console.log(d3.timeParse("%Y-%m-%d")("1947-01-01"));
-
-    console.log(xScale(d3.timeParse("%Y-%m-%d")("1947-01-01")));
-
     // create chart
     svg.selectAll('rect')
         .data(data)
@@ -63,7 +57,7 @@ d3.json("https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
             div.transition()
                 .duration(200)
                 .style("opacity", 0.9)
-            div.html("$" + d3.format(".1f")(d[1]) + "<br>" + d3.timeFormat("%B, %Y")(d3.timeParse("%Y-%m-%d")(d[0])))
+            div.html("$" + d3.format(",.2f")(d[1]) + " B <br>" + d3.timeFormat("%B, %Y")(d3.timeParse("%Y-%m-%d")(d[0])))
                 .style("left", (d3.event.pageX + 20) + "px")
                 .style("top", (d3.event.pageY - 70) + "px")
         })

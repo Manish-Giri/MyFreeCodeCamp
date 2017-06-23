@@ -10,9 +10,12 @@ font-family: 'Open Sans', sans-serif;
 
 
 /* COLORS */
+
 $header-footer-color: #bdbdbd;
 $bar-color: #212121;
 $chart-background: #e0e0e0;
+$rect-hover-color: #81c784;
+$tooltip-background-color: #212121;
 
 /*
   ---------------------------
@@ -73,6 +76,9 @@ h1 {
   rect {
     fill: $bar-color ;
     cursor: pointer;
+    &:hover {
+      fill: $rect-hover-color;
+    }
   }
 }
 
@@ -88,10 +94,11 @@ h1 {
   position: absolute;
   text-align: center;
   padding: 20px;
-  background-color: lightgray;
-  width: 100px;
-  height: 50px;
-  padding: 2px;
+  background-color: $tooltip-background-color;
+  color: whitesmoke;
+  width: 140px;
+  height: 60px;
+  padding: 10px 2px 2px 5px;
   font-size: 12px;
   font-family:'Open Sans', sans-serif;
   border: 0px;
