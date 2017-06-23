@@ -6,6 +6,7 @@ font-family: 'Lora', serif;
 font-family: 'Playfair Display', serif;
 font-family: 'Open Sans', sans-serif;
  */
+/* COLORS */
 /*
   ---------------------------
     STICKY FOOTER
@@ -25,11 +26,50 @@ body {
 body {
   background-color: black; }
 
+/*
+  ---------------------------
+     HEADER
+  ---------------------------
+
+*/
 h1 {
   font-family: 'Lora', serif;
-  color: #80cbc4;
+  color: #bdbdbd;
   text-align: center;
-  font-size: 32px; }
+  font-size: 32px;
+  text-transform: uppercase; }
+
+/*
+  ---------------------------
+        CHART
+  ---------------------------
+
+*/
+.chart {
+  margin: 20px auto;
+  width: 85%;
+  background-color: #e0e0e0; }
+  .chart rect {
+    fill: #212121;
+    cursor: pointer; }
+
+/*
+  ---------------------------
+     TOOLTIP
+  ---------------------------
+
+*/
+.tooltip {
+  position: absolute;
+  text-align: center;
+  width: 60px;
+  height: 28px;
+  padding: 2px;
+  font-size: 12px;
+  font-family: 'Patrick Hand SC', cursive;
+  border: 0px;
+  border-radius: 10px;
+  pointer-events: none; }
 
 /*
   ---------------------------
@@ -39,11 +79,12 @@ h1 {
 */
 footer {
   text-align: center;
-  color: whitesmoke; }
+  color: #bdbdbd;
+  text-transform: capitalize; }
   footer span {
-    font-size: 18px; }
+    font-family: 'Cinzel', serif;
+    font-size: 16px; }
     footer span i {
-      color: red;
-      margin: -5px; }
+      color: red; }
 
 /*# sourceMappingURL=style.css.map */

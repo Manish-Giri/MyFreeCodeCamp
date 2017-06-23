@@ -9,6 +9,10 @@ font-family: 'Open Sans', sans-serif;
  */
 
 
+/* COLORS */
+$header-footer-color: #bdbdbd;
+$bar-color: #212121;
+$chart-background: #e0e0e0;
 
 /*
   ---------------------------
@@ -37,22 +41,61 @@ body {
 }
 
 
+/*
+  ---------------------------
+     HEADER
+  ---------------------------
+
+*/
 
 h1 {
   font-family: 'Lora', serif;
-  color: #80cbc4;
+  color: $header-footer-color;
   text-align: center;
   font-size: 32px;
+  text-transform: uppercase;
 }
 
 
 
+/*
+  ---------------------------
+        CHART
+  ---------------------------
+
+*/
+
+.chart {
+  margin: 20px auto;
+  width: 85%;
+  background-color: $chart-background;
+
+  rect {
+    fill: $bar-color ;
+    cursor: pointer;
+  }
+}
 
 
+/*
+  ---------------------------
+     TOOLTIP
+  ---------------------------
 
+*/
 
-
-
+.tooltip {
+  position: absolute;
+  text-align: center;
+  width: 60px;
+  height: 28px;
+  padding: 2px;
+  font-size: 12px;
+  font-family: 'Patrick Hand SC', cursive;
+  border: 0px;
+  border-radius: 10px;
+  pointer-events: none;
+}
 
 /*
   ---------------------------
@@ -63,13 +106,16 @@ h1 {
 
 footer {
   text-align: center;
-  color: whitesmoke;
+  color: $header-footer-color;
+  text-transform: capitalize;
 
   span {
-    font-size: 18px;
+    font-family: 'Cinzel', serif;
+    font-size: 16px;
+
     i {
       color: red;
-      margin: -5px;
+
     }
   }
 
