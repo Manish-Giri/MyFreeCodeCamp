@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css?family=Cinzel|Lora|Open+Sans|Patrick+Hand+SC|Playfair+Display");
+/*
+font-family: 'Cinzel', serif;
+font-family: 'Patrick Hand SC', cursive;
+font-family: 'Lora', serif;
+font-family: 'Playfair Display', serif;
+font-family: 'Open Sans', sans-serif;
+ */
+/* COLORS */
+/*
+$header-footer-color: #bdbdbd;
+$bar-color: #212121;
+$chart-background: #e0e0e0;
+$rect-hover-color: #81c784;
+$tooltip-background-color: #212121;
+*/
+/*
+  ---------------------------
+    STICKY FOOTER
+  ---------------------------
+
+*/
+html, body {
+  height: 100%; }
+
+body {
+  display: flex;
+  flex-direction: column;
+  background: url("http://cdn.wallpapersafari.com/19/89/OSYEdQ.jpg") no-repeat; }
+
+.content {
+  flex: 1 0 auto; }
+
+body {
+  background-color: black; }
+
+/*
+  ---------------------------
+     HEADER
+  ---------------------------
+
+*/
+h1 {
+  font-family: 'Lora', serif;
+  color: whitesmoke;
+  text-align: center;
+  font-size: 32px;
+  text-transform: uppercase; }
+
+/*
+  ---------------------------
+     FOOTER
+  ---------------------------
+
+*/
+footer {
+  text-align: center;
+  color: white;
+  text-transform: capitalize; }
+  footer span {
+    font-family: 'Cinzel', serif;
+    font-size: 16px; }
+    footer span i {
+      color: red; }
+
+/*# sourceMappingURL=style.css.map */
