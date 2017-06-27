@@ -7,7 +7,7 @@
 const margin = {top: 20, right: 10, bottom: 20, left: 70};
 
 // SVG values
-let width = 960 - margin.left - margin.right;
+let width = 1060 - margin.left - margin.right;
 let height = 500 - margin.top - margin.bottom;
 
 

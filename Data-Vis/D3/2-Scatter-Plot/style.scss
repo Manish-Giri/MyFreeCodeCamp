@@ -34,6 +34,8 @@ body {
   display: flex;
   flex-direction: column;
   background: url("http://cdn.wallpapersafari.com/19/89/OSYEdQ.jpg") no-repeat;
+  background-size: cover;
+
 }
 
 .content {
@@ -61,6 +63,23 @@ h1 {
   font-size: 32px;
   text-transform: uppercase;
 }
+
+
+
+/*
+  ---------------------------
+     CHART
+  ---------------------------
+
+*/
+
+svg {
+  display: block;
+  background-color: rgba(0,0,0,0.4);
+
+  margin: 5px auto;
+}
+
 
 
 
