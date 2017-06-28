@@ -82,11 +82,12 @@ svg {
 
 
 // axes color
-.axisBottom {
+.axisStyle {
   path, line, text {
     stroke: white;
-
+    fill: none;
   }
+
 }
 
 

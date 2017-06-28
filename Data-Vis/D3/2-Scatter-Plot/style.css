@@ -59,8 +59,9 @@ svg {
   background-color: rgba(0, 0, 0, 0.4);
   margin: 5px auto; }
 
-.axisBottom path, .axisBottom line, .axisBottom text {
-  stroke: white; }
+.axisStyle path, .axisStyle line, .axisStyle text {
+  stroke: white;
+  fill: none; }
 
 /*
   ---------------------------
