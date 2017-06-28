@@ -4,13 +4,11 @@
 
 
 // margin
-const margin = {top: 20, right: 10, bottom: 20, left: 70};
+const margin = {top: 10, right: 60, bottom: 60, left: 60};
 
 // SVG values
-let width = 1060 - margin.left - margin.right;
+let width = 960 - margin.left - margin.right;
 let height = 500 - margin.top - margin.bottom;
-
-
 
 // create SVG element
 let svg = d3.select(".chart")
@@ -18,6 +16,7 @@ let svg = d3.select(".chart")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
     .append("g")
+    .attr("padding", 10)
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 d3.json("https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/cyclist-data.json", function(result) {
@@ -38,7 +37,7 @@ d3.json("https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
 
     let yScale = d3.scaleLinear()
         .domain(d3.extent(data, row => row.Place))
-    .range([0, height])
+        .range([0, height])
         .nice();
 
     // create scatter plot
@@ -52,5 +51,11 @@ d3.json("https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
         .attr("fill", d => d.Doping ? "#ef5350" : "#8bc34a")
     .attr("stroke", "black")
 
+    // create axes
+    // x axis
+    svg.append("g")
+        .attr("class", "axisBottom")
+        .attr("transform", "translate(0," + (height+2) + ")")
+        .call(d3.axisBottom(xScale).tickFormat(d3.timeFormat("%M:%S")));
 
 });
