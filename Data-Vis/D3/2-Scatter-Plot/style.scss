@@ -11,13 +11,13 @@ font-family: 'Open Sans', sans-serif;
 
 /* COLORS */
 
-/*
+
 $header-footer-color: #bdbdbd;
 $bar-color: #212121;
 $chart-background: #e0e0e0;
 $rect-hover-color: #81c784;
 $tooltip-background-color: #212121;
-*/
+
 
 /*
   ---------------------------
@@ -90,6 +90,30 @@ svg {
 
 }
 
+
+
+/*
+  ---------------------------
+     TOOLTIP
+  ---------------------------
+
+*/
+
+.tooltip {
+  position: absolute;
+  text-align: center;
+  padding: 20px;
+  background-color: $tooltip-background-color;
+  color: whitesmoke;
+  width: 150px;
+  height: 100px;
+  padding: 10px 2px 2px 5px;
+  font-size: 12px;
+  font-family:'Open Sans', sans-serif;
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
+}
 
 
 /*

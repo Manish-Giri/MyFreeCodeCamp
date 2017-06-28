@@ -10,6 +10,14 @@ const margin = {top: 10, right: 60, bottom: 60, left: 60};
 let width = 1060 - margin.left - margin.right;
 let height = 500 - margin.top - margin.bottom;
 
+
+// create div for tooltip
+let div = d3.select("body")
+    .append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
+
+
 // create SVG element
 let svg = d3.select(".chart")
     .append('svg')
@@ -53,10 +61,25 @@ d3.json("https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
         .enter()
         .append("circle")
         .attr("cx", d => xScale(d3.timeParse("%M:%S")(d.Time)))
-    .attr("cy", d => yScaleDup(+d.Place))
-    .attr("r", 6)
+        .attr("cy", d => yScaleDup(+d.Place))
+        .attr("r", 6)
         .attr("fill", d => d.Doping ? "#ef5350" : "#8bc34a")
-    .attr("stroke", "black")
+        .attr("stroke", "black")
+        // create tooltips
+        .on("mouseover", d => {
+            div.transition()
+                .duration(300)
+                .style("opacity", 0.9)
+            div.html(`<b>${d.Name}-${d.Nationality}</b><br> Time: ${d.Time}, Year: ${d.Year} <br> ${d.Doping}`)
+                .style("left", (d3.event.pageX) - 60 + "px")
+                .style("top", (d3.event.pageY) - 130 + "px")
+        })
+        .on("mouseout", d => {
+            div.transition()
+                .duration(500)
+                .style("opacity", 0)
+        });
+
 
     // create axes
     // x axis
@@ -69,4 +92,7 @@ d3.json("https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
     svg.append("g")
         .attr("class", "axisStyle" )
         .call(d3.axisLeft(yScale));
+
+    // create tooltips
+
 });
