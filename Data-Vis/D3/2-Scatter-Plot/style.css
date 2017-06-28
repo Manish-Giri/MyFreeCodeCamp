@@ -19,7 +19,7 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
-  background: url("http://cdn.wallpapersafari.com/19/89/OSYEdQ.jpg") no-repeat;
+  background: url("https://www.dropbox.com/s/wqtbos5dw7zbwex/OSYEdQ%20%281%29.jpg?dl=1") no-repeat;
   background-size: cover; }
 
 .content {
@@ -68,14 +68,28 @@ svg {
   padding: 20px;
   background-color: #212121;
   color: whitesmoke;
-  width: 150px;
-  height: 100px;
-  padding: 10px 2px 2px 5px;
+  width: 260px;
+  height: 130px;
   font-size: 12px;
   font-family: 'Open Sans', sans-serif;
   border: 0px;
   border-radius: 8px;
   pointer-events: none; }
+
+.about {
+  font-size: 14px;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 5px; }
+
+.label {
+  stroke: white;
+  fill: none;
+  shape-rendering: crispEdges;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px; }
 
 /*
   ---------------------------
