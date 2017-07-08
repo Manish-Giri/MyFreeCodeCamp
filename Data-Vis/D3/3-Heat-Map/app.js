@@ -1,9 +1,9 @@
 const margin = {left: 70, top: 40, right: 40, bottom: 50};
-const width = 1000 - margin.left - margin.right;
+const width = 960 - margin.left - margin.right;
 const height = 500 - margin.top - margin.bottom;
 const padding = 5;
 const months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"];
-const colors = ['#ffffcc', "#ffffb2", "#ffffd9", '#ffeda0', '#fed976', '#feb24c', '#fd8d3c', '#fc4e2a', '#e31a1c', '#bd0026', '#800026'];
+const colors = ["#ffffd9", '#ffffcc',  "#ffffb2",  '#ffeda0', '#fed976', '#feb24c', '#fd8d3c', '#fc4e2a', '#e31a1c', '#bd0026', '#800026'];
 
 
 let svg = d3.select('.chart')
@@ -13,10 +13,17 @@ let svg = d3.select('.chart')
   .append('g')  
   .attr('transform', "translate(" + margin.left + "," + margin.top + ")");
 
-d3.json("https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/global-temperature.json", function(res) {
-    console.log(res);
+d3.json("https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/global-temperature.json", function(result) {
+    console.log(result);
 
-    let data = res.monthlyVariance.map(d => d);
+    let base = result.baseTemperature;
+    let data = result.monthlyVariance.map(d => d);
+
+    // create div for tooltip
+    let div = d3.select("body")
+        .append("div")
+        .attr("class", "tooltip")
+        .style("opacity", 0);
 
     // create scales
     let yScale = d3.scaleLinear()
@@ -83,7 +90,20 @@ d3.json("https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
         .attr("width", 4)
         .attr("height", 35)
         .attr("fill", obj => heatScale(obj.variance))
-        .attr("cursor", "pointer");
+        .attr("cursor", "pointer")
+        .on("mouseover", d => {
+            div.transition()
+                .duration(300)
+                .style("opacity", 0.9)
+            div.html(`<span class="about">${months[d.month-1]} - ${d.year}</span><br><span>${(base + d.variance).toFixed(3)}&#8451;</span>`)
+                .style("left", (d3.event.pageX) - 60 + "px")
+                .style("top", (d3.event.pageY) - 130 + "px")
+        })
+        .on("mouseout", d => {
+            div.transition()
+                .duration(500)
+                .style("opacity", 0)
+        });
 
 
     // create legend
