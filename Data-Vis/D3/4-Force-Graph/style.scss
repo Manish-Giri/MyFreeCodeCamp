@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css?family=Cinzel|Lora|Open+Sans|Bellefair|Alegreya+Sans+SC|Josefin+Sans|Philosopher');
+
+/*
+  ---------------------------
+    STICKY FOOTER
+  ---------------------------
+
+*/
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  // background: black;
+}
+
+.content {
+  flex: 1 0 auto;
+}
+
+/*
+  ---------------------------
+    HEADER
+  ---------------------------
+
+*/
+h1 {
+  font-family: 'Lora', serif;
+  color: #222;
+  text-align: center;
+  font-size: 30px;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*
+  ---------------------------
+        FOOTER
+  ---------------------------
+
+*/
+footer {
+  text-align: center;
+  color: #222;
+  text-transform: capitalize;
+
+  span {
+    font-family: 'Cinzel', serif;
+    font-size: 16px;
+
+    i {
+      color: red;
+
+    }
+  }
+}
