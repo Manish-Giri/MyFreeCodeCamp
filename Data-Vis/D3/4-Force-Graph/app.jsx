@@ -1,22 +1,18 @@
 const Header = () => {
-    return <h1 className="header">Monthly Global Land-Surface Temperature</h1>
+    return <h1 className="header">Force Directed Graph of State Contiguity</h1>
 };
 
 class Chart extends React.Component {
 
 }
 
-class App extends React.Component {
-    render() {
+const App = () => {
         return (
             <div>
                 <Header/>
             </div>
         )
-    }
 }
-
-
 
 
 ReactDOM.render(<App />, document.getElementById("main"));
