@@ -20,7 +20,16 @@ class Chart extends React.Component {
                     return {
                         id: index,
                         label: object.country,
-                        flag: `https://github.com/hjnilsson/country-flags/raw/master/png100px/${object.code}.png`
+                        image: `https://github.com/hjnilsson/country-flags/raw/master/png100px/${object.code}.png`,
+                        shape: "circularImage",
+                        size: 15,
+                        color: {
+                            border: "#222"
+                        },
+                        font: {
+                            color: "#eeeeee",
+                            face: "Open Sans', sans-serif"
+                        }
                     }
                 });
                 // console.log(n);
@@ -45,9 +54,36 @@ class Chart extends React.Component {
         };
 
         let options = {
-            
-        }
-        return <h3 nodes={this.state.nodes}>Chart here</h3>
+            layout: {
+                hierarchical: false,
+                improvedLayout:false
+            },
+            height: '100%',
+            width: '100%',
+            edges: {
+                color: "#efefef",
+                arrows: { to: { enabled: false } },
+            },
+            nodes: {
+                shapeProperties: {
+                    interpolation: false    // 'true' for intensive zooming
+                }
+            }
+        };
+
+        let styles = {
+            width: "90%",
+            height: "100%",
+            border: "1px solid red",
+            margin: "5px auto"
+        };
+
+        return (
+            <div className="chart">
+                <ReactGraphVis.default graph={graph} options={options} style={styles}/>
+            </div>
+        )
+
     }
 }
 
