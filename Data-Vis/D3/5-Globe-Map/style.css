@@ -1,5 +1,13 @@
-@import url("https://fonts.googleapis.com/css?family=Cinzel|Lora|Open+Sans|Bellefair|Alegreya+Sans+SC|Josefin+Sans|Philosopher");
+@import url("https://fonts.googleapis.com/css?family=Kurale|Varela+Round");
 /*
+@import url('https://fonts.googleapis.com/css?family=Cinzel|Lora|Open+Sans|Bellefair|Alegreya+Sans+SC|Josefin+Sans|Philosopher');
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans+SC|Bellefair|Josefin+Sans|Philosopher');
+@import url('https://fonts.googleapis.com/css?family=Kurale|Vollkorn');
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans+SC');
+@import url('https://fonts.googleapis.com/css?family=Bellefair');
+@import url('https://fonts.googleapis.com/css?family=Spectral+SC:700');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
 
 FONT FAMILIES
 
@@ -32,11 +40,18 @@ html, body {
 
 body {
   display: flex;
-  flex-direction: column;
-  background: black; }
+  flex-direction: column; }
 
 .content {
   flex: 1 0 auto; }
+
+body {
+  background: #E8CBC0;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #636FA4, #E8CBC0);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #636FA4, #E8CBC0);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
 
 /*
   ---------------------------
@@ -45,12 +60,45 @@ body {
 
 */
 h1 {
-  font-family: 'Lora', serif;
-  color: whitesmoke;
+  font-family: 'Kurale', serif;
+  color: #222;
   text-align: center;
-  font-size: 30px;
+  font-size: 34px;
   text-transform: uppercase;
-  margin-bottom: 0; }
+  margin-top: 20px; }
+
+.chart {
+  margin: 0 auto; }
+  .chart path {
+    stroke: rgba(0, 0, 0, 0.3);
+    fill: rgba(0, 0, 0, 0.1); }
+  .chart circle {
+    stroke: rgba(0, 0, 0, 0.3);
+    fill: rgba(255, 0, 0, 0.2); }
+    .chart circle.animation {
+      stroke: red;
+      fill: rgba(255, 0, 0, 0.4); }
+    .chart circle:hover {
+      stroke: rgba(0, 128, 0, 0.7);
+      fill: rgba(0, 128, 0, 0.2);
+      cursor: pointer;
+      transition: all 0.2s ease-in-out; }
+
+.tooltip {
+  position: absolute;
+  text-align: left;
+  padding: 5px;
+  color: #111;
+  width: 220px;
+  height: 120px;
+  font-size: 14px;
+  font-family: 'Varela Round', sans-serif;
+  border: 5px;
+  border-radius: 8px;
+  pointer-events: none;
+  background: rgba(238, 240, 243, 0.8);
+  transition: opacity 0.3s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 0px 1px, rgba(0, 0, 0, 0.12) 0px 8px 32px; }
 
 /*
   ---------------------------
@@ -60,11 +108,10 @@ h1 {
 */
 footer {
   text-align: center;
-  color: white;
   text-transform: capitalize; }
   footer span {
-    font-family: 'Cinzel', serif;
-    font-size: 16px; }
+    font-family: 'Kurale', serif;
+    font-size: 14px; }
     footer span i {
       color: red; }
 
